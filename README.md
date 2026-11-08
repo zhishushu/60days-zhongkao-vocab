@@ -36,7 +36,7 @@
 ### ① 一行命令（推荐）
 
 ```bash
-git clone https://github.com/<你的用户名>/60days-zhongkao-vocab.git
+git clone https://github.com/zhishushu/60days-zhongkao-vocab.git
 cd 60days-zhongkao-vocab
 ./install.sh          # macOS / Linux / Windows 的 git-bash
 # Windows PowerShell：

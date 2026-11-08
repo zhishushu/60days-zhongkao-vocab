@@ -16,7 +16,7 @@
 
 ```bash
 cd 60days-zhongkao-vocab        # 本目录
-git remote add origin https://github.com/<你的用户名>/60days-zhongkao-vocab.git
+git remote add origin https://github.com/zhishushu/60days-zhongkao-vocab.git
 git push -u origin main
 ```
 
@@ -46,7 +46,7 @@ git push origin v1.7.0
 在随便一台电脑（或另一个目录）上模拟别人安装：
 
 ```bash
-git clone https://github.com/<你的用户名>/60days-zhongkao-vocab.git /tmp/t
+git clone https://github.com/zhishushu/60days-zhongkao-vocab.git /tmp/t
 cd /tmp/t && bash install.sh --target /tmp/fake-skills/60days-zhongkao-vocab
 python3 /tmp/fake-skills/60days-zhongkao-vocab/scripts/generate.py \
         /tmp/fake-skills/60days-zhongkao-vocab/assets/sample-wordlist.json /tmp/ok.html

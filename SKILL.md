@@ -8,7 +8,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [education, vocabulary, 中考, single-file-html, ocr]
-    homepage: https://github.com/<你的用户名>/60days-zhongkao-vocab
+    homepage: https://github.com/zhishushu/60days-zhongkao-vocab
     related_skills: [vocab-quiz-builder, dogfood]
 ---
 

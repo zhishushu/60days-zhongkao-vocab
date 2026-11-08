@@ -28,6 +28,49 @@
 - **手机端深度适配**：内置键盘、无 `prompt/alert/confirm`、390px 无横向溢出、刘海屏安全区
 - **单文件交付**：CSS/JS/数据全部内联；离线语音包是可选的一个同级 `audio/` 文件夹
 
+## 安装（给别人的一键装法）
+
+本仓库就是一份 **AI Skill 包**：根目录有 `SKILL.md`，`scripts/`、`assets/`、`references/` 都是相对路径，
+放到任何"技能目录"里即可用。三种装法任选：
+
+### ① 一行命令（推荐）
+
+```bash
+git clone https://github.com/<你的用户名>/60days-zhongkao-vocab.git
+cd 60days-zhongkao-vocab
+./install.sh          # macOS / Linux / Windows 的 git-bash
+# Windows PowerShell：
+.\install.ps1
+```
+
+脚本会自动判断装到哪儿，也可以指定：
+
+| 命令 | 装到 |
+|---|---|
+| `./install.sh --hermes` | `$HERMES_HOME/skills/productivity/60days-zhongkao-vocab`（Hermes Agent） |
+| `./install.sh --claude` | `~/.claude/skills/60days-zhongkao-vocab`（Claude Code 等） |
+| `./install.sh --target DIR` | 任何支持 `SKILL.md` 的助手 / 自己的技能目录 |
+
+### ② 手动拖进去
+
+把整个文件夹复制到对应目录，改名成 `60days-zhongkao-vocab`：
+
+```
+Hermes Agent   →  $HERMES_HOME/skills/productivity/60days-zhongkao-vocab/    (默认 ~/.hermes/…)
+Claude Code    →  ~/.claude/skills/60days-zhongkao-vocab/
+其他助手        →  任意 skills/ 目录，只要 SKILL.md 在技能根目录
+```
+
+装完在助手会话里说一句「用 60days-zhongkao-vocab 帮我把这份词表做成词汇训练页」即可触发。
+
+### ③ 不用 AI 助手，直接当工具用
+
+`scripts/` 全是普通 Python 脚本，装不装进助手都能跑：
+
+```bash
+python3 scripts/generate.py assets/sample-wordlist.json 示例.html   # 立刻得到可用的 HTML
+```
+
 ## 界面预览
 
 | 登录（名字 + 密码） | 首页 | 学单词（释义 / 变化 / 短语 / 例句带中文） |
@@ -131,6 +174,8 @@ python3 scripts/fetch_audio.py wordlist.json audio/ --workers 3
 ├── LICENSE                          # MIT
 ├── NOTICE.md                        # 第三方数据/录音的来源与许可
 ├── requirements.txt
+├── install.sh                       # 一键装进 Hermes / Claude Code / 指定目录
+├── install.ps1                      # 同上（Windows PowerShell）
 ├── scripts/
 │   ├── ocr_pdf.py                   # 扫描版 PDF → 逐页 OCR JSON
 │   ├── parse_pdf.py                 # OCR → 词表 JSON（音标/释义/短语/派生词/例句）

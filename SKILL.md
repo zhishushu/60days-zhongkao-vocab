@@ -4,13 +4,20 @@ description: Use when 中考英语词汇复习/背单词/默写/词汇游戏。�
 version: 1.7.0
 author: Elaine-Wu Yi
 license: MIT
+platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [education, vocabulary, 中考, single-file-html, ocr]
+    homepage: https://github.com/<你的用户名>/60days-zhongkao-vocab
     related_skills: [vocab-quiz-builder, dogfood]
 ---
 
 # 60天搞定中考词汇（60days-zhongkao-vocab）
+
+> **安装**：把整个目录放进助手的 skills 目录即可（Hermes：`$HERMES_HOME/skills/productivity/60days-zhongkao-vocab/`；
+> Claude Code：`~/.claude/skills/60days-zhongkao-vocab/`），或直接跑仓库根目录的 `./install.sh` / `.\install.ps1`。
+> 所有脚本按 **本文件所在目录** 解析 `assets/`、`references/`，所以装在哪里都能用；不装进助手也能直接
+> `python3 scripts/generate.py 词表.json out.html`。
 
 把一本中考词汇书（或一份词表）变成学生手机浏览器就能用的**单文件 HTML 训练器**：
 「单词流星雨」（按 Day 玩消消乐/对对碰/连连看，游戏即复习）、「单词翻译官」（中→英 / 英→中随机）、「听写闯关」、「真题大作战」，外加「学习中心」（艾宾浩斯抗遗忘复习 / 错题本 / 学习报告 / 排行榜）。答题期间只回对错，**答满规定题数后才在结果页给答案与逐题解析**（音标 + 词性 + 释义 + 派生词 + 短语 + 例句）。进门前必须名字+密码登录。

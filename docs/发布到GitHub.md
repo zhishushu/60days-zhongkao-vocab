@@ -41,7 +41,21 @@ git push origin v1.7.0
 - 标题：`v1.7.0 · 首个公开版本`
 - 附件：把桌面上 `60天搞定中考词汇-离线语音版.zip` 拖进去（学生下载解压即用）
 
-## 4. 之后要改内容
+## 4. 发布后自测（别跳过）
+
+在随便一台电脑（或另一个目录）上模拟别人安装：
+
+```bash
+git clone https://github.com/<你的用户名>/60days-zhongkao-vocab.git /tmp/t
+cd /tmp/t && bash install.sh --target /tmp/fake-skills/60days-zhongkao-vocab
+python3 /tmp/fake-skills/60days-zhongkao-vocab/scripts/generate.py \
+        /tmp/fake-skills/60days-zhongkao-vocab/assets/sample-wordlist.json /tmp/ok.html
+```
+
+看到「2 个 Day / 34 词 / JS: OK」就说明别人也能装、也能用。
+Windows 上再跑一次 `.\install.ps1 -Target D:\tmp\skills\60days-zhongkao-vocab`。
+
+## 5. 之后要改内容
 
 ```bash
 # 改完词表/模板后重新生成示例

@@ -1,0 +1,15 @@
+# 生成页面只需要 Python 3 + Node.js（Node 仅用于生成时的 JS 语法自检）
+# 下面这些是 OCR / 答案册导入 / 语音包才会用到的依赖
+
+# 扫描版 PDF 取图
+pymupdf>=1.24
+
+# OCR（必须 --no-deps 逐个安装，见 references/answer-key-import.md）
+rapidocr-onnxruntime>=1.3
+opencv-python>=4.8
+pyclipper>=1.3
+Shapely>=2.0
+PyYAML>=6.0
+
+# 离线语音包转码（自带 ffmpeg 二进制）
+imageio-ffmpeg>=0.5

@@ -1,0 +1,2674 @@
+[
+{
+"d": "Day 1",
+"no": 1,
+"s": "What about ____ (go) to Zhongshan Park to see the flowers? -Sounds good!",
+"h": "go",
+"ans": "going",
+"note": ""
+},
+{
+"d": "Day 1",
+"no": 2,
+"s": "Lucy was a____ from school yesterday because she had a fever.",
+"h": "",
+"ans": "absent",
+"note": "考查固定搭配be absent from缺席”。"
+},
+{
+"d": "Day 1",
+"no": 3,
+"s": "Children believe that the Monkey King is a hero who has many ____ (able).",
+"h": "able",
+"ans": "abilities",
+"note": ""
+},
+{
+"d": "Day 1",
+"no": 4,
+"s": "Our country has a proud record of sporting ____ (achieve).",
+"h": "achieve",
+"ans": "achievements",
+"note": "空处作of 的宾语,应用名词。 \"achieve\"的名词形式是“achievement”，在此意为“成就； 成绩”,是可数名词,且空前没有表示单数概念的限定词， 所以需要使用“achievement”的复数形式“achievements” 来表示多方面的成就。"
+},
+{
+"d": "Day 1",
+"no": 5,
+"s": "We can't afford to wait any longer to take ____ (act)!",
+"h": "act",
+"ans": "action",
+"note": "考查固定搭配take action“采取行动”。"
+},
+{
+"d": "Day 1",
+"no": 6,
+"s": "On weekends, all the left-behind children can come to school and take part in fun a____ like playing soccer and singing songs.",
+"h": "",
+"ans": "activities",
+"note": "句意：周末,所有留守儿童都可以来学 校参加踢足球、唱歌等有趣的活动。根据“like playing soccer and singing songs”和首字母提示可知，此处应用 activity表示“活动”，且应用其复数形式表泛指。故填 activities ."
+},
+{
+"d": "Day 2",
+"no": 1,
+"s": "You are alone now. I'm not there to help you or give you any kind of ____ (advise).",
+"h": "advise",
+"ans": "advice",
+"note": ""
+},
+{
+"d": "Day 2",
+"no": 2,
+"s": "Actually, we can't afford ____ (lose) anyone of our team, or we won't win.",
+"h": "lose",
+"ans": "to lose",
+"note": ""
+},
+{
+"d": "Day 2",
+"no": 3,
+"s": "Don't be afraid of ____ (ask) your parents or teachers for help if you are in trouble.",
+"h": "ask",
+"ans": "asking",
+"note": ""
+},
+{
+"d": "Day 2",
+"no": 4,
+"s": "The movie shows how humans fight a____ disasters(灾难).",
+"h": "",
+"ans": "against",
+"note": ""
+},
+{
+"d": "Day 2",
+"no": 5,
+"s": "At the a____ of 13, she went to a sports school in Xiangtan, Hunan Province.",
+"h": "",
+"ans": "age",
+"note": ""
+},
+{
+"d": "Day 2",
+"no": 6,
+"s": "Liu Kun was still sleepy, but he agreed ____ (practice) playing soccer with Zu Ti.",
+"h": "practice",
+"ans": "to practice",
+"note": ""
+},
+{
+"d": "Day 2",
+"no": 7,
+"s": "We advise teenagers ____ (take) more exercise. It's important to have a healthy body.",
+"h": "take",
+"ans": "to take",
+"note": ""
+},
+{
+"d": "Day 3",
+"no": 1,
+"s": "My mother allows me ____ (watch) TV for an hour on weekends.",
+"h": "watch",
+"ans": "to watch",
+"note": ""
+},
+{
+"d": "Day 3",
+"no": 2,
+"s": "Jane can look after herself while she lives ____ (独自).",
+"h": "",
+"ans": "alone",
+"note": ""
+},
+{
+"d": "Day 3",
+"no": 3,
+"s": "A____ they are twins, they don't look like each other.",
+"h": "",
+"ans": "Although",
+"note": ""
+},
+{
+"d": "Day 3",
+"no": 4,
+"s": "Students are not a____ to eat in class. We should follow the school rules.",
+"h": "",
+"ans": "allowed",
+"note": ""
+},
+{
+"d": "Day 3",
+"no": 6,
+"s": "The Silk Road got its name because silk was one of the main things transported ____ (沿着)this road.",
+"h": "",
+"ans": "along",
+"note": ""
+},
+{
+"d": "Day 4",
+"no": 1,
+"s": "Mary found it difficult to solve the problems, so she asked her father ____ some advice.",
+"h": "",
+"ans": "for",
+"note": ""
+},
+{
+"d": "Day 4",
+"no": 2,
+"s": "She paid her full attention ____ the project and succeeded in the end.",
+"h": "",
+"ans": "to",
+"note": ""
+},
+{
+"d": "Day 4",
+"no": 3,
+"s": "When playing in the hallways, students should avoid ____ (push) each other.",
+"h": "push",
+"ans": "pushing",
+"note": ""
+},
+{
+"d": "Day 4",
+"no": 4,
+"s": "We should speak ____ politely as possible when we ask strangers for help.",
+"h": "",
+"ans": "as",
+"note": "分析句意可知,此处表示说话应尽可能礼貌 一些,应用“as...as possible\"结构。故填 as。"
+},
+{
+"d": "Day 4",
+"no": 5,
+"s": "Our interest in Chinese paper-cut rose a lot after a(n) ____ (艺术家) gave us a talk.",
+"h": "",
+"ans": "artist",
+"note": ""
+},
+{
+"d": "Day 4",
+"no": 6,
+"s": "She fell on a piece of glass, which cut her eye ____ (bad).",
+"h": "bad",
+"ans": "badly",
+"note": ""
+},
+{
+"d": "Day 5",
+"no": 1,
+"s": "Li Xin set up a business to make ____ (beauty) artworks by using materials from old cars.",
+"h": "beauty",
+"ans": "beautiful",
+"note": ""
+},
+{
+"d": "Day 5",
+"no": 2,
+"s": "Mom was worried because ____ my poor grades.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 5",
+"no": 3,
+"s": "At the ____ (begin) of the last century in the US, avocados(鳄梨) weren't popular.",
+"h": "begin",
+"ans": "beginning",
+"note": ""
+},
+{
+"d": "Day 5",
+"no": 4,
+"s": "You'll also find out about the history of pets, their ____ (行为) and the different ways they communicate. As Grade 9 students, we should keep a b____ between our hobbies and schoolwork.",
+"h": "",
+"ans": "behavior",
+"note": ""
+},
+{
+"d": "Day 6",
+"no": 1,
+"s": "It is usually ____ (believe) that a person should get about eight hours of sleep per night.",
+"h": "believe",
+"ans": "believed",
+"note": "根据提示词和空前的is可知,空处应用 过去分词形式,it is believed that...表示\"人们认为....” 故填believed。"
+},
+{
+"d": "Day 6",
+"no": 2,
+"s": "Whose volleyball is this? It must b____ to Carla. She loves volleyball a lot.",
+"h": "",
+"ans": "belong",
+"note": ""
+},
+{
+"d": "Day 6",
+"no": 3,
+"s": "You have a cold. You'd better ____ (take) this medicine and have a good rest.",
+"h": "take",
+"ans": "take",
+"note": "空处位于 had better 的缩略形式之后,应填 动词原形。"
+},
+{
+"d": "Day 6",
+"no": 4,
+"s": "Don't worry about the return ticket. Daniel has helped ____ (预订) two-way tickets.",
+"h": "",
+"ans": "(to)book",
+"note": "句意:不用担心返程的票。Daniel 已 经帮忙预订了往返票。help后面用动词原形或动词不定 式,结合中文提示,该空填（to）book。"
+},
+{
+"d": "Day 6",
+"no": 5,
+"s": "You have to believe ____ yourself.",
+"h": "",
+"ans": "in",
+"note": ""
+},
+{
+"d": "Day 7",
+"no": 1,
+"s": "Through exercise, ____ our mind and body will become healthier.",
+"h": "",
+"ans": "both",
+"note": ""
+},
+{
+"d": "Day 7",
+"no": 2,
+"s": "Then, it's time for a(n) ____ (休息)!I eat snacks (零食)and talk with friends.",
+"h": "",
+"ans": "break",
+"note": ""
+},
+{
+"d": "Day 7",
+"no": 3,
+"s": "You'll bring pleasure ____ everyone who uses the park.",
+"h": "",
+"ans": "to/for",
+"note": ""
+},
+{
+"d": "Day 7",
+"no": 4,
+"s": "It is a really difficult job to repair the car because it is old and ____ (break).",
+"h": "break",
+"ans": "broken",
+"note": ""
+},
+{
+"d": "Day 8",
+"no": 1,
+"s": "Now you can pour the water; however, be ____ (care) not to use boiling water.",
+"h": "care",
+"ans": "careful",
+"note": ""
+},
+{
+"d": "Day 8",
+"no": 2,
+"s": "He and Pagani were busy ____ (work) together during this period. I'm sure.",
+"h": "work",
+"ans": "working",
+"note": ""
+},
+{
+"d": "Day 8",
+"no": 3,
+"s": "I want to borrow the book ____ (call) Fu Lei's Family Letters from the school library.",
+"h": "call",
+"ans": "called",
+"note": ""
+},
+{
+"d": "Day 9",
+"no": 1,
+"s": "Spring rolls were popular food served mainly during the ____ (celebrate) of the Spring Festival.",
+"h": "celebrate",
+"ans": "celebration",
+"note": "句意：春卷是在庆祝春节期间主要供 应的受欢迎的食物。celebrate“庆祝”,是动词,该空位于 the后面,of 前面,因此需要填名词。故填 celebration。"
+},
+{
+"d": "Day 9",
+"no": 2,
+"s": "If you study hard, you will ____ (certain) pass the exam.",
+"h": "certain",
+"ans": "certainly",
+"note": ""
+},
+{
+"d": "Day 9",
+"no": 3,
+"s": "We are looking forward to having a chance ____ (help) people in need.",
+"h": "help",
+"ans": "to help",
+"note": ""
+},
+{
+"d": "Day 9",
+"no": 4,
+"s": "I can't afford this expensive T-shirt, so I'd like a(n) ____ (较便宜的)one.",
+"h": "",
+"ans": "cheaper",
+"note": "该空用形容词作定语,结合中文提示 “较便宜的”可知应用cheap的比较级,故填cheaper。"
+},
+{
+"d": "Day 9",
+"no": 7,
+"s": "She ____ (catch) the cat gently and told Donna that animals were not allowed to be taken to school.",
+"h": "catch",
+"ans": "caught",
+"note": ""
+},
+{
+"d": "Day 10",
+"no": 1,
+"s": "____ (child) should accept gifts from their elders with both hands.",
+"h": "child",
+"ans": "Children",
+"note": "句意：孩子们应该用双手接受来自长辈 词汇册 答案解析 的礼物。child 为可数名词,由后文的 their 可知,空处应 使用复数形式表泛指且首字母大写。故填 Children。"
+},
+{
+"d": "Day 10",
+"no": 2,
+"s": "If you stayed at home, I think you made a good ____ (choose).",
+"h": "choose",
+"ans": "choice",
+"note": ""
+},
+{
+"d": "Day 10",
+"no": 3,
+"s": "Oh, we have missed the last bus. -I'm afraid we have no choice but ____ (walk) there now.",
+"h": "walk",
+"ans": "to walk",
+"note": ""
+},
+{
+"d": "Day 10",
+"no": 4,
+"s": "I was so scared that I could hardly think ____ (clear) after that.",
+"h": "clear",
+"ans": "clearly",
+"note": ""
+},
+{
+"d": "Day 10",
+"no": 5,
+"s": "The videos look good and ____ (close) follow what you want them to show.",
+"h": "close",
+"ans": "closely",
+"note": ""
+},
+{
+"d": "Day 10",
+"no": 6,
+"s": "In Colombia, family relationships are strong and children usually live close ____ their parents all their lives.",
+"h": "",
+"ans": "to",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 1,
+"s": "Teenagers will feel ____ (comfortable) and even get angry if someone reads their diaries.",
+"h": "comfortable",
+"ans": "uncomfortable",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 2,
+"s": "He always compares himself ____ his brother, who is more successful in their parents' eyes.",
+"h": "",
+"ans": "and/to/with",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 3,
+"s": "____ (compete) between them has lasted for years, but they're still good friends.",
+"h": "compete",
+"ans": "Competition",
+"note": "设空处作句子主语,应用提示词的 名词形式 competition,表示“竞争”,不可数。句首单词首 字母大写,故填 Competition。"
+},
+{
+"d": "Day 11",
+"no": 4,
+"s": "The boy had been polishing a diamond (钻石) until it was ____ (complete) clean and bright.",
+"h": "complete",
+"ans": "completely",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 5,
+"s": "The museum has a special ____ (collect) of ancient paintings. Many visitors come to see it every year.",
+"h": "collect",
+"ans": "collection",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 6,
+"s": "The players all have ____ (confident) in their coach.",
+"h": "confident",
+"ans": "confidence",
+"note": "句意：运动员们都对他们的教练有信 心。have confidence in信赖；对....有信心”。故填 confidence。"
+},
+{
+"d": "Day 11",
+"no": 7,
+"s": "A wise man always ____ (connect) what he learns from books with real life and uses this way to solve the problems he meets.",
+"h": "connect",
+"ans": "connects",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 8,
+"s": "The Internet makes ____ (communicate) easier than before.",
+"h": "communicate",
+"ans": "communication",
+"note": ""
+},
+{
+"d": "Day 11",
+"no": 9,
+"s": "Mr. White is such a careless person. In a way, we have a lot ____ common.",
+"h": "",
+"ans": "in",
+"note": ""
+},
+{
+"d": "Day 12",
+"no": 1,
+"s": "Jack hasn't taken his piano lessons for a long time. He is considering ____ (give) them up.",
+"h": "give",
+"ans": "giving",
+"note": ""
+},
+{
+"d": "Day 12",
+"no": 2,
+"s": "Do you know how to wash your hands ____ (正确地)?",
+"h": "",
+"ans": "correctly",
+"note": ""
+},
+{
+"d": "Day 12",
+"no": 3,
+"s": "A new electric car usually c____ around $ 11,000 more than a new gas car in my hometown.",
+"h": "",
+"ans": "costs",
+"note": ""
+},
+{
+"d": "Day 12",
+"no": 4,
+"s": "He wanted to continue ____ (work) until he was 70.",
+"h": "work",
+"ans": "working",
+"note": ""
+},
+{
+"d": "Day 12",
+"no": 5,
+"s": "This mountain c____ an area of about 14,100 square metres and is 34.3 metres high.",
+"h": "",
+"ans": "covers",
+"note": "考查动词。句意：这座山占地大约14， 100平方米,高34.3米。cover an area of\"占地.....\",此 处描述客观事实,主语是这座山,谓语动词应用第三人称 单数形式,故填covers。"
+},
+{
+"d": "Day 12",
+"no": 6,
+"s": "My cousin Andrew is crazy ____ DIY. He loves to repair things and decorate (装饰) his house.",
+"h": "",
+"ans": "about",
+"note": ""
+},
+{
+"d": "Day 13",
+"no": 1,
+"s": "Mr. Green is one of the most ____ (create) engineers in this company.",
+"h": "create",
+"ans": "creative",
+"note": ""
+},
+{
+"d": "Day 13",
+"no": 2,
+"s": "The Earth is getting more and more ____ (crowd) as the global population is still growing.",
+"h": "crowd",
+"ans": "crowded",
+"note": "句意：由于全球人口仍在增长,地球变 得越来越拥挤。get 在这里是连系动词,后接形容词作表 语。crowded\"拥挤的”。故填crowded。"
+},
+{
+"d": "Day 13",
+"no": 3,
+"s": "Many young people often share their ____ (日常的)life on TikTok.",
+"h": "",
+"ans": "daily",
+"note": ""
+},
+{
+"d": "Day 13",
+"no": 4,
+"s": "They may not know how to deal ____ money and they should ask parents for advice.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 13",
+"no": 5,
+"s": "I've decided ____ (stay) away from fried food and soft drinks since I had my medical exam.",
+"h": "stay",
+"ans": "to stay",
+"note": ""
+},
+{
+"d": "Day 13",
+"no": 7,
+"s": "To ____ (减少) food waste, some schools introduce online systems to the students to choose meals ahead of time.",
+"h": "",
+"ans": "cut down",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 1,
+"s": "One day while looking through a travel magazine, I was ____ (deep) attracted by the photos of the desert views.",
+"h": "deep",
+"ans": "deeply",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 2,
+"s": "Many birds depend ____ stars for direction, but they get lost easily at night when city lights are kept on all night.",
+"h": "",
+"ans": "on",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 3,
+"s": "Too much pressure is not good for a child's____ (develop).",
+"h": "develop",
+"ans": "development",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 4,
+"s": "The Dragon Boat Festival has something to do with the ____ (die) of Qu Yuan, a famous Chinese poet.",
+"h": "die",
+"ans": "death",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 5,
+"s": "They can't tell the ____ (different) between food materials like leeks (韭葱) and shallots (青葱).",
+"h": "different",
+"ans": "difference",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 6,
+"s": "If I have difficulty in ____ (solve) math problems, my teacher will offer me some useful suggestions.",
+"h": "solve",
+"ans": "solving",
+"note": ""
+},
+{
+"d": "Day 14",
+"no": 7,
+"s": "This year, we are going to learn ____ (different).",
+"h": "different",
+"ans": "differently",
+"note": "空处修饰前面的动词learn,应用副 词。故填differently。"
+},
+{
+"d": "Day 15",
+"no": 1,
+"s": "Does the radio say the expressway is closed in both ____ (direct) because of the heavy fog?",
+"h": "direct",
+"ans": "directions",
+"note": ""
+},
+{
+"d": "Day 15",
+"no": 2,
+"s": "He was too ____ (disappoint) to feel anything.",
+"h": "disappoint",
+"ans": "disappointed",
+"note": "句意:他太失望了,以至于什么也感 觉不到。此处为“too+adj.+to do sth.”结构,该空作表语 且主语是人。故填disappointed。"
+},
+{
+"d": "Day 15",
+"no": 3,
+"s": "In 1911, Marie Curie won the Nobel Prize in Chemistry because of her ____ (discover) of radium(镭).",
+"h": "discover",
+"ans": "discovery",
+"note": ""
+},
+{
+"d": "Day 15",
+"no": 4,
+"s": "I hope there'll be a lively and interesting ____ (discuss) in class.",
+"h": "discuss",
+"ans": "discussion",
+"note": ""
+},
+{
+"d": "Day 15",
+"no": 5,
+"s": "To get everybody in the discussion, Miss Su has d____ our class into six groups.",
+"h": "",
+"ans": "divided",
+"note": "句意:为了让每个人都参与讨论,苏老师 把我们班分成了六个小组。根据首字母提示和“ourclass into sixgroups”可知，此处为固定搭配divide...into... “将……分成…….”;由“has”可知,本句时态为现在完成 时。故填divided。"
+},
+{
+"d": "Day 15",
+"no": 6,
+"s": "There is no d____ that healthy eating habits are important.",
+"h": "",
+"ans": "doubt",
+"note": ""
+},
+{
+"d": "Day 15",
+"no": 7,
+"s": "What is Mrs. Chen doing? The party will begin, so she is busy d____ up at the moment.",
+"h": "",
+"ans": "dressing",
+"note": "句意：——陈女士在做什么？— -派对 将要开始,所以她此刻在忙着装扮。be busy doing sth. “忙着做某事”，dress up“装扮”,故填dressing。"
+},
+{
+"d": "Day 15",
+"no": 8,
+"s": "The movie's____ ea s e se s ()",
+"h": "",
+"ans": "director",
+"note": ""
+},
+{
+"d": "Day 16",
+"no": 1,
+"s": "Videos about Baduanjin can ____ (easy) be found on the Internet.",
+"h": "easy",
+"ans": "easily",
+"note": "句意：在网上可以很容易地找到关于八段 锦的视频。easy“容易的”,是形容词,而此空应用副词， 故填easily。"
+},
+{
+"d": "Day 16",
+"no": 2,
+"s": "China plans to pay more attention to scientific ____ (educate) in its primary and middle schools.",
+"h": "educate",
+"ans": "education",
+"note": ""
+},
+{
+"d": "Day 16",
+"no": 3,
+"s": "Her words had a magical effect ____ us.",
+"h": "",
+"ans": "on",
+"note": ""
+},
+{
+"d": "Day 16",
+"no": 4,
+"s": "WeChat is an ____ (effect) means of communication.",
+"h": "effect",
+"ans": "effective",
+"note": ""
+},
+{
+"d": "Day 16",
+"no": 5,
+"s": "We will spare no effort ____ (ensure) that the project can be completed on time.",
+"h": "ensure",
+"ans": "to ensure (",
+"note": ""
+},
+{
+"d": "Day 16",
+"no": 6,
+"s": "We are making an ____ (努力) to make a difference and create a better future!",
+"h": "",
+"ans": "effort",
+"note": ""
+},
+{
+"d": "Day 16",
+"no": 7,
+"s": "You can't keep the two books at the same time. You can only borrow either this one ____ that one.",
+"h": "",
+"ans": "or",
+"note": ""
+},
+{
+"d": "Day 17",
+"no": 1,
+"s": "My parents always encourage me ____ (be) myself.",
+"h": "be",
+"ans": "to be",
+"note": ""
+},
+{
+"d": "Day 17",
+"no": 2,
+"s": "Searching online, you'll find ____ (end) results.",
+"h": "end",
+"ans": "endless",
+"note": ""
+},
+{
+"d": "Day 17",
+"no": 3,
+"s": "It was a very long and hard time, but I enjoyed ____ (my).",
+"h": "my",
+"ans": "myself",
+"note": "句意：这是一段非常漫长而艰难的时光， 但我过得愉快。固定搭配:enjoy oneself\"过得愉快”。my 68 5年中考3年模拟 中考英语 的反身代词为 myself。故填myself。"
+},
+{
+"d": "Day 17",
+"no": 4,
+"s": "They are such interesting books that we all enjoy ____ (read) them.",
+"h": "read",
+"ans": "reading",
+"note": ""
+},
+{
+"d": "Day 17",
+"no": 5,
+"s": "Kate's mother is not busy today. She has nothing ____ (其他) to deal with.",
+"h": "",
+"ans": "clse",
+"note": ""
+},
+{
+"d": "Day 17",
+"no": 6,
+"s": "Eric made sure to get ____ (足够的) exercise every day by running around.",
+"h": "",
+"ans": "enough",
+"note": ""
+},
+{
+"d": "Day 17",
+"no": 7,
+"s": "Everything went ____ (确切地)as planned.",
+"h": "",
+"ans": "exactly",
+"note": "句意：一切都严格按计划进行。exactly “精确地,确切地”，此处应用副词修饰动词went。故填 exactly."
+},
+{
+"d": "Day 18",
+"no": 1,
+"s": "Everyone is at school today ____ (除了) Tom. He is ill.",
+"h": "",
+"ans": "except",
+"note": ""
+},
+{
+"d": "Day 18",
+"no": 2,
+"s": "Teachers always expect their students ____ (follow) the school rules.",
+"h": "follow",
+"ans": "to follow",
+"note": ""
+},
+{
+"d": "Day 18",
+"no": 3,
+"s": "My ____ (experience) as a volunteer in Africa are the most important in my life.",
+"h": "experience",
+"ans": "experiences",
+"note": ""
+},
+{
+"d": "Day 18",
+"no": 4,
+"s": "We can also learn many popular ____ (express) about daily life on the Internet.",
+"h": "express",
+"ans": "expressions",
+"note": ""
+},
+{
+"d": "Day 18",
+"no": 5,
+"s": "Sharing housework can make kids understand the idea of ____ (fair).",
+"h": "fair",
+"ans": "fairness",
+"note": ""
+},
+{
+"d": "Day 18",
+"no": 6,
+"s": "The little boy slipped (滑) on the ice and f____ over.",
+"h": "",
+"ans": "fell",
+"note": "句意:这个小男孩在冰上滑了一下,摔倒了。 根据首字母提示和语境可知,此处表示“摔倒”；该空与 “slipped”是并列谓语,时态是一般过去时,故填 fell。"
+},
+{
+"d": "Day 18",
+"no": 7,
+"s": "A tour guide is someone who can ____ (解释) to travelers what they are seeing and help keep them safe.",
+"h": "",
+"ans": "explain",
+"note": ""
+},
+{
+"d": "Day 19",
+"no": 1,
+"s": "By age 17, Abing was famous ____ his musical ability.",
+"h": "",
+"ans": "for",
+"note": ""
+},
+{
+"d": "Day 19",
+"no": 2,
+"s": "In the English word competition, he won first place with the ____ (少)mistakes.",
+"h": "",
+"ans": "fewest",
+"note": "句意：在英语单词比赛中,他以最少的错 误赢得了第一名。mistakes 是可数名词复数,应用few表 示“少”;根据“he won first place”可知,比赛中的第一名 犯错误最少,此处应用最高级。故填fewest。"
+},
+{
+"d": "Day 19",
+"no": 3,
+"s": "The father is always a real ____ (fight) in the little kid's heart.",
+"h": "fight",
+"ans": "fighter",
+"note": "考查名词。此处表示在那个小孩心里， 父亲总是一名真正的奋斗者。fight 应加后缀-er,表示 “奋斗者”。"
+},
+{
+"d": "Day 19",
+"no": 4,
+"s": "Look! The boy is filling the cup ____ some dirty water.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 19",
+"no": 5,
+"s": "Jenny found it hard ____ (work) out the maths problem, so she gave it up.",
+"h": "work",
+"ans": "to work",
+"note": ""
+},
+{
+"d": "Day 19",
+"no": 6,
+"s": "Yesterday I had a fight ____ my best friend Tom.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 20",
+"no": 1,
+"s": "When you're under much pressure, please listen to our Chinese ____ (民间的)music.",
+"h": "",
+"ans": "folk",
+"note": ""
+},
+{
+"d": "Day 20",
+"no": 2,
+"s": "-Professor Wang will give us a talk on the history of Huai'an tomorrow. Really? I look forward to ____ (attend) it.",
+"h": "attend",
+"ans": "attending",
+"note": ""
+},
+{
+"d": "Day 20",
+"no": 3,
+"s": "You will meet people who will drive you to spend your money ____ (free).",
+"h": "free",
+"ans": "freely",
+"note": ""
+},
+{
+"d": "Day 20",
+"no": 4,
+"s": "From then on, she watched Chinese movies and soap operas ____ her free time.",
+"h": "",
+"ans": "in",
+"note": ""
+},
+{
+"d": "Day 21",
+"no": 1,
+"s": "If you live with a lot of anger, you're more likely to be ____ (friend) to others.",
+"h": "friend",
+"ans": "unfriendly",
+"note": "句意：如果你带着大量怒气生活，你就 更有可能对他人不友好。由“If you live with a lot of anger\"可知,此处表示对他人不友好,be 后用形容词。故 填 unfriendly。"
+},
+{
+"d": "Day 21",
+"no": 2,
+"s": "Young children seem to be full ____ energy. They never seem tired.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 21",
+"no": 3,
+"s": "After he gave up ____ (fish) and became a photo model in 2008, he took photos with tourists worldwide.",
+"h": "fish",
+"ans": "fishing",
+"note": ""
+},
+{
+"d": "Day 21",
+"no": 4,
+"s": "____ (general) speaking, the warmer a place is, the more types of plants and animals it will usually support.",
+"h": "general",
+"ans": "Generally",
+"note": ""
+},
+{
+"d": "Day 22",
+"no": 1,
+"s": "Nancy really wonders whose ____ (手套) these are on the shelf.",
+"h": "",
+"ans": "gloves",
+"note": "句意:南希真的想知道架子上是谁的手 套。“手套”glove,根据后面的“these are”可知,应是复数 形式。故填 gloves。"
+},
+{
+"d": "Day 22",
+"no": 2,
+"s": "Friends make life much ____ (good).",
+"h": "good",
+"ans": "better",
+"note": ""
+},
+{
+"d": "Day 22",
+"no": 3,
+"s": "We have to go our separate ways after ____ (graduate).",
+"h": "graduate",
+"ans": "graduation/graduating",
+"note": ""
+},
+{
+"d": "Day 22",
+"no": 4,
+"s": "I want something that allows me to see my ____ (grow) and changes over time.",
+"h": "grow",
+"ans": "growth",
+"note": ""
+},
+{
+"d": "Day 22",
+"no": 5,
+"s": "Do you know anything about Jane Austen? She was one of the ____ (good) female writers in Britain.",
+"h": "good",
+"ans": "best",
+"note": "此处是固定搭配“one of+the+形容词最高 级+名词复数”,表示“最………·的………之一”,因此应用形 容词good的最高级best。"
+},
+{
+"d": "Day 23",
+"no": 1,
+"s": "I've got into the h____ of reading Tang poems every morning. him.",
+"h": "",
+"ans": "habit",
+"note": ""
+},
+{
+"d": "Day 23",
+"no": 3,
+"s": "Even the light from a television could be ____ (harm) to his health.",
+"h": "harm",
+"ans": "harmful",
+"note": ""
+},
+{
+"d": "Day 23",
+"no": 4,
+"s": "Daily exercise is necessary because it can help us stay ____ (health).",
+"h": "health",
+"ans": "healthy",
+"note": ""
+},
+{
+"d": "Day 23",
+"no": 5,
+"s": "Peter is looking forward to hearing ____ his pen pal.",
+"h": "",
+"ans": "from",
+"note": ""
+},
+{
+"d": "Day 23",
+"no": 6,
+"s": "I happened ____ (meet) a friend of mine when I was shopping in the mall.",
+"h": "meet",
+"ans": "to meet",
+"note": ""
+},
+{
+"d": "Day 23",
+"no": 7,
+"s": "Babies lose ____ (热量) much faster than adults.",
+"h": "",
+"ans": "heat",
+"note": ""
+},
+{
+"d": "Day 24",
+"no": 1,
+"s": "Tom was playing chess when the rain began to beat ____ (heavy) against the window.",
+"h": "heavy",
+"ans": "heavily",
+"note": "句意：当雨开始重重地打在窗户上时,汤 姆正在下国际象棋。此空修饰动词 beat,应填副词,表示 “重重地”，故填heavily。"
+},
+{
+"d": "Day 24",
+"no": 2,
+"s": "This kind of special noodles tastes so delicious that I can't help ____ (ask) for more.",
+"h": "ask",
+"ans": "asking",
+"note": ""
+},
+{
+"d": "Day 24",
+"no": 3,
+"s": "Planting some flowers in your garden is very ____ (help) for attracting bees.",
+"h": "help",
+"ans": "helpful",
+"note": ""
+},
+{
+"d": "Day 24",
+"no": 4,
+"s": "Squirrels (松鼠) can jump up to 1.5 meters in ____ (high).",
+"h": "high",
+"ans": "height",
+"note": ""
+},
+{
+"d": "Day 24",
+"no": 5,
+"s": "May I speak to Mr. Green? -Hold ____, please.",
+"h": "",
+"ans": "on",
+"note": ""
+},
+{
+"d": "Day 24",
+"no": 6,
+"s": "The automatic (自动化的) test of listening and speaking in Ningbo is usually ____ (举行)in March.",
+"h": "",
+"ans": "held",
+"note": "句意：宁波市听说自动化考试通常在三月 举行。hold\"举行”。考试应是“被举行”,所以本句是被 动语态。空前已有 be动词,所以填 hold 的过去分词形式 held。"
+},
+{
+"d": "Day 25",
+"no": 1,
+"s": "It was ____ (honest) of the young reporter to hide the truth from the public.",
+"h": "honest",
+"ans": "dishonest",
+"note": "句意：那位年轻记者对公众隐瞒真相 是不诚实的。根据“hide the truth from the public”可知该 记者这样做是不诚实的。故填dishonest。"
+},
+{
+"d": "Day 25",
+"no": 2,
+"s": "Students love the teachers who are outgoing and ____ (humor).",
+"h": "humor",
+"ans": "humorous",
+"note": ""
+},
+{
+"d": "Day 25",
+"no": 3,
+"s": "It sounded like she was ____ a hurry to get somewhere.",
+"h": "",
+"ans": "in",
+"note": ""
+},
+{
+"d": "Day 25",
+"no": 4,
+"s": "We depend on the Internet so much that it's hard for us to imagine ____ (live) a life without it.",
+"h": "live",
+"ans": "living",
+"note": ""
+},
+{
+"d": "Day 25",
+"no": 5,
+"s": "With a little ____ (imagine), you could turn this place into a palace.",
+"h": "imagine",
+"ans": "imagination",
+"note": ""
+},
+{
+"d": "Day 25",
+"no": 6,
+"s": "The project is of great ____ (重要) for all the workers.",
+"h": "",
+"ans": "importance",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 1,
+"s": "There are many things to enjoy about traveling,____ (包括) the natural beauty and delicious local food.",
+"h": "",
+"ans": "including",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 2,
+"s": "Social media has a growing influence ____ how people communicate.",
+"h": "",
+"ans": "on/upon",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 3,
+"s": "Instead of ____ (go) to college, Hemingway became a reporter for The Kansas City Star.",
+"h": "go",
+"ans": "going",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 4,
+"s": "I like traveling because I can meet some ____ (interest) people and things along the way.",
+"h": "interest",
+"ans": "interesting",
+"note": "考查形容词。句意：我喜欢旅行，因 为我可以沿途遇到一些有趣的人和事情。分析句子,设 空处修饰 people and things，作定语，应用形容词，故填 interesting."
+},
+{
+"d": "Day 26",
+"no": 5,
+"s": "Brian was really nervous at the beginning of his last job ____ (面试).",
+"h": "",
+"ans": "interview",
+"note": "句意：Brian在上个工作面试开始时十 分紧张。空处需要填名词作介词of的宾语,结合所给中 文提示可知，填interview。"
+},
+{
+"d": "Day 26",
+"no": 6,
+"s": "Printing is a great ____ (invent) of ancient China.",
+"h": "invent",
+"ans": "invention",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 7,
+"s": "I accepted Tom's____ (invite) to his party.",
+"h": "invite",
+"ans": "invitation",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 8,
+"s": "Tom and Paul like science very much and their dreams are to be great ____ [ In'ventez].",
+"h": "",
+"ans": "inventors",
+"note": "句意：汤姆和保罗非常喜欢科学，他们 的梦想是成为伟大的发明家。根据语境和音标可知填 inventors ."
+},
+{
+"d": "Day 26",
+"no": 9,
+"s": "His BMI reached a normal level after four months of effort. “ My health and willpower(意志力) have shown a big ____ (improve).\"",
+"h": "improve",
+"ans": "improvement",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 10,
+"s": "She started to become more and more interested ____ it.",
+"h": "",
+"ans": "in",
+"note": ""
+},
+{
+"d": "Day 26",
+"no": 11,
+"s": "Let's i____ Kate over for dinner tomorrow.",
+"h": "",
+"ans": "invite",
+"note": "句意：我们邀请凯特明天来家里吃晚饭 吧。根据“Kate over for dinner tomorrow”和首字母可知 是邀请凯特来家里吃晚饭。invite sb.over“邀请某人来 家里”;祈使句中动词用原形,故填invite。"
+},
+{
+"d": "Day 27",
+"no": 1,
+"s": "The train j____ from Hangzhou to Shanghai takes about 90 minutes.",
+"h": "",
+"ans": "journey",
+"note": "句意：从杭州到上海的火车行程大约需 要 90 分钟。根据“from Hangzhou to Shanghai takes about 90 minutes”并结合首字母提示可知,此处是指火车的行 程,应用名词 journey。根据谓语动词 takes 为第三人称单 数可知,主语应为单数形式,故填journey。"
+},
+{
+"d": "Day 27",
+"no": 2,
+"s": "How can I improve my pronunciation, Madam? -Keep on ____ (practice) and you'll make progress.",
+"h": "practice",
+"ans": "practicing",
+"note": ""
+},
+{
+"d": "Day 27",
+"no": 3,
+"s": "The key to ____ (stay) on our own tracks is to be patient and keep our own passions (热情).",
+"h": "stay",
+"ans": "staying",
+"note": ""
+},
+{
+"d": "Day 27",
+"no": 4,
+"s": "After reading Little Women, I felt warmth and ____ (kind) from the family.",
+"h": "kind",
+"ans": "kindness",
+"note": ""
+},
+{
+"d": "Day 28",
+"no": 1,
+"s": "As we all know, the Yellow River is known ____ a “ mother river\" of the Chinese nation.",
+"h": "",
+"ans": "as",
+"note": ""
+},
+{
+"d": "Day 28",
+"no": 2,
+"s": "Nanjing Baiju is an ancient type of art which has strong local colour and a____ (持久的)value.",
+"h": "",
+"ans": "lasting",
+"note": ""
+},
+{
+"d": "Day 28",
+"no": 3,
+"s": "Jack was ____ for school. He explained to his teacher that he didn't catch the bus.",
+"h": "",
+"ans": "late",
+"note": ""
+},
+{
+"d": "Day 28",
+"no": 5,
+"s": "They spent time together in the cold wind, learned ____ (work) together and helped each other.",
+"h": "work",
+"ans": "to work",
+"note": "句意：他们在寒风中共度时光,学习合作 并互相帮助。此处考查 learn to do sth.“学习做某事”。 故填towork。"
+},
+{
+"d": "Day 28",
+"no": 6,
+"s": "Our government made some ____ (法律)to care about the left-behind(留守的)kids.",
+"h": "",
+"ans": "laws",
+"note": "句意：我们政府制定了一些法律来关爱留 守儿童。“法律”law,是可数名词，由 some可知此处应用 复数形式，故填laws。"
+},
+{
+"d": "Day 29",
+"no": 1,
+"s": "Well, I ____ (忘了带) the old newspaper on my desk yesterday. It belonged to my grandmother..",
+"h": "",
+"ans": "left",
+"note": ""
+},
+{
+"d": "Day 29",
+"no": 2,
+"s": "Most hotels in Suqian can provide a high ____ (水平)of service.",
+"h": "",
+"ans": "level",
+"note": ""
+},
+{
+"d": "Day 29",
+"no": 3,
+"s": "On one visit, I carefully entered a dark room to find an elderly man ____ (lie) in bed.",
+"h": "lie",
+"ans": "lying",
+"note": ""
+},
+{
+"d": "Day 29",
+"no": 4,
+"s": "They wondered who had taken the paper and hoped nobody would do something ____ (类似)that.",
+"h": "",
+"ans": "like",
+"note": ""
+},
+{
+"d": "Day 29",
+"no": 5,
+"s": "If people have a healthy lifestyle, they are more likely ____ (have) satisfying social lives.",
+"h": "have",
+"ans": "to have",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 1,
+"s": "Listening ____ light music can make people feel relaxed.",
+"h": "",
+"ans": "to",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 2,
+"s": "My English teacher always makes her classes ____ (生动的)and interesting.",
+"h": "",
+"ans": "lively",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 3,
+"s": "He promises to reply to me as ____ as he receives my letter.",
+"h": "",
+"ans": "long",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 4,
+"s": "She ____ (看起来) like a completely different person.",
+"h": "",
+"ans": "looks/looked",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 5,
+"s": "My brother is looking t____ the Internet pages for information about how to make zongzi.",
+"h": "",
+"ans": "through",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 6,
+"s": "Being a good ____ (listen) requires patience, respect and an encouraging attitude.",
+"h": "listen",
+"ans": "listener",
+"note": ""
+},
+{
+"d": "Day 30",
+"no": 7,
+"s": "Soon we landed at our destination, and we cheered ____ (loud).",
+"h": "loud",
+"ans": "loudly",
+"note": "句意：很快我们就在目的地着陆了，我们 大声欢呼起来。根据空前的动词“cheered”可知，此处应 填副词。故填loudly。"
+},
+{
+"d": "Day 30",
+"no": 8,
+"s": "Linda is a____ (可爱的)girl,honest and caring.",
+"h": "",
+"ans": "lovely",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 1,
+"s": "The old man felt ____ (luck) to be alive after that traffic accident.",
+"h": "luck",
+"ans": "lucky",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 2,
+"s": "Typing can also make it easier for people ____ (correct) mistakes.",
+"h": "correct",
+"ans": "to correct",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 3,
+"s": "He burned your farm down to make you ____ (sell) it.",
+"h": "sell",
+"ans": "sell",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 4,
+"s": "I like to go fishing because it always makes me ____ (feel) comfortable.",
+"h": "feel",
+"ans": "feel",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 5,
+"s": "Many of the stories about Bao Zheng were made ____ some movies, novels, operas and so on.",
+"h": "",
+"ans": "into",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 6,
+"s": "As the host city, Suzhou will manage ____ (make) the 2026 ISF Football World Cup a great success.",
+"h": "make",
+"ans": "to make",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 7,
+"s": "The ____ (manage) asked Lily to wait for him outside because he was having a meeting.",
+"h": "manage",
+"ans": "manager",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 8,
+"s": "They can vote (选举), learn to drive a car, get ____ (marry), join the army...",
+"h": "marry",
+"ans": "married",
+"note": ""
+},
+{
+"d": "Day 31",
+"no": 9,
+"s": "It's fun that Russian visitors come to the two morning ____ (市场) in Heihe to have breakfast.",
+"h": "",
+"ans": "markets",
+"note": "句意：有趣的是，俄罗斯游客来到这两 个黑河早市吃早餐。market“市场”可数名词，由“two” 可知,用复数形式。故填markets。"
+},
+{
+"d": "Day 32",
+"no": 1,
+"s": "The conversation we had last night was so ____ (meaning), as it helped us understand each other better.",
+"h": "meaning",
+"ans": "meaningful",
+"note": ""
+},
+{
+"d": "Day 32",
+"no": 2,
+"s": "They made up their minds ____ (send) their children to good schools.",
+"h": "send",
+"ans": "to send",
+"note": ""
+},
+{
+"d": "Day 32",
+"no": 3,
+"s": "Would you mind ____ (share) your English book with me? I forgot to bring it.",
+"h": "share",
+"ans": "sharing",
+"note": ""
+},
+{
+"d": "Day 32",
+"no": 4,
+"s": "It's important to learn from ____ (错误)and become stronger.",
+"h": "",
+"ans": "mistakes",
+"note": "考查名词。句意：从错误中学习并变得 更强大很重要。mistake表示“错误”，是可数名词，此处 表泛指,应该用复数,故填mistakes。"
+},
+{
+"d": "Day 33",
+"no": 1,
+"s": "How often in life do we compare ourselves to others and still keep happy though we know we really can't win? It's____ (nature) to compare sometimes.",
+"h": "nature",
+"ans": "natural",
+"note": "句意：我们在生活中多久与他人比较一 次,并且尽管知道自已不可能赢却仍然保持开心？有时 比较是很正常的。根据固定句式“It's+形容词+to do 词汇册 答案解析 sth.”可知，应将nature变为形容词。故填natural。"
+},
+{
+"d": "Day 33",
+"no": 2,
+"s": "You should do ____ (much) exercise than before, and you'll get stronger.",
+"h": "much",
+"ans": "more",
+"note": ""
+},
+{
+"d": "Day 33",
+"no": 3,
+"s": "Huizhou became the ____ (nation) ink-making center in the Ming Dynasty.",
+"h": "nation",
+"ans": "national",
+"note": ""
+},
+{
+"d": "Day 33",
+"no": 4,
+"s": "Ann was so ____ (move) that tears filled her eyes.",
+"h": "move",
+"ans": "moved",
+"note": ""
+},
+{
+"d": "Day 34",
+"no": 1,
+"s": "I need ____ (prepare) for my presentation by organizing my notes and practicing my speech.",
+"h": "prepare",
+"ans": "to prepare",
+"note": ""
+},
+{
+"d": "Day 34",
+"no": 2,
+"s": "We offered to look after our ____ (邻居的)dog when she was away.",
+"h": "",
+"ans": "neighbour's/neighbor's",
+"note": "句意：我们主动提出当邻 居不在的时候,照顾她的狗。“邻居”neighbour/neighbor， “邻居的”说明要用名词所有格,结合 she 可知特指这一 个邻居,用单数形式。故填 neighbour's/neighbor's。"
+},
+{
+"d": "Day 34",
+"no": 3,
+"s": "The classroom is so ____ (noise) that I can hardly hear anything.",
+"h": "noise",
+"ans": "noisy",
+"note": ""
+},
+{
+"d": "Day 34",
+"no": 4,
+"s": "What did you do on vacation, Sally? N____. I just stayed at home.",
+"h": "",
+"ans": "Nothing",
+"note": "句意Sally,你假期做了什么？—什 么也没做。我只是待在家里。根据“I just stayed at home.”和首字母提示可知什么也没做，应用不定代词 Nothing. 答案解析 69"
+},
+{
+"d": "Day 35",
+"no": 1,
+"s": "They promised to provide a certain number ____ funds(资金)for every race.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 35",
+"no": 2,
+"s": "The headmaster went to the ____ (open) of the new school.",
+"h": "open",
+"ans": "opening",
+"note": ""
+},
+{
+"d": "Day 35",
+"no": 3,
+"s": "The bank is o____ the market. To get there, we just need to cross the street.",
+"h": "",
+"ans": "opposite",
+"note": ""
+},
+{
+"d": "Day 35",
+"no": 4,
+"s": "Kate's room is in good o____, and everything is in its proper place.",
+"h": "",
+"ans": "order",
+"note": ""
+},
+{
+"d": "Day 35",
+"no": 5,
+"s": "He donated money to support of the local animal protection ____ (organise).",
+"h": "organise",
+"ans": "organisation/organization",
+"note": ""
+},
+{
+"d": "Day 36",
+"no": 1,
+"s": "My teacher always offers us help ____ (patient).",
+"h": "patient",
+"ans": "patiently",
+"note": ""
+},
+{
+"d": "Day 36",
+"no": 2,
+"s": "Then, to everyone's surprise, he handed the waiter a million-pound cheque to pay ____ the bill.",
+"h": "",
+"ans": "for",
+"note": ""
+},
+{
+"d": "Day 36",
+"no": 3,
+"s": "Have you ever cut your finger on the edge(边缘) of a book page? The small cut on the finger can be very ____ (pain).",
+"h": "pain",
+"ans": "painful",
+"note": ""
+},
+{
+"d": "Day 37",
+"no": 1,
+"s": "Although that ____ (perform) of the club was over, I still stayed in the folk music club and learned to play the guzheng.",
+"h": "perform",
+"ans": "performance",
+"note": "句意：虽然俱乐部的那场表演结束 了,但我仍然留在民乐俱乐部学习弹奏古筝。空处被of the club 修饰，作从句主语，因此需要用名词。故填 performance。"
+},
+{
+"d": "Day 37",
+"no": 2,
+"s": "Harvard students could share their ____ (person) information there.",
+"h": "person",
+"ans": "personal",
+"note": "句意：哈佛大学的学生可以在那里分 享他们的个人信息。此处修饰名词应用形容词,表示“个 人的”。故填personal。"
+},
+{
+"d": "Day 37",
+"no": 3,
+"s": "Be careful when you take ____ (photo) on rainy days. Don't get your camera wet!",
+"h": "photo",
+"ans": "photos",
+"note": ""
+},
+{
+"d": "Day 37",
+"no": 4,
+"s": "Exercise is a key part of staying healthy and good for both ____ (身体的)and mental health.",
+"h": "",
+"ans": "physical",
+"note": ""
+},
+{
+"d": "Day 37",
+"no": 5,
+"s": "It is a pity ____ (waste) so much food.",
+"h": "waste",
+"ans": "to waste",
+"note": ""
+},
+{
+"d": "Day 37",
+"no": 6,
+"s": "She had pity ____ him and gave him some food to eat.",
+"h": "",
+"ans": "on",
+"note": ""
+},
+{
+"d": "Day 38",
+"no": 1,
+"s": "This weekend, Sam plans ____ (visit) the art museum with his parents.",
+"h": "visit",
+"ans": "to visit",
+"note": ""
+},
+{
+"d": "Day 38",
+"no": 2,
+"s": "\" Didn't your mother teach you not to play ____ knives?\" Mr. Apple Tree said.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 38",
+"no": 3,
+"s": "Many of her friends are pleased ____ the day's lunch selections: pizza, French fries and hot dogs.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 38",
+"no": 4,
+"s": "Reading brings me both ____ (please) and knowledge.",
+"h": "please",
+"ans": "pleasure",
+"note": ""
+},
+{
+"d": "Day 38",
+"no": 5,
+"s": "There was still plenty ____ time to take Jill out for pizza.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 38",
+"no": 6,
+"s": "In tea, we find peace, art, and ____ (polite). It has played an important role in Chinese culture.",
+"h": "polite",
+"ans": "politeness",
+"note": ""
+},
+{
+"d": "Day 39",
+"no": 1,
+"s": "We need to try our best to stop noise ____ (pollute).",
+"h": "pollute",
+"ans": "pollution",
+"note": "句意：我们需要尽我们的最大努力阻止 噪声污染。此处指“噪声污染”,应用 noise pollution。故 填 pollution。"
+},
+{
+"d": "Day 39",
+"no": 3,
+"s": "The school is making ____ (prepare) for the opening ceremony of the new term.",
+"h": "prepare",
+"ans": "preparations",
+"note": ""
+},
+{
+"d": "Day 39",
+"no": 4,
+"s": "Holly prefers playing the piano to ____ (play) the violin. Listen! She is playing the piano in her room.",
+"h": "play",
+"ans": "playing",
+"note": ""
+},
+{
+"d": "Day 39",
+"no": 5,
+"s": "In the past, when I felt upset, I____ (prefer) to keep my feelings to myself.",
+"h": "prefer",
+"ans": "preferred",
+"note": ""
+},
+{
+"d": "Day 39",
+"no": 6,
+"s": "Mum, the leather boots look beautiful. -Yes,but the p____ is too high. Let's have a look at a cheaper pair.",
+"h": "",
+"ans": "price",
+"note": "句意：——妈妈,这双皮靴看起来很漂 亮。一一是的,但是价格太高了。我们看一双便宜点的 吧。根据“Let's have a look at a cheaper pair.”和首字母提 示可知,此处表示价格太高,结合is 可知,主语用单数,故 填 price。"
+},
+{
+"d": "Day 40",
+"no": 1,
+"s": "My father promises ____ (buy) me a model car if I pass the exam.",
+"h": "buy",
+"ans": "to buy",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 2,
+"s": "-How do you improve your English ____ (pronounce)? By listening to a tape and repeating out loud.",
+"h": "pronounce",
+"ans": "pronunciation",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 3,
+"s": "This website may ____ (提供) you with more useful information.",
+"h": "",
+"ans": "provide",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 4,
+"s": "It's good manners to dress ____ (proper) for different situations.",
+"h": "proper",
+"ans": "properly",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 5,
+"s": "An armadillo(犹滁) has a hard cover that can protect it ____ other dangerous animals.",
+"h": "",
+"ans": "from",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 6,
+"s": "Anyway, I'm really proud ____ you.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 7,
+"s": "Lanterns have become the national ____ (proud) in China.",
+"h": "proud",
+"ans": "pride",
+"note": ""
+},
+{
+"d": "Day 40",
+"no": 8,
+"s": "What problems do you have ____ (order) dishes in China? -I can't read the Chinese on the menus.",
+"h": "order",
+"ans": "ordering",
+"note": "句意一—你在中国点菜时有什么问题 吗？— 一我看不懂莱单上的中文。order“点（酒、菜 等）”;固定搭配:have problems doing sth.“做某事有困 难”。故填ordering。"
+},
+{
+"d": "Day 41",
+"no": 1,
+"s": "People shouldn't____ (逼迫) their kids so hard. Too much pressure is not good for a child's development.",
+"h": "",
+"ans": "push",
+"note": ""
+},
+{
+"d": "Day 41",
+"no": 2,
+"s": "How many times have we put ____ our dreams until tomorrow? I'd say, too many. Our dreams should not, and cannot wait.",
+"h": "",
+"ans": "off",
+"note": ""
+},
+{
+"d": "Day 41",
+"no": 3,
+"s": "China's BeiDou Navigation Satellite System has developed ____ (quick) and it plays an important role in many fields.",
+"h": "quick",
+"ans": "quickly",
+"note": "考查副词。句意：中国的北斗卫星导航 系统发展迅速,在许多领域都发挥着重要的作用。设空 处修饰谓语 has developed,应用副词形式。故填 quickly。"
+},
+{
+"d": "Day 41",
+"no": 4,
+"s": "They are selling used books to ____ (筹集) money for the club.",
+"h": "",
+"ans": "raise",
+"note": ""
+},
+{
+"d": "Day 41",
+"no": 5,
+"s": "After two years, I was ready ____ (get) Larry back.",
+"h": "get",
+"ans": "to get",
+"note": "句意:两年后,我准备好要把Larry 带回来 了。根据“Iwas ready”可知,此处为固定搭配be ready to do sth.“准备好做某事”,空处应填动词不定式。故填 to get. 70 5年中考3年模拟 中考英语"
+},
+{
+"d": "Day 41",
+"no": 6,
+"s": "Robert held the telephone ____ (quiet) with eyes full of tears.",
+"h": "quiet",
+"ans": "quietly",
+"note": "句意:Robert 安静地拿着电话,眼里充满 了泪水。空处修饰动词 held,需要填副词。故填quietly。"
+},
+{
+"d": "Day 42",
+"no": 2,
+"s": "What is the old man doing? He is collecting empty bottles and waste paper for ____ (recycle).",
+"h": "recycle",
+"ans": "recycling",
+"note": ""
+},
+{
+"d": "Day 42",
+"no": 3,
+"s": "Finally, he r____ our invitation to the party because he had to prepare for an important interview.",
+"h": "",
+"ans": "refused",
+"note": ""
+},
+{
+"d": "Day 42",
+"no": 4,
+"s": "The film is so exciting that we all don't regret ____ (see) it.",
+"h": "see",
+"ans": "seeing",
+"note": ""
+},
+{
+"d": "Day 42",
+"no": 5,
+"s": "That was great! I felt ____ (relax) at once.",
+"h": "relax",
+"ans": "relaxed",
+"note": ""
+},
+{
+"d": "Day 42",
+"no": 6,
+"s": "Qipao became popular in the 1920s and ____ (依然是) as the national-style dress.",
+"h": "",
+"ans": "remained",
+"note": ""
+},
+{
+"d": "Day 42",
+"no": 7,
+"s": "The lovely rabbits on these stamps remind me ____ my sweet childhood.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 42",
+"no": 8,
+"s": "Please send me a____ (答复)as soon as possible.",
+"h": "",
+"ans": "reply/response",
+"note": ""
+},
+{
+"d": "Day 43",
+"no": 1,
+"s": "The teacher requires students ____ (arrive) on time for class.",
+"h": "arrive",
+"ans": "to arrive",
+"note": ""
+},
+{
+"d": "Day 43",
+"no": 2,
+"s": "A true friend is someone who walks in when the rest ____ the world walks out.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 43",
+"no": 3,
+"s": "The lake area is ____ ((丰富) in wildlife and draws lots of people.",
+"h": "",
+"ans": "rich",
+"note": "考查形容词。句意：这片湖区野生动物丰 富,吸引了很多人。根据汉语提示可知,这里填 rich。"
+},
+{
+"d": "Day 43",
+"no": 4,
+"s": "I don't think they will risk ____ (hold) an election.",
+"h": "hold",
+"ans": "holding",
+"note": ""
+},
+{
+"d": "Day 43",
+"no": 5,
+"s": "Although not included in zhongkao, BMI in cities like Xiamen still plays a r____ in regular PE tests.",
+"h": "",
+"ans": "role",
+"note": ""
+},
+{
+"d": "Day 44",
+"no": 1,
+"s": "Follow these tips, and you can enjoy your summer ____ (安全地).",
+"h": "",
+"ans": "safely",
+"note": "句意：遵循这些提示,你便可以安全地享 受你的夏天。设空处修饰动词enjoy,应使用副词。safely “安全地”。故填safely。"
+},
+{
+"d": "Day 44",
+"no": 2,
+"s": "I am ____ (satisfy) with the result of my exam because I have studied hard.",
+"h": "satisfy",
+"ans": "satisfied",
+"note": ""
+},
+{
+"d": "Day 44",
+"no": 3,
+"s": "It is ____ (say) that the Chinese character “ cha\" for tea was finally decided by Lu Yu.",
+"h": "say",
+"ans": "said",
+"note": ""
+},
+{
+"d": "Day 44",
+"no": 4,
+"s": "Losing weight requires a____ (science) plan.",
+"h": "science",
+"ans": "scientific",
+"note": "句意：减肥需要一个科学的计划。空 处位于冠词a后面,名词前面,应填形容词修饰 plan。故 填 scientific。"
+},
+{
+"d": "Day 44",
+"no": 5,
+"s": "This rule is designed for students' health and ____ (safe).",
+"h": "safe",
+"ans": "safety",
+"note": ""
+},
+{
+"d": "Day 45",
+"no": 1,
+"s": "I have a poor s____ of direction, so I easily get lost in big cities.",
+"h": "",
+"ans": "sense",
+"note": ""
+},
+{
+"d": "Day 45",
+"no": 2,
+"s": "Sam didn't seem ____ (be) happy just now. But I don't know why.",
+"h": "be",
+"ans": "to be",
+"note": ""
+},
+{
+"d": "Day 45",
+"no": 3,
+"s": "Teachers ask students to take gardening ____ (serious).",
+"h": "serious",
+"ans": "seriously",
+"note": "句意：老师要求学生们认真对待园艺。 take sth.seriously认真对待某事”。故填 seriously。"
+},
+{
+"d": "Day 45",
+"no": 4,
+"s": "It's my pleasure to offer you good ____ (serve), sir.",
+"h": "serve",
+"ans": "service",
+"note": ""
+},
+{
+"d": "Day 45",
+"no": 5,
+"s": "Spring is my favorite s____ because different kinds of flowers come out.",
+"h": "",
+"ans": "season",
+"note": "句意：春天是我最喜欢的季节,因为各种 各样的花开放。根据“Spring is my favorite”可知此处说 的是季节,且只是春天这一个季节,故填 season。"
+},
+{
+"d": "Day 45",
+"no": 6,
+"s": "He has ____ (很少) seen a child with so much talent.",
+"h": "",
+"ans": "seldom",
+"note": "句意:他很少看到一个孩子有这么高的 天赋。该空在构成谓语的 has 和 seen 之间,应用副词,结 合中文提示可知填seldom。"
+},
+{
+"d": "Day 45",
+"no": 7,
+"s": "Drawing is her hobby and she's____ (认真的)about it.",
+"h": "",
+"ans": "serious",
+"note": "句意:绘画是她的爱好,而且她对此很认 真。根据中文提示可知,该空填 serious。"
+},
+{
+"d": "Day 46",
+"no": 1,
+"s": "The tour guide showed us ____ the museum and explained the exhibits.",
+"h": "",
+"ans": "around",
+"note": ""
+},
+{
+"d": "Day 46",
+"no": 2,
+"s": "I expected him to show ____ at the party, but he never came.",
+"h": "",
+"ans": "up",
+"note": ""
+},
+{
+"d": "Day 46",
+"no": 3,
+"s": "Sally is my best friend, and she often sits beside me ____ (silent) when I am sad.",
+"h": "silent",
+"ans": "silently",
+"note": ""
+},
+{
+"d": "Day 46",
+"no": 4,
+"s": "\"Has anyone seen my notebook?\" she asked. Meg and Beth said “No\", but Amy was in ____ (silent).",
+"h": "silent",
+"ans": "silence",
+"note": ""
+},
+{
+"d": "Day 46",
+"no": 5,
+"s": "Some people don't like this fruit ____ (simple) because of the smell.",
+"h": "simple",
+"ans": "simply",
+"note": "句意：有些人不喜欢这种水果仅仅是因 为它的味道。分析句子结构可知，空处作状语修饰 because of the smell,需填 simple 的副词形式。故填 simply 。"
+},
+{
+"d": "Day 47",
+"no": 1,
+"s": "It is reported that more and more people have trouble falling ____ (sleep) at night.",
+"h": "sleep",
+"ans": "asleep",
+"note": "句意：据报道,越来越多的人晚上入睡有 困难。fall asleep“人睡”。故填 asleep。"
+},
+{
+"d": "Day 47",
+"no": 2,
+"s": "Although I didn't like it at that time, I____ (slow) understood Mom's words.",
+"h": "slow",
+"ans": "slowly",
+"note": "句意：虽然当时我不喜欢它,但是我慢慢 地理解了妈妈的话。空处应用副词修饰谓语动词 “understood”,slow的副词形式为slowly“慢慢地”。故填 slowly 。"
+},
+{
+"d": "Day 47",
+"no": 3,
+"s": "The performance was so excellent ____ all the audience stood up and clapped.",
+"h": "",
+"ans": "that",
+"note": ""
+},
+{
+"d": "Day 47",
+"no": 4,
+"s": "It helps ____ (解决) the problems of farm waste and food shortages(短缺).",
+"h": "",
+"ans": "(to)solve",
+"note": "help（sb.）（to）do sth.为固定用法。"
+},
+{
+"d": "Day 48",
+"no": 1,
+"s": "Millie is interested in biology and she ____ (有时) records the actions of some insects in the park.",
+"h": "",
+"ans": "sometimes",
+"note": ""
+},
+{
+"d": "Day 48",
+"no": 2,
+"s": "As teenagers, we'd better develop one or more hobbies in our s____ time.",
+"h": "",
+"ans": "spare",
+"note": ""
+},
+{
+"d": "Day 48",
+"no": 3,
+"s": "Lu Ban spent the whole night in ____ (build) ten pavilions(亭) around the lake.",
+"h": "build",
+"ans": "building",
+"note": "句意:鲁班花了一整夜的时间在湖边建 了十个亭子。spend time（in）doing sth.“花费时间做某 事”,故填building。"
+},
+{
+"d": "Day 48",
+"no": 4,
+"s": "I like to spend time ____ my parents on Saturdays and Sundays.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 48",
+"no": 5,
+"s": "I thought I should spend my time ____ schoolwork to get good grades.",
+"h": "",
+"ans": "on",
+"note": ""
+},
+{
+"d": "Day 49",
+"no": 1,
+"s": "As a student, you must stay ____ from smoking and drinking.",
+"h": "",
+"ans": "away",
+"note": ""
+},
+{
+"d": "Day 49",
+"no": 2,
+"s": "The thief ____ (steal) her mobile phone quietly and ran away quickly.",
+"h": "steal",
+"ans": "stole",
+"note": ""
+},
+{
+"d": "Day 49",
+"no": 3,
+"s": "It was such an interesting novel that I couldn't stop ____ (read) it again and again.",
+"h": "read",
+"ans": "reading",
+"note": "句意:这是一本如此有趣的小说,我忍不 住看了一遍又一遍。could 是 can 的过去式; can't stop doing sth.意为“忍不住做某事”。故填reading。"
+},
+{
+"d": "Day 49",
+"no": 4,
+"s": "I don't know the ____ (strange). Can you tell me who he is?",
+"h": "strange",
+"ans": "stranger",
+"note": ""
+},
+{
+"d": "Day 49",
+"no": 5,
+"s": "You should be strict ____ yourself, or you'll fall behind.",
+"h": "",
+"ans": "with",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 1,
+"s": "If you want to be a____ (success) learner, you must learn independently.",
+"h": "success",
+"ans": "successful",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 2,
+"s": "They also did housework such as ____ (make) the bed and cooking meals.",
+"h": "make",
+"ans": "making",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 3,
+"s": "It rained all of a s____ yesterday, but luckily I didn't get wet.",
+"h": "",
+"ans": "sudden",
+"note": "句意：昨天突然下雨了，但幸运的是我没 有被淋湿。根据all of a和首字母提示的s可知,此处是 固定搭配all of a sudden“突然”。故填sudden。"
+},
+{
+"d": "Day 50",
+"no": 4,
+"s": "The article gives students some ____ (suggest) about how to stay safe online.",
+"h": "suggest",
+"ans": "suggestions",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 5,
+"s": "Students are not supposed ____ (play) football in the classroom.",
+"h": "play",
+"ans": "to play",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 6,
+"s": "After Tom received the biscuits, the coach suggested ____ (share) them with the strong boy.",
+"h": "share",
+"ans": "sharing",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 7,
+"s": "I believe if we continue to work together, we are sure ____ (win).",
+"h": "win",
+"ans": "to win",
+"note": ""
+},
+{
+"d": "Day 50",
+"no": 8,
+"s": "____ my surprise, the restaurant is actually very nice.",
+"h": "",
+"ans": "To",
+"note": ""
+},
+{
+"d": "Day 51",
+"no": 1,
+"s": "It takes me about twenty minutes ____ (walk) to the subway station.",
+"h": "walk",
+"ans": "to walk",
+"note": ""
+},
+{
+"d": "Day 51",
+"no": 2,
+"s": "He traveled everywhere to look for herbs (药草) and do research. And he talked ____ farmers, doctors and patients.",
+"h": "",
+"ans": "with/to",
+"note": ""
+},
+{
+"d": "Day 51",
+"no": 3,
+"s": "New ____ (技术) have greatly changed our lives.",
+"h": "",
+"ans": "technologies",
+"note": "考查名词。根据空后的 have 可知， 此处用technology的复数形式。"
+},
+{
+"d": "Day 51",
+"no": 4,
+"s": "Always remember that planning things carefully ahead is better than ____ (regret) later.",
+"h": "regret",
+"ans": "regretting",
+"note": "句意：永远记住,事先认真计划比事后 后悔好。regret 后悔。than 是介词,故该空应用动词的 -ing形式。故填regretting。"
+},
+{
+"d": "Day 52",
+"no": 1,
+"s": "____ (thank) to the help of the government, farmers in China are living a happier and richer life. bringing it back to me!\"",
+"h": "thank",
+"ans": "Thanks",
+"note": ""
+},
+{
+"d": "Day 52",
+"no": 3,
+"s": "Some of ____ (they) are now traveling in a show all over the world.",
+"h": "they",
+"ans": "them",
+"note": "句意：他们中的一些人现在正在世界各地 巡回演出。空处位于 of 后面作宾语,应使用代词 they 的 宾格形式。故填them。"
+},
+{
+"d": "Day 52",
+"no": 4,
+"s": "We must study hard to get into a good high school. Exactly! Happiness is achieved t____ hard work.",
+"h": "",
+"ans": "through",
+"note": "句意：一—我们必须努力学习进人一所 好高中。一—确实！幸福是通过努力学习实现的。本题"
+},
+{
+"d": "Day 52",
+"no": 5,
+"s": "In China, people usually tidy ____ their houses to sweep away bad luck before the Spring Festival.",
+"h": "",
+"ans": "up",
+"note": ""
+},
+{
+"d": "Day 52",
+"no": 6,
+"s": "I'm really ____ (thank) to my parents. With their help, I have been very active.",
+"h": "thank",
+"ans": "thankful",
+"note": ""
+},
+{
+"d": "Day 52",
+"no": 7,
+"s": "I want to be a writer. I love using words to express my ____ (think) and feelings.",
+"h": "think",
+"ans": "thoughts",
+"note": ""
+},
+{
+"d": "Day 52",
+"no": 8,
+"s": "A boy in my class was mean to Leo. He ____ (throw) Leo's notebook onto the ground.",
+"h": "throw",
+"ans": "threw",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 1,
+"s": "The work is very ____ (累人的),but nobody complains about it.",
+"h": "",
+"ans": "tiring",
+"note": "考查形容词。空处在 be 动词后作表语,修 饰 The work。"
+},
+{
+"d": "Day 53",
+"no": 2,
+"s": "For further information on ____ (明天) weather conditions, call the hotline below.",
+"h": "",
+"ans": "tomorrow's",
+"note": "考查名词所有格。句意:如需进一步 了解有关明天的天气情况的信息，请拨打以下热线电话。 此处表示“明天的天气情况”,tomorrow要用名词所有格 形式。"
+},
+{
+"d": "Day 53",
+"no": 3,
+"s": "The bookstore is a place where book lovers get t____ and share ideas or experiences.",
+"h": "",
+"ans": "together",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 4,
+"s": "He was too proud ____ (ask) his parents for help and support.",
+"h": "ask",
+"ans": "to ask",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 5,
+"s": "Some people think that we are spending ____ (太多) time online. which can be really bad for our health.",
+"h": "",
+"ans": "too much",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 6,
+"s": "When we arrived at the top ____ the mountain, we saw the most beautiful sunrise.",
+"h": "",
+"ans": "of",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 7,
+"s": "The t____ (总的) cost of the new bags will be 267 yuan.",
+"h": "",
+"ans": "total",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 8,
+"s": "I was ____ (touch) by all the lively characters in the story.",
+"h": "touch",
+"ans": "touched",
+"note": ""
+},
+{
+"d": "Day 53",
+"no": 9,
+"s": "Dad advised visiting my grandparents three ____ (time) a week as their house is near ours.",
+"h": "time",
+"ans": "times",
+"note": ""
+},
+{
+"d": "Day 54",
+"no": 1,
+"s": "Every year, Yangzhou offers a magical and special experience for its ____ (tour).",
+"h": "tour",
+"ans": "tourists",
+"note": "考查名词。句意：扬州每年为游客们提 供一次神奇而特别的体验。此空位于形容词性物主代词 之后,所以要用名词形式tourist;又因为游客不止一人,故 用其复数形式。"
+},
+{
+"d": "Day 54",
+"no": 2,
+"s": "I was deeply attracted by ____ (tradition) Chinese culture.",
+"h": "tradition",
+"ans": "traditional",
+"note": ""
+},
+{
+"d": "Day 54",
+"no": 3,
+"s": "The animals in the early zoos were not ____ (对待)well.",
+"h": "",
+"ans": "treated",
+"note": ""
+},
+{
+"d": "Day 54",
+"no": 4,
+"s": "I have trouble ____ (learn) English. Could you help me?",
+"h": "learn",
+"ans": "learning",
+"note": ""
+},
+{
+"d": "Day 54",
+"no": 5,
+"s": "I won't let you go unless you tell the ____ (true).",
+"h": "true",
+"ans": "truth",
+"note": ""
+},
+{
+"d": "Day 54",
+"no": 6,
+"s": "Although they are sometimes shy, they have a strong mind and will try their best ____ (make) their dreams come true.",
+"h": "make",
+"ans": "to make",
+"note": "句意：虽然他们有时会害羞,但他们有 坚强的意志,并会尽最大努力使他们的梦想成真。固定 搭配:try one's best to do sth.“尽某人最大努力做某事”, 所以此处应为动词不定式。故填 to make。"
+},
+{
+"d": "Day 55",
+"no": 2,
+"s": "I used ____ (eat) a lot of French fries. For my health, I don't eat them now.",
+"h": "eat",
+"ans": "to eat",
+"note": ""
+},
+{
+"d": "Day 55",
+"no": 3,
+"s": "The wind can be used ____ (produce) electricity.",
+"h": "produce",
+"ans": "to produce",
+"note": ""
+},
+{
+"d": "Day 55",
+"no": 4,
+"s": "The teacher is used to ____ (divide) us into two groups to play the games.",
+"h": "divide",
+"ans": "dividing",
+"note": ""
+},
+{
+"d": "Day 55",
+"no": 5,
+"s": "I won't tell you my plan ____ (除非) you tell me yours.",
+"h": "",
+"ans": "unless",
+"note": ""
+},
+{
+"d": "Day 55",
+"no": 6,
+"s": "It's raining too hard outside. We won't leave ____ the rain stops.",
+"h": "",
+"ans": "until",
+"note": ""
+},
+{
+"d": "Day 55",
+"no": 7,
+"s": "People ____ (usual) become friends because they have something in common.",
+"h": "usual",
+"ans": "usually",
+"note": ""
+},
+{
+"d": "Day 55",
+"no": 8,
+"s": "Jim has gone to bed. This is very ____ (usual). He always stays up late.",
+"h": "usual",
+"ans": "unusual",
+"note": "考查形容词。根据句意可知,Jim总是 熬夜,而今天已经去睡觉了,这很不寻常。usual 应加上 否定前缀 un-。"
+},
+{
+"d": "Day 56",
+"no": 1,
+"s": "The stone you found the other day in the park seemed ____ (value). It looks like real gold to me.",
+"h": "value",
+"ans": "valuable",
+"note": "句意：你几天前在公园里发现的那块石 头似乎很值钱。在我看来它像是真金。seem 是系动词, 后接形容词作表语。故填valuable。"
+},
+{
+"d": "Day 56",
+"no": 2,
+"s": "The festival attracts a large number of ____ (visit) from all over the world.",
+"h": "visit",
+"ans": "visitors",
+"note": "句意：这个节日吸引了来自世界各地的大 量游客。a large number of 后接名词复数。故填visitors。"
+},
+{
+"d": "Day 56",
+"no": 3,
+"s": "The bus was so crowded that they had to ____ (等待)the next one.",
+"h": "",
+"ans": "wait for",
+"note": "考查动词短语。句意：这辆公共汽车如 此拥挤,以至于他们不得不等下一辆。wait for“等待”， had to后跟动词原形。故填wait for。 答案解析 71"
+},
+{
+"d": "Day 57",
+"no": 1,
+"s": "The Changjiang Delta is a very ____ (wealth) area in China.",
+"h": "wealth",
+"ans": "wealthy",
+"note": "句意:长江三角洲是中国一个非常富裕 的地区。此空应用形容词作定语修饰名词“area”, wealthy“富有的”是形容词。故填wealthy。"
+},
+{
+"d": "Day 57",
+"no": 2,
+"s": "I want to know ____ the weather will be like in Beijing tomorrow.",
+"h": "",
+"ans": "what",
+"note": ""
+},
+{
+"d": "Day 57",
+"no": 3,
+"s": "In ancient China, there were no weekends because people did not use a____ (week) calendar.",
+"h": "week",
+"ans": "weekly",
+"note": "句意在中国古代没有周末,因为人们不 使用周历。空前是冠词,空后是名词,故该空作定语修饰 calendar，weekly表示“每周的”符合语境。故填weekly。"
+},
+{
+"d": "Day 57",
+"no": 4,
+"s": "Do you know the story of Cao Chong ____ /weiz/ the Elephant?",
+"h": "",
+"ans": "Weighs",
+"note": ""
+},
+{
+"d": "Day 57",
+"no": 5,
+"s": "So what's the best way ____ (win) a game of “Rock-Paper-Scissors\"?",
+"h": "win",
+"ans": "to win",
+"note": ""
+},
+{
+"d": "Day 57",
+"no": 6,
+"s": "The brain makes up 2% of our body ____ (weigh) but uses about a fifth of the energy we get from food.",
+"h": "weigh",
+"ans": "weight",
+"note": ""
+},
+{
+"d": "Day 58",
+"no": 1,
+"s": "____ (不管) it's summer or winter, it is a good place to take a holiday.",
+"h": "",
+"ans": "Whether",
+"note": ""
+},
+{
+"d": "Day 58",
+"no": 2,
+"s": "As we all know, the new kind of car is ____ (wide) accepted around the world.",
+"h": "wide",
+"ans": "widely",
+"note": ""
+},
+{
+"d": "Day 58",
+"no": 3,
+"s": "I'll never forget her words-be a true ____ (win) in your own heart.",
+"h": "win",
+"ans": "winner",
+"note": "句意：我将永远不会忘记她的话一一成 为自己心中真正的赢家。这句话鼓励了我很多次。空前"
+}
+]

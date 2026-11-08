@@ -1,0 +1,25 @@
+# 生成的成品（体积大、可随时重建）
+*.html.bak
+!demo/*.html
+
+# OCR 中间产物
+ocr/
+ans_ocr/
+__pycache__/
+*.pyc
+
+# 离线语音包（巨大，用 scripts/fetch_audio.py 本地生成）
+audio/
+*.zip
+
+# 词表与 PDF 原件（含版权内容，不入库）
+wordlist*.json
+!assets/sample-wordlist.json
+!assets/exercises-答案册.json
+*.pdf
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/

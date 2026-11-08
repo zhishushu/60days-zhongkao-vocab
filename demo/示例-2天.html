@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>60天搞定中考词汇</title>
+<style>
+:root{
+  --bg1:#fff9fb;--bg2:#ffeef4;--bg3:#fdf1ff;
+  --card:#ffffff;--card2:#fff3f7;--card3:#ffe8f1;
+  --line:#fbd9e5;--line2:#f7c6d8;
+  --text:#4a3340;--text2:#8d7280;--text3:#b39aa8;
+  --accent:#f472b6;--accent2:#fb7185;--accent3:#a78bfa;
+  --ok:#10b981;--bad:#ef4444;--warn:#f59e0b;
+  --shadow:0 6px 22px rgba(244,114,182,.13);
+  --shadow-sm:0 2px 10px rgba(244,114,182,.10);
+  --radius:20px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:var(--font);color:var(--text);min-height:100vh;
+  background:radial-gradient(700px 420px at 8% -6%,#ffe3ee 0%,transparent 62%),
+    radial-gradient(620px 380px at 104% 4%,#f3e8ff 0%,transparent 58%),
+    linear-gradient(175deg,var(--bg1),var(--bg2) 46%,var(--bg3));
+  background-attachment:fixed;
+  padding:calc(14px + env(safe-area-inset-top)) 14px calc(26px + env(safe-area-inset-bottom));}
+#app{max-width:640px;margin:0 auto}
+.screen{display:none}
+.screen.active{display:block;animation:fade .24s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h1{font-size:25px;margin:6px 0 4px;color:#42303a}
+h2{font-size:17px;margin:20px 0 10px;color:#42303a}
+.sub{color:var(--text2);font-size:13px;margin:0 0 14px;line-height:1.6}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.userchip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:6px 12px;font-size:13px;cursor:pointer;box-shadow:var(--shadow-sm);color:var(--text)}
+.avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#fda4d0,#fda4af);display:grid;place-items:center;
+  font-size:12px;font-weight:800;color:#fff}
+.statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0 18px}
+.statbox{padding:12px 8px;text-align:center;border-radius:16px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.statbox b{display:block;font-size:19px;color:#e0578f}
+.statbox span{font-size:11px;color:var(--text3)}
+.bigbtn{display:flex;align-items:center;gap:13px;padding:15px 16px;border-radius:var(--radius);border:1px solid var(--line);
+  background:var(--card);margin-bottom:11px;cursor:pointer;transition:.16s;box-shadow:var(--shadow-sm)}
+.bigbtn:active{transform:scale(.985)}
+.bigbtn.locked{opacity:.62;filter:grayscale(.35);cursor:not-allowed}
+.bigbtn.locked .go{display:none}
+.bigbtn.hero{background:linear-gradient(135deg,#fff0f6,#f9ecff);border-color:#f7c6d8}
+.bigbtn .ico{font-size:25px;width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#ffe4ef,#f3e8ff)}
+.bigbtn .tt{font-size:16px;font-weight:800;color:#42303a}
+.bigbtn .dd{font-size:12px;color:var(--text2);margin-top:3px;line-height:1.5}
+.bigbtn .go{margin-left:auto;color:var(--line2);font-size:22px;font-weight:700}
+.btn{appearance:none;border:none;border-radius:15px;padding:13px 18px;font-size:15px;font-weight:800;font-family:inherit;
+  background:linear-gradient(135deg,#fb9cc6,#f8739b);color:#fff;cursor:pointer;width:100%;
+  box-shadow:0 6px 16px rgba(248,115,155,.28);letter-spacing:.5px}
+.btn:active{transform:scale(.985)}
+.btn.ghost{background:var(--card2);color:var(--text);border:1px solid var(--line2);box-shadow:none}
+.btn.sm{padding:9px 14px;font-size:13px;width:auto}
+.btn[disabled]{opacity:.55}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>.btn{flex:1;min-width:120px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 4px;max-height:30vh;overflow:auto}
+.pill{padding:8px 13px;border-radius:999px;border:1px solid var(--line2);background:var(--card);font-size:13px;cursor:pointer;color:var(--text2)}
+.pill.on{background:linear-gradient(135deg,#fb9cc6,#f8739b);color:#fff;border-color:transparent;font-weight:800}
+/* 答题 */
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.qhead .idx{font-size:13px;color:var(--text2)}
+.bar{flex:1;height:7px;background:#ffe1ec;border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#fda4af,#f472b6);width:0;transition:width .3s}
+.timer{font-variant-numeric:tabular-nums;font-size:15px;font-weight:800;color:var(--text2);min-width:40px;text-align:right}
+.timer.warn{color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.tag{display:inline-block;font-size:11px;letter-spacing:1px;color:#d9468a;border:1px solid #fbcfe0;background:#fff0f6;
+  padding:4px 12px;border-radius:999px;margin-bottom:12px;font-weight:700}
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 16px;box-shadow:var(--shadow)}
+.qbig{font-size:30px;font-weight:800;line-height:1.35;word-break:break-word;color:#42303a;text-align:center}
+.qcn{font-size:24px;font-weight:800;line-height:1.55;word-break:break-word;color:#42303a;text-align:center}
+.qipa{color:#c2749c;font-size:15px;margin-top:8px;letter-spacing:.4px;text-align:center}
+.qhint{color:var(--text3);font-size:13px;margin-top:10px;line-height:1.6;text-align:center}
+.hintword{display:inline-block;margin-top:10px;background:#fff0f6;border:1px dashed #f7c6d8;color:#d9468a;border-radius:12px;padding:7px 14px;font-size:14px;font-weight:800}
+.sentbox{background:#fffafc;border:1px solid var(--line);border-radius:16px;padding:14px;font-size:15.5px;line-height:1.85;color:var(--text);text-align:left}
+.sentbox u{text-decoration:none;border-bottom:2px solid var(--accent);color:#d9468a;font-weight:800;padding:0 6px}
+.speakbtn{background:var(--card2);border:1px solid var(--line2);color:#c2557f;border-radius:999px;padding:8px 16px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:700}
+.inp{width:100%;padding:15px 16px;font-size:20px;border-radius:15px;border:2px solid var(--line2);background:#fffdfe;color:var(--text);
+  font-family:inherit;outline:none;text-align:center;letter-spacing:1px;box-shadow:inset 0 1px 3px rgba(244,114,182,.06)}
+.inp:focus{border-color:var(--accent);background:#fff}
+.inp.ok{border-color:var(--ok);color:#0f766e;background:#f0fdf9}
+.inp.bad{border-color:var(--bad);color:#b91c1c;background:#fef2f2}
+.inp[readonly]{cursor:pointer;caret-color:transparent}
+.fb{text-align:center;font-size:15px;font-weight:800;margin-top:14px;min-height:24px}
+.fb.good{color:var(--ok)}.fb.bad{color:var(--bad)}.fb.timeout{color:var(--warn)}
+/* 详情/解析 */
+.sect{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line2)}
+.sect h4{margin:0 0 8px;font-size:12px;letter-spacing:1px;color:var(--text3);font-weight:800}
+.chip{display:inline-block;background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:6px 10px;margin:0 6px 6px 0;font-size:13px;color:var(--text)}
+.chip em{font-style:normal;color:var(--text2);font-size:12px}
+.explain .wrow{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.explain .wen{font-size:22px;font-weight:800;color:#42303a}
+.explain .wipa{color:#c2749c;font-size:14px}
+.explain .wpos{color:#8b5cf6;font-size:12px;font-style:italic;font-weight:700}
+.explain .wcn{font-size:15px;color:var(--text);margin-top:4px;line-height:1.65}
+/* 列表/卡片 */
+.list-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:var(--card);border:1px solid var(--line);
+  margin-bottom:8px;cursor:pointer;box-shadow:var(--shadow-sm)}
+.list-item .l{flex:1;min-width:0}
+.list-item .n{font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#42303a}
+.list-item .m{font-size:12px;color:var(--text2);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.list-item .r{font-size:12px;color:var(--text3);text-align:right;white-space:nowrap}
+.empty{text-align:center;color:var(--text3);padding:34px 10px;font-size:14px;line-height:1.8}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 15px;margin-bottom:9px;box-shadow:var(--shadow-sm)}
+.qa .qt{font-size:12.5px;color:var(--text3);margin-bottom:5px}
+.qa .qq{font-size:15px;font-weight:800;color:#42303a;line-height:1.55}
+.qa .ans{font-size:13px;margin-top:6px;color:var(--text2);line-height:1.7}
+.qa .ans b{color:#d9468a}
+.qa .right{color:var(--ok);font-weight:800}
+.qa .wrong{color:var(--bad);font-weight:800}
+.qa .hl{color:#d9468a;font-weight:800}
+/* tabs */
+.tabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:5px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.tabs div{flex:1;text-align:center;padding:9px 4px;border-radius:10px;font-size:13px;font-weight:700;color:var(--text2);cursor:pointer}
+.tabs div.on{background:linear-gradient(135deg,#fb9cc6,#f8739b);color:#fff}
+/* 游戏 */
+.gamehint{background:#fff0f6;border:1px dashed #f7c6d8;border-radius:14px;padding:10px 14px;font-size:12.5px;color:#b03a68;line-height:1.6;margin-bottom:12px}
+.gamegrid{display:grid;gap:8px;justify-content:center}
+.gamegrid .tile{min-height:56px}
+.tile{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;
+  border-radius:14px;background:#fff;border:2px solid var(--line2);box-shadow:var(--shadow-sm);cursor:pointer;
+  font-weight:800;color:#42303a;word-break:break-word;overflow:hidden;transition:.12s;user-select:none}
+.tile.cn{background:#fff7fb;color:#a63e6b;font-weight:700}
+.tile.sel{border-color:var(--accent);background:#ffe8f1;transform:scale(.96)}
+.tile.gone{visibility:hidden;pointer-events:none;transition:none}
+.tile.shake{animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tile.back{background:linear-gradient(135deg,#fbcfe8,#f9c8d8);color:transparent;font-size:0}
+.tile.back:after{content:'❋';font-size:20px;color:#fff}
+.tile.reveal{background:#fff;color:#42303a;border-color:var(--accent)}
+.tile.hintflash{animation:flash .6s 2}
+@keyframes flash{50%{box-shadow:0 0 0 4px rgba(244,114,182,.45)}}
+.gamebar{display:flex;gap:10px;justify-content:space-between;font-size:13px;color:var(--text2);margin-bottom:10px;font-weight:700}
+#linkSvg{position:absolute;left:0;top:0;pointer-events:none;z-index:5}
+/* 模态框 */
+.overlay{position:fixed;inset:0;background:rgba(74,51,64,.32);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:16px;z-index:60}
+.overlay.show{display:flex}
+.modal{width:100%;max-width:520px;max-height:86vh;overflow:auto;padding:22px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 20px 50px rgba(190,24,93,.18)}
+.modal h3{margin:0 0 12px;font-size:18px;color:#42303a}
+/* 键盘 */
+.vk{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,#fff8fb,#fff0f6);border-top:1px solid var(--line2);box-shadow:0 -8px 24px rgba(244,114,182,.14);
+  transform:translateY(110%);transition:transform .22s ease}
+.vk.show{transform:none}
+.vkrow{display:flex;gap:5px;justify-content:center;margin-bottom:6px}
+.vkkey{flex:1;min-width:0;max-width:52px;height:45px;border-radius:11px;border:1px solid var(--line2);background:#fff;color:#4a3340;
+  font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;padding:0;box-shadow:0 2px 5px rgba(244,114,182,.12)}
+.vkkey:active{background:#ffe3ee}
+.vkkey.wide{max-width:70px;font-size:13px}
+.vkkey.space{flex:4;max-width:100%}
+.vkkey.enter{flex:1.7;max-width:112px;background:linear-gradient(135deg,#fb9cc6,#f8739b);color:#fff;border-color:transparent;font-size:14px}
+body.vkopen #app{padding-bottom:265px}
+@media(min-width:768px){.vk{left:50%;right:auto;width:640px;transform:translateX(-50%) translateY(110%)}.vk.show{transform:translateX(-50%)}}
+/* 报告 */
+.report{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow-sm);line-height:1.85;font-size:14px}
+.report h3{margin:0 0 8px;font-size:15px;color:#d9468a}
+.report ul{margin:6px 0 0;padding-left:18px}
+.report li{margin-bottom:5px;color:var(--text2)}
+.report b{color:#d9468a}
+.sess{display:flex;justify-content:space-between;gap:8px;padding:9px 12px;border-bottom:1px dashed var(--line2);font-size:13px}
+.sess:last-child{border-bottom:none}
+.sess .m{color:var(--text2)}
+.toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:rgba(74,51,64,.93);color:#fff;padding:10px 18px;
+  border-radius:999px;font-size:13px;z-index:99;animation:fade .2s;box-shadow:var(--shadow)}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <div class="userchip" onclick="openUserModal()"><div class="avatar" id="avatar">?</div><span id="uname">未选择用户</span></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn ghost sm" onclick="renderHome()">🏠 首页</button>
+      <button class="btn ghost sm" onclick="logout()">退出登录</button>
+    </div>
+  </div>
+
+  <div class="screen active" id="welcome"></div>
+  <div class="screen" id="home"></div>
+  <div class="screen" id="gamehub"></div>
+  <div class="screen" id="learn"></div>
+  <div class="screen" id="game"></div>
+  <div class="screen" id="quiz"></div>
+  <div class="screen" id="result"></div>
+  <div class="screen" id="reader"></div>
+  <div class="screen" id="study"></div>
+
+  <div class="vk" id="vk">
+    <div class="vkrow" id="vk0"></div><div class="vkrow" id="vk1"></div>
+    <div class="vkrow" id="vk2"></div><div class="vkrow" id="vk3"></div>
+  </div>
+
+  <div class="overlay" id="countModal"><div class="modal">
+    <h3>本次练习</h3><p class="sub" id="countInfo"></p>
+    <div class="pills" id="countPills">
+      <div class="pill" onclick="pickCount(this,10)">10 题</div>
+      <div class="pill" onclick="pickCount(this,20)">20 题</div>
+      <div class="pill" onclick="pickCount(this,30)">30 题</div>
+      <div class="pill" onclick="pickCount(this,0)">全部</div>
+    </div>
+    <input class="inp" id="customCount" type="number" inputmode="numeric" placeholder="或输入题数" style="margin:12px 0;font-size:16px">
+    <div class="row"><button class="btn ghost" onclick="closeModal('countModal')">取消</button><button class="btn" onclick="confirmCount()">开始</button></div>
+  </div></div>
+
+  <div class="overlay" id="userModal"><div class="modal">
+    <h3>切换同学</h3><div class="sub">为保护各自的成绩，切换请回到登录页用名字和密码进入。</div>
+    <div class="row" style="margin-top:12px"><button class="btn ghost" onclick="closeModal('userModal')">知道了</button><button class="btn" onclick="closeModal('userModal');logout()">去登录页</button></div>
+  </div></div>
+
+  <div class="overlay" id="detailModal"><div class="modal">
+    <div id="detailBody"></div>
+    <div class="row" style="margin-top:16px"><button class="btn ghost" onclick="closeModal('detailModal')">关闭</button></div>
+  </div></div>
+
+  <div class="overlay" id="confirmModal"><div class="modal">
+    <h3>确认操作</h3><p class="sub" id="confirmMsg"></p>
+    <div class="row"><button class="btn ghost" onclick="closeModal('confirmModal')">取消</button><button class="btn" id="confirmYes">确定</button></div>
+  </div></div>
+
+  <div class="overlay" id="dayModal"><div class="modal">
+    <h3>选择范围</h3><p class="sub" id="dayInfo"></p>
+    <div id="dayPicks" style="max-height:44vh;overflow:auto"></div>
+    <div class="row" style="margin-top:14px"><button class="btn ghost" onclick="closeModal('dayModal')">取消</button><button class="btn" onclick="startFromDayModal()">下一步</button></div>
+  </div></div>
+</div>
+
+<script>
+/* ================= 数据 ================= */
+const DATA = {"title":"60天搞定中考词汇（示例：前 2 天）","days":[{"day":"Day 1","page":4,"words":[{"en":"a","pos":"art","cn":"一个；件","forms":[],"phrases":[],"ipa":"/ˈeɪ/"},{"en":"able","pos":"adj","cn":"能够；有才能的","forms":[{"w":"unable","label":"未能；无法"},{"w":"ability","label":"能力；才能"}],"phrases":[{"en":"be able to do sth","cn":"能够做某事"},{"en":"have the ability to do sth","cn":"有能力做某事"}],"ipa":"/ˈeɪbəɫ/","ex":[{"s":"Children believe that the Monkey King is a hero who has many ____.","root":"able","ans":"abilities","note":""}]},{"en":"about","pos":"adv/prep","cn":"大约；于；做·怎么样","forms":[],"phrases":[{"en":"how doing sth","cn":"怎么样"}],"ipa":"/əˈbaʊt/"},{"en":"above","pos":"prep","cn":"在上面；多于；在上面","forms":[],"phrases":[{"en":"above all","cn":"最重要的是；尤其是"}],"ipa":"/əˈbəv/"},{"en":"abroad","pos":"adv","cn":"在国外；到国外","forms":[],"phrases":[{"en":"go","cn":"出国旅行"}],"ipa":"/əˈbɹɔd/"},{"en":"absent","pos":"adj","cn":"缺席的；不在场的","forms":[],"phrases":[{"en":"be absent from","cn":"不在…"}],"ipa":"/ˈæbsənt/"},{"en":"accept","pos":"v","cn":"接受","forms":[{"w":"acceptable","label":"可接受的；认可的"}],"phrases":[{"en":"accept one's offer","cn":"接受某人的提议"},{"en":"accept one's advice","cn":"接受某人的建议"}],"ipa":"/ækˈsɛpt/"},{"en":"accident","pos":"n","cn":"（交通）事故；意外遭遇","forms":[{"w":"accidental","label":"意外的；偶然的"},{"w":"accidentally","label":"意外地；偶然地"}],"phrases":[{"en":"by accident","cn":"偶然；意外地"}],"ipa":"/ˈæksədənt/"},{"en":"account","pos":"n","cn":"账户","forms":[],"phrases":[],"ipa":"/əˈkaʊnt/"},{"en":"ache","pos":"v/n","cn":"痛；疼痛","forms":[],"phrases":[],"ipa":"/ˈeɪk/"},{"en":"achieve","pos":"v","cn":"达到；完成；获得","forms":[{"w":"achievement","label":"成就；成绩；完成"}],"phrases":[{"en":"achieve a goal","cn":"达到目标"},{"en":"a sense of achievement","cn":"成就感"}],"ipa":"/əˈtʃiv/","ex":[{"s":"Our country has a proud record of sporting ____.","root":"achieve","ans":"achievements","note":""}]},{"en":"across","pos":"adv/prep","cn":"横过；在对面","forms":[],"phrases":[{"en":"across from","cn":"在……·对面"}],"ipa":"/əˈkɹɔs/"},{"en":"act","pos":"v","cn":"扮演；表现得；行动；行为；行动","forms":[{"w":"action","label":"行动；行为"},{"w":"active","label":"活跃的；积极的"},{"w":"activity","label":"活动"}],"phrases":[{"en":"take action","cn":"采取行动"},{"en":"take an active part in","cn":"积极参加"}],"ipa":"/ˈækt/","ex":[{"s":"We can't afford to wait any longer to take ____!","root":"act","ans":"action","note":""}]}]},{"day":"Day 2","page":5,"words":[{"en":"actually","pos":"adv","cn":"真实地；事实上","forms":[{"w":"actual","label":"真实的；实际的"}],"phrases":[],"ipa":"/ˈækˌtʃuəɫi/"},{"en":"ad","pos":"n","cn":"（）；广告","forms":[],"phrases":[],"ipa":"/ˈæd/"},{"en":"add","pos":"v","cn":"增加；加","forms":[],"phrases":[],"ipa":"/ˈæd/"},{"en":"address","pos":"n/v","cn":"住址；地址；处理","forms":[],"phrases":[],"ipa":"/ˈæˌdɹɛs/"},{"en":"admire","pos":"v","cn":"欣赏；仰慕","forms":[{"w":"admirable","label":"值得钦佩的"},{"w":"admiration","label":"钦佩；赞赏"}],"phrases":[],"ipa":"/ædˈmaɪɹ/"},{"en":"adult","pos":"adj","cn":"成年的；成人的；成年人；成年动物","forms":[],"phrases":[],"ipa":"/ˈædəɫt/"},{"en":"advantage","pos":"n","cn":"优点；有利条件","forms":[{"w":"disadvantage","label":"缺点；不利因素"}],"phrases":[],"ipa":"/ædˈvæntɪdʒ/"},{"en":"advice","pos":"n","cn":"劝告；建议","forms":[],"phrases":[{"en":"ask sb. for advice","cn":"向某人寻求建议"},{"en":"take one's advice","cn":"接受某人的建议"},{"en":"a piece of advice","cn":"一条建议"},{"en":"give sb.advice on/about sth","cn":"就某事给某人建议"}],"ipa":"/ædˈvaɪs/"},{"en":"advise","pos":"v","cn":"劝告；建议","forms":[],"phrases":[{"en":"advise sb.to do sth","cn":"建议某人做某事"}],"ipa":"/ædˈvaɪz/","ex":[{"s":"You are alone now. I'm not there to help you or give you any kind of ____.","root":"advise","ans":"advice","note":""}]},{"en":"afford","pos":"v","cn":"买得起；承担得起（后果）","forms":[],"phrases":[{"en":"afford to do sth","cn":"负担得起做某事（的后果）"}],"ipa":"/əˈfɔɹd/"},{"en":"afraid","pos":"adj","cn":"害怕；畏惧","forms":[],"phrases":[{"en":"be afraid of sth","cn":"做某事"},{"en":"be afraid to do sth","cn":"害怕做某事"}],"ipa":"/əˈfɹeɪd/"},{"en":"after","pos":"prep/conj","cn":"在以后","forms":[],"phrases":[],"ipa":"/ˈæftɝ/"},{"en":"afternoon","pos":"n","cn":"下午","forms":[],"phrases":[{"en":"in the afternoon","cn":"在下午"},{"en":"(all) over again","cn":"再；重新"},{"en":"again and again","cn":"再三地；反复地"},{"en":"over and over again 1","cn":"多次；反复"}],"ipa":"/ˌæftɝˈnun/"},{"en":"against","pos":"prep","cn":"倚；碰；撞；反对","forms":[],"phrases":[{"en":"be against doing sth．","cn":"反对做某事"},{"en":"fight against","cn":"与…斗争"}],"ipa":"/əˈɡeɪnst/"},{"en":"age","pos":"n","cn":"年龄；时代；时期","forms":[],"phrases":[{"en":"at the age of","cn":"在……·岁时"},{"en":"for ages","cn":"很长时间"}],"ipa":"/ˈeɪdʒ/"},{"en":"ago","pos":"adv","cn":"以前","forms":[],"phrases":[{"en":"a long time ago","cn":"很久以前"}],"ipa":"/əˈɡoʊ/"},{"en":"agree","pos":"v","cn":"同意；赞成；应允","forms":[{"w":"disagree","label":"不同意；不一致"},{"w":"agreement","label":"协议；同意；意见一致"}],"phrases":[{"en":"agree to do sth","cn":"同意做某事"},{"en":"agree with sb","cn":"同意某人（的看法）"},{"en":"agree on sth","cn":"就某事达成一致意见"},{"en":"reach an agreement","cn":"达成协议"}],"ipa":"/əˈɡɹi/"},{"en":"ahead","pos":"adv","cn":"向前；在前面","forms":[],"phrases":[{"en":"ahead of","cn":"早于；在…前面"},{"en":"go ahead （","cn":"口语）请吧；开始吧"}],"ipa":"/əˈhɛd/"},{"en":"aid","pos":"n","cn":"援助；救援物资","forms":[],"phrases":[],"ipa":"/ˈeɪd/"},{"en":"aim","pos":"n","cn":"目的；瞄准；力争做到；瞄准；针对","forms":[],"phrases":[{"en":"aim to do sth","cn":"打算做某事"}],"ipa":"/ˈeɪm/"},{"en":"air","pos":"n/v","cn":"空气；晾干；通风","forms":[],"phrases":[],"ipa":"/ˈɛɹ/"}]}],"exercises":[{"d":"Day 1","no":1,"s":"What about ____ (go) to Zhongshan Park to see the flowers? -Sounds good!","h":"go","ans":"going","note":""},{"d":"Day 1","no":2,"s":"Lucy was a____ from school yesterday because she had a fever.","h":"","ans":"absent","note":"考查固定搭配be absent from缺席”。"},{"d":"Day 1","no":3,"s":"Children believe that the Monkey King is a hero who has many ____ (able).","h":"able","ans":"abilities","note":""},{"d":"Day 1","no":4,"s":"Our country has a proud record of sporting ____ (achieve).","h":"achieve","ans":"achievements","note":"空处作of 的宾语,应用名词。 \"achieve\"的名词形式是“achievement”，在此意为“成就； 成绩”,是可数名词,且空前没有表示单数概念的限定词， 所以需要使用“achievement”的复数形式“achievements” 来表示多方面的成就。"},{"d":"Day 1","no":5,"s":"We can't afford to wait any longer to take ____ (act)!","h":"act","ans":"action","note":"考查固定搭配take action“采取行动”。"},{"d":"Day 1","no":6,"s":"On weekends, all the left-behind children can come to school and take part in fun a____ like playing soccer and singing songs.","h":"","ans":"activities","note":"句意：周末,所有留守儿童都可以来学 校参加踢足球、唱歌等有趣的活动。根据“like playing soccer and singing songs”和首字母提示可知，此处应用 activity表示“活动”，且应用其复数形式表泛指。故填 activities ."},{"d":"Day 2","no":1,"s":"You are alone now. I'm not there to help you or give you any kind of ____ (advise).","h":"advise","ans":"advice","note":""},{"d":"Day 2","no":2,"s":"Actually, we can't afford ____ (lose) anyone of our team, or we won't win.","h":"lose","ans":"to lose","note":""},{"d":"Day 2","no":3,"s":"Don't be afraid of ____ (ask) your parents or teachers for help if you are in trouble.","h":"ask","ans":"asking","note":""},{"d":"Day 2","no":4,"s":"The movie shows how humans fight a____ disasters(灾难).","h":"","ans":"against","note":""},{"d":"Day 2","no":5,"s":"At the a____ of 13, she went to a sports school in Xiangtan, Hunan Province.","h":"","ans":"age","note":""},{"d":"Day 2","no":6,"s":"Liu Kun was still sleepy, but he agreed ____ (practice) playing soccer with Zu Ti.","h":"practice","ans":"to practice","note":""},{"d":"Day 2","no":7,"s":"We advise teenagers ____ (take) more exercise. It's important to have a healthy body.","h":"take","ans":"to take","note":""},{"d":"Day 3","no":1,"s":"My mother allows me ____ (watch) TV for an hour on weekends.","h":"watch","ans":"to watch","note":""},{"d":"Day 3","no":2,"s":"Jane can look after herself while she lives ____ (独自).","h":"","ans":"alone","note":""},{"d":"Day 3","no":3,"s":"A____ they are twins, they don't look like each other.","h":"","ans":"Although","note":""},{"d":"Day 3","no":4,"s":"Students are not a____ to eat in class. We should follow the school rules.","h":"","ans":"allowed","note":""},{"d":"Day 3","no":6,"s":"The Silk Road got its name because silk was one of the main things transported ____ (沿着)this road.","h":"","ans":"along","note":""},{"d":"Day 4","no":1,"s":"Mary found it difficult to solve the problems, so she asked her father ____ some advice.","h":"","ans":"for","note":""},{"d":"Day 4","no":2,"s":"She paid her full attention ____ the project and succeeded in the end.","h":"","ans":"to","note":""},{"d":"Day 4","no":3,"s":"When playing in the hallways, students should avoid ____ (push) each other.","h":"push","ans":"pushing","note":""},{"d":"Day 4","no":4,"s":"We should speak ____ politely as possible when we ask strangers for help.","h":"","ans":"as","note":"分析句意可知,此处表示说话应尽可能礼貌 一些,应用“as...as possible\"结构。故填 as。"},{"d":"Day 4","no":5,"s":"Our interest in Chinese paper-cut rose a lot after a(n) ____ (艺术家) gave us a talk.","h":"","ans":"artist","note":""},{"d":"Day 4","no":6,"s":"She fell on a piece of glass, which cut her eye ____ (bad).","h":"bad","ans":"badly","note":""},{"d":"Day 5","no":1,"s":"Li Xin set up a business to make ____ (beauty) artworks by using materials from old cars.","h":"beauty","ans":"beautiful","note":""},{"d":"Day 5","no":2,"s":"Mom was worried because ____ my poor grades.","h":"","ans":"of","note":""},{"d":"Day 5","no":3,"s":"At the ____ (begin) of the last century in the US, avocados(鳄梨) weren't popular.","h":"begin","ans":"beginning","note":""},{"d":"Day 5","no":4,"s":"You'll also find out about the history of pets, their ____ (行为) and the different ways they communicate. As Grade 9 students, we should keep a b____ between our hobbies and schoolwork.","h":"","ans":"behavior","note":""},{"d":"Day 6","no":1,"s":"It is usually ____ (believe) that a person should get about eight hours of sleep per night.","h":"believe","ans":"believed","note":"根据提示词和空前的is可知,空处应用 过去分词形式,it is believed that...表示\"人们认为....” 故填believed。"},{"d":"Day 6","no":2,"s":"Whose volleyball is this? It must b____ to Carla. She loves volleyball a lot.","h":"","ans":"belong","note":""},{"d":"Day 6","no":3,"s":"You have a cold. You'd better ____ (take) this medicine and have a good rest.","h":"take","ans":"take","note":"空处位于 had better 的缩略形式之后,应填 动词原形。"},{"d":"Day 6","no":4,"s":"Don't worry about the return ticket. Daniel has helped ____ (预订) two-way tickets.","h":"","ans":"(to)book","note":"句意:不用担心返程的票。Daniel 已 经帮忙预订了往返票。help后面用动词原形或动词不定 式,结合中文提示,该空填（to）book。"},{"d":"Day 6","no":5,"s":"You have to believe ____ yourself.","h":"","ans":"in","note":""},{"d":"Day 7","no":1,"s":"Through exercise, ____ our mind and body will become healthier.","h":"","ans":"both","note":""},{"d":"Day 7","no":2,"s":"Then, it's time for a(n) ____ (休息)!I eat snacks (零食)and talk with friends.","h":"","ans":"break","note":""},{"d":"Day 7","no":3,"s":"You'll bring pleasure ____ everyone who uses the park.","h":"","ans":"to/for","note":""},{"d":"Day 7","no":4,"s":"It is a really difficult job to repair the car because it is old and ____ (break).","h":"break","ans":"broken","note":""},{"d":"Day 8","no":1,"s":"Now you can pour the water; however, be ____ (care) not to use boiling water.","h":"care","ans":"careful","note":""},{"d":"Day 8","no":2,"s":"He and Pagani were busy ____ (work) together during this period. I'm sure.","h":"work","ans":"working","note":""},{"d":"Day 8","no":3,"s":"I want to borrow the book ____ (call) Fu Lei's Family Letters from the school library.","h":"call","ans":"called","note":""},{"d":"Day 9","no":1,"s":"Spring rolls were popular food served mainly during the ____ (celebrate) of the Spring Festival.","h":"celebrate","ans":"celebration","note":"句意：春卷是在庆祝春节期间主要供 应的受欢迎的食物。celebrate“庆祝”,是动词,该空位于 the后面,of 前面,因此需要填名词。故填 celebration。"},{"d":"Day 9","no":2,"s":"If you study hard, you will ____ (certain) pass the exam.","h":"certain","ans":"certainly","note":""},{"d":"Day 9","no":3,"s":"We are looking forward to having a chance ____ (help) people in need.","h":"help","ans":"to help","note":""},{"d":"Day 9","no":4,"s":"I can't afford this expensive T-shirt, so I'd like a(n) ____ (较便宜的)one.","h":"","ans":"cheaper","note":"该空用形容词作定语,结合中文提示 “较便宜的”可知应用cheap的比较级,故填cheaper。"},{"d":"Day 9","no":7,"s":"She ____ (catch) the cat gently and told Donna that animals were not allowed to be taken to school.","h":"catch","ans":"caught","note":""},{"d":"Day 10","no":1,"s":"____ (child) should accept gifts from their elders with both hands.","h":"child","ans":"Children","note":"句意：孩子们应该用双手接受来自长辈 词汇册 答案解析 的礼物。child 为可数名词,由后文的 their 可知,空处应 使用复数形式表泛指且首字母大写。故填 Children。"},{"d":"Day 10","no":2,"s":"If you stayed at home, I think you made a good ____ (choose).","h":"choose","ans":"choice","note":""},{"d":"Day 10","no":3,"s":"Oh, we have missed the last bus. -I'm afraid we have no choice but ____ (walk) there now.","h":"walk","ans":"to walk","note":""},{"d":"Day 10","no":4,"s":"I was so scared that I could hardly think ____ (clear) after that.","h":"clear","ans":"clearly","note":""},{"d":"Day 10","no":5,"s":"The videos look good and ____ (close) follow what you want them to show.","h":"close","ans":"closely","note":""},{"d":"Day 10","no":6,"s":"In Colombia, family relationships are strong and children usually live close ____ their parents all their lives.","h":"","ans":"to","note":""},{"d":"Day 11","no":1,"s":"Teenagers will feel ____ (comfortable) and even get angry if someone reads their diaries.","h":"comfortable","ans":"uncomfortable","note":""},{"d":"Day 11","no":2,"s":"He always compares himself ____ his brother, who is more successful in their parents' eyes.","h":"","ans":"and/to/with","note":""},{"d":"Day 11","no":3,"s":"____ (compete) between them has lasted for years, but they're still good friends.","h":"compete","ans":"Competition","note":"设空处作句子主语,应用提示词的 名词形式 competition,表示“竞争”,不可数。句首单词首 字母大写,故填 Competition。"},{"d":"Day 11","no":4,"s":"The boy had been polishing a diamond (钻石) until it was ____ (complete) clean and bright.","h":"complete","ans":"completely","note":""},{"d":"Day 11","no":5,"s":"The museum has a special ____ (collect) of ancient paintings. Many visitors come to see it every year.","h":"collect","ans":"collection","note":""},{"d":"Day 11","no":6,"s":"The players all have ____ (confident) in their coach.","h":"confident","ans":"confidence","note":"句意：运动员们都对他们的教练有信 心。have confidence in信赖；对....有信心”。故填 confidence。"},{"d":"Day 11","no":7,"s":"A wise man always ____ (connect) what he learns from books with real life and uses this way to solve the problems he meets.","h":"connect","ans":"connects","note":""},{"d":"Day 11","no":8,"s":"The Internet makes ____ (communicate) easier than before.","h":"communicate","ans":"communication","note":""},{"d":"Day 11","no":9,"s":"Mr. White is such a careless person. In a way, we have a lot ____ common.","h":"","ans":"in","note":""},{"d":"Day 12","no":1,"s":"Jack hasn't taken his piano lessons for a long time. He is considering ____ (give) them up.","h":"give","ans":"giving","note":""},{"d":"Day 12","no":2,"s":"Do you know how to wash your hands ____ (正确地)?","h":"","ans":"correctly","note":""},{"d":"Day 12","no":3,"s":"A new electric car usually c____ around $ 11,000 more than a new gas car in my hometown.","h":"","ans":"costs","note":""},{"d":"Day 12","no":4,"s":"He wanted to continue ____ (work) until he was 70.","h":"work","ans":"working","note":""},{"d":"Day 12","no":5,"s":"This mountain c____ an area of about 14,100 square metres and is 34.3 metres high.","h":"","ans":"covers","note":"考查动词。句意：这座山占地大约14， 100平方米,高34.3米。cover an area of\"占地.....\",此 处描述客观事实,主语是这座山,谓语动词应用第三人称 单数形式,故填covers。"},{"d":"Day 12","no":6,"s":"My cousin Andrew is crazy ____ DIY. He loves to repair things and decorate (装饰) his house.","h":"","ans":"about","note":""},{"d":"Day 13","no":1,"s":"Mr. Green is one of the most ____ (create) engineers in this company.","h":"create","ans":"creative","note":""},{"d":"Day 13","no":2,"s":"The Earth is getting more and more ____ (crowd) as the global population is still growing.","h":"crowd","ans":"crowded","note":"句意：由于全球人口仍在增长,地球变 得越来越拥挤。get 在这里是连系动词,后接形容词作表 语。crowded\"拥挤的”。故填crowded。"},{"d":"Day 13","no":3,"s":"Many young people often share their ____ (日常的)life on TikTok.","h":"","ans":"daily","note":""},{"d":"Day 13","no":4,"s":"They may not know how to deal ____ money and they should ask parents for advice.","h":"","ans":"with","note":""},{"d":"Day 13","no":5,"s":"I've decided ____ (stay) away from fried food and soft drinks since I had my medical exam.","h":"stay","ans":"to stay","note":""},{"d":"Day 13","no":7,"s":"To ____ (减少) food waste, some schools introduce online systems to the students to choose meals ahead of time.","h":"","ans":"cut down","note":""},{"d":"Day 14","no":1,"s":"One day while looking through a travel magazine, I was ____ (deep) attracted by the photos of the desert views.","h":"deep","ans":"deeply","note":""},{"d":"Day 14","no":2,"s":"Many birds depend ____ stars for direction, but they get lost easily at night when city lights are kept on all night.","h":"","ans":"on","note":""},{"d":"Day 14","no":3,"s":"Too much pressure is not good for a child's____ (develop).","h":"develop","ans":"development","note":""},{"d":"Day 14","no":4,"s":"The Dragon Boat Festival has something to do with the ____ (die) of Qu Yuan, a famous Chinese poet.","h":"die","ans":"death","note":""},{"d":"Day 14","no":5,"s":"They can't tell the ____ (different) between food materials like leeks (韭葱) and shallots (青葱).","h":"different","ans":"difference","note":""},{"d":"Day 14","no":6,"s":"If I have difficulty in ____ (solve) math problems, my teacher will offer me some useful suggestions.","h":"solve","ans":"solving","note":""},{"d":"Day 14","no":7,"s":"This year, we are going to learn ____ (different).","h":"different","ans":"differently","note":"空处修饰前面的动词learn,应用副 词。故填differently。"},{"d":"Day 15","no":1,"s":"Does the radio say the expressway is closed in both ____ (direct) because of the heavy fog?","h":"direct","ans":"directions","note":""},{"d":"Day 15","no":2,"s":"He was too ____ (disappoint) to feel anything.","h":"disappoint","ans":"disappointed","note":"句意:他太失望了,以至于什么也感 觉不到。此处为“too+adj.+to do sth.”结构,该空作表语 且主语是人。故填disappointed。"},{"d":"Day 15","no":3,"s":"In 1911, Marie Curie won the Nobel Prize in Chemistry because of her ____ (discover) of radium(镭).","h":"discover","ans":"discovery","note":""},{"d":"Day 15","no":4,"s":"I hope there'll be a lively and interesting ____ (discuss) in class.","h":"discuss","ans":"discussion","note":""},{"d":"Day 15","no":5,"s":"To get everybody in the discussion, Miss Su has d____ our class into six groups.","h":"","ans":"divided","note":"句意:为了让每个人都参与讨论,苏老师 把我们班分成了六个小组。根据首字母提示和“ourclass into sixgroups”可知，此处为固定搭配divide...into... “将……分成…….”;由“has”可知,本句时态为现在完成 时。故填divided。"},{"d":"Day 15","no":6,"s":"There is no d____ that healthy eating habits are important.","h":"","ans":"doubt","note":""},{"d":"Day 15","no":7,"s":"What is Mrs. Chen doing? The party will begin, so she is busy d____ up at the moment.","h":"","ans":"dressing","note":"句意：——陈女士在做什么？— -派对 将要开始,所以她此刻在忙着装扮。be busy doing sth. “忙着做某事”，dress up“装扮”,故填dressing。"},{"d":"Day 15","no":8,"s":"The movie's____ ea s e se s ()","h":"","ans":"director","note":""},{"d":"Day 16","no":1,"s":"Videos about Baduanjin can ____ (easy) be found on the Internet.","h":"easy","ans":"easily","note":"句意：在网上可以很容易地找到关于八段 锦的视频。easy“容易的”,是形容词,而此空应用副词， 故填easily。"},{"d":"Day 16","no":2,"s":"China plans to pay more attention to scientific ____ (educate) in its primary and middle schools.","h":"educate","ans":"education","note":""},{"d":"Day 16","no":3,"s":"Her words had a magical effect ____ us.","h":"","ans":"on","note":""},{"d":"Day 16","no":4,"s":"WeChat is an ____ (effect) means of communication.","h":"effect","ans":"effective","note":""},{"d":"Day 16","no":5,"s":"We will spare no effort ____ (ensure) that the project can be completed on time.","h":"ensure","ans":"to ensure (","note":""},{"d":"Day 16","no":6,"s":"We are making an ____ (努力) to make a difference and create a better future!","h":"","ans":"effort","note":""},{"d":"Day 16","no":7,"s":"You can't keep the two books at the same time. You can only borrow either this one ____ that one.","h":"","ans":"or","note":""},{"d":"Day 17","no":1,"s":"My parents always encourage me ____ (be) myself.","h":"be","ans":"to be","note":""},{"d":"Day 17","no":2,"s":"Searching online, you'll find ____ (end) results.","h":"end","ans":"endless","note":""},{"d":"Day 17","no":3,"s":"It was a very long and hard time, but I enjoyed ____ (my).","h":"my","ans":"myself","note":"句意：这是一段非常漫长而艰难的时光， 但我过得愉快。固定搭配:enjoy oneself\"过得愉快”。my 68 5年中考3年模拟 中考英语 的反身代词为 myself。故填myself。"},{"d":"Day 17","no":4,"s":"They are such interesting books that we all enjoy ____ (read) them.","h":"read","ans":"reading","note":""},{"d":"Day 17","no":5,"s":"Kate's mother is not busy today. She has nothing ____ (其他) to deal with.","h":"","ans":"clse","note":""},{"d":"Day 17","no":6,"s":"Eric made sure to get ____ (足够的) exercise every day by running around.","h":"","ans":"enough","note":""},{"d":"Day 17","no":7,"s":"Everything went ____ (确切地)as planned.","h":"","ans":"exactly","note":"句意：一切都严格按计划进行。exactly “精确地,确切地”，此处应用副词修饰动词went。故填 exactly."},{"d":"Day 18","no":1,"s":"Everyone is at school today ____ (除了) Tom. He is ill.","h":"","ans":"except","note":""},{"d":"Day 18","no":2,"s":"Teachers always expect their students ____ (follow) the school rules.","h":"follow","ans":"to follow","note":""},{"d":"Day 18","no":3,"s":"My ____ (experience) as a volunteer in Africa are the most important in my life.","h":"experience","ans":"experiences","note":""},{"d":"Day 18","no":4,"s":"We can also learn many popular ____ (express) about daily life on the Internet.","h":"express","ans":"expressions","note":""},{"d":"Day 18","no":5,"s":"Sharing housework can make kids understand the idea of ____ (fair).","h":"fair","ans":"fairness","note":""},{"d":"Day 18","no":6,"s":"The little boy slipped (滑) on the ice and f____ over.","h":"","ans":"fell","note":"句意:这个小男孩在冰上滑了一下,摔倒了。 根据首字母提示和语境可知,此处表示“摔倒”；该空与 “slipped”是并列谓语,时态是一般过去时,故填 fell。"},{"d":"Day 18","no":7,"s":"A tour guide is someone who can ____ (解释) to travelers what they are seeing and help keep them safe.","h":"","ans":"explain","note":""},{"d":"Day 19","no":1,"s":"By age 17, Abing was famous ____ his musical ability.","h":"","ans":"for","note":""},{"d":"Day 19","no":2,"s":"In the English word competition, he won first place with the ____ (少)mistakes.","h":"","ans":"fewest","note":"句意：在英语单词比赛中,他以最少的错 误赢得了第一名。mistakes 是可数名词复数,应用few表 示“少”;根据“he won first place”可知,比赛中的第一名 犯错误最少,此处应用最高级。故填fewest。"},{"d":"Day 19","no":3,"s":"The father is always a real ____ (fight) in the little kid's heart.","h":"fight","ans":"fighter","note":"考查名词。此处表示在那个小孩心里， 父亲总是一名真正的奋斗者。fight 应加后缀-er,表示 “奋斗者”。"},{"d":"Day 19","no":4,"s":"Look! The boy is filling the cup ____ some dirty water.","h":"","ans":"with","note":""},{"d":"Day 19","no":5,"s":"Jenny found it hard ____ (work) out the maths problem, so she gave it up.","h":"work","ans":"to work","note":""},{"d":"Day 19","no":6,"s":"Yesterday I had a fight ____ my best friend Tom.","h":"","ans":"with","note":""},{"d":"Day 20","no":1,"s":"When you're under much pressure, please listen to our Chinese ____ (民间的)music.","h":"","ans":"folk","note":""},{"d":"Day 20","no":2,"s":"-Professor Wang will give us a talk on the history of Huai'an tomorrow. Really? I look forward to ____ (attend) it.","h":"attend","ans":"attending","note":""},{"d":"Day 20","no":3,"s":"You will meet people who will drive you to spend your money ____ (free).","h":"free","ans":"freely","note":""},{"d":"Day 20","no":4,"s":"From then on, she watched Chinese movies and soap operas ____ her free time.","h":"","ans":"in","note":""},{"d":"Day 21","no":1,"s":"If you live with a lot of anger, you're more likely to be ____ (friend) to others.","h":"friend","ans":"unfriendly","note":"句意：如果你带着大量怒气生活，你就 更有可能对他人不友好。由“If you live with a lot of anger\"可知,此处表示对他人不友好,be 后用形容词。故 填 unfriendly。"},{"d":"Day 21","no":2,"s":"Young children seem to be full ____ energy. They never seem tired.","h":"","ans":"of","note":""},{"d":"Day 21","no":3,"s":"After he gave up ____ (fish) and became a photo model in 2008, he took photos with tourists worldwide.","h":"fish","ans":"fishing","note":""},{"d":"Day 21","no":4,"s":"____ (general) speaking, the warmer a place is, the more types of plants and animals it will usually support.","h":"general","ans":"Generally","note":""},{"d":"Day 22","no":1,"s":"Nancy really wonders whose ____ (手套) these are on the shelf.","h":"","ans":"gloves","note":"句意:南希真的想知道架子上是谁的手 套。“手套”glove,根据后面的“these are”可知,应是复数 形式。故填 gloves。"},{"d":"Day 22","no":2,"s":"Friends make life much ____ (good).","h":"good","ans":"better","note":""},{"d":"Day 22","no":3,"s":"We have to go our separate ways after ____ (graduate).","h":"graduate","ans":"graduation/graduating","note":""},{"d":"Day 22","no":4,"s":"I want something that allows me to see my ____ (grow) and changes over time.","h":"grow","ans":"growth","note":""},{"d":"Day 22","no":5,"s":"Do you know anything about Jane Austen? She was one of the ____ (good) female writers in Britain.","h":"good","ans":"best","note":"此处是固定搭配“one of+the+形容词最高 级+名词复数”,表示“最………·的………之一”,因此应用形 容词good的最高级best。"},{"d":"Day 23","no":1,"s":"I've got into the h____ of reading Tang poems every morning. him.","h":"","ans":"habit","note":""},{"d":"Day 23","no":3,"s":"Even the light from a television could be ____ (harm) to his health.","h":"harm","ans":"harmful","note":""},{"d":"Day 23","no":4,"s":"Daily exercise is necessary because it can help us stay ____ (health).","h":"health","ans":"healthy","note":""},{"d":"Day 23","no":5,"s":"Peter is looking forward to hearing ____ his pen pal.","h":"","ans":"from","note":""},{"d":"Day 23","no":6,"s":"I happened ____ (meet) a friend of mine when I was shopping in the mall.","h":"meet","ans":"to meet","note":""},{"d":"Day 23","no":7,"s":"Babies lose ____ (热量) much faster than adults.","h":"","ans":"heat","note":""},{"d":"Day 24","no":1,"s":"Tom was playing chess when the rain began to beat ____ (heavy) against the window.","h":"heavy","ans":"heavily","note":"句意：当雨开始重重地打在窗户上时,汤 姆正在下国际象棋。此空修饰动词 beat,应填副词,表示 “重重地”，故填heavily。"},{"d":"Day 24","no":2,"s":"This kind of special noodles tastes so delicious that I can't help ____ (ask) for more.","h":"ask","ans":"asking","note":""},{"d":"Day 24","no":3,"s":"Planting some flowers in your garden is very ____ (help) for attracting bees.","h":"help","ans":"helpful","note":""},{"d":"Day 24","no":4,"s":"Squirrels (松鼠) can jump up to 1.5 meters in ____ (high).","h":"high","ans":"height","note":""},{"d":"Day 24","no":5,"s":"May I speak to Mr. Green? -Hold ____, please.","h":"","ans":"on","note":""},{"d":"Day 24","no":6,"s":"The automatic (自动化的) test of listening and speaking in Ningbo is usually ____ (举行)in March.","h":"","ans":"held","note":"句意：宁波市听说自动化考试通常在三月 举行。hold\"举行”。考试应是“被举行”,所以本句是被 动语态。空前已有 be动词,所以填 hold 的过去分词形式 held。"},{"d":"Day 25","no":1,"s":"It was ____ (honest) of the young reporter to hide the truth from the public.","h":"honest","ans":"dishonest","note":"句意：那位年轻记者对公众隐瞒真相 是不诚实的。根据“hide the truth from the public”可知该 记者这样做是不诚实的。故填dishonest。"},{"d":"Day 25","no":2,"s":"Students love the teachers who are outgoing and ____ (humor).","h":"humor","ans":"humorous","note":""},{"d":"Day 25","no":3,"s":"It sounded like she was ____ a hurry to get somewhere.","h":"","ans":"in","note":""},{"d":"Day 25","no":4,"s":"We depend on the Internet so much that it's hard for us to imagine ____ (live) a life without it.","h":"live","ans":"living","note":""},{"d":"Day 25","no":5,"s":"With a little ____ (imagine), you could turn this place into a palace.","h":"imagine","ans":"imagination","note":""},{"d":"Day 25","no":6,"s":"The project is of great ____ (重要) for all the workers.","h":"","ans":"importance","note":""},{"d":"Day 26","no":1,"s":"There are many things to enjoy about traveling,____ (包括) the natural beauty and delicious local food.","h":"","ans":"including","note":""},{"d":"Day 26","no":2,"s":"Social media has a growing influence ____ how people communicate.","h":"","ans":"on/upon","note":""},{"d":"Day 26","no":3,"s":"Instead of ____ (go) to college, Hemingway became a reporter for The Kansas City Star.","h":"go","ans":"going","note":""},{"d":"Day 26","no":4,"s":"I like traveling because I can meet some ____ (interest) people and things along the way.","h":"interest","ans":"interesting","note":"考查形容词。句意：我喜欢旅行，因 为我可以沿途遇到一些有趣的人和事情。分析句子,设 空处修饰 people and things，作定语，应用形容词，故填 interesting."},{"d":"Day 26","no":5,"s":"Brian was really nervous at the beginning of his last job ____ (面试).","h":"","ans":"interview","note":"句意：Brian在上个工作面试开始时十 分紧张。空处需要填名词作介词of的宾语,结合所给中 文提示可知，填interview。"},{"d":"Day 26","no":6,"s":"Printing is a great ____ (invent) of ancient China.","h":"invent","ans":"invention","note":""},{"d":"Day 26","no":7,"s":"I accepted Tom's____ (invite) to his party.","h":"invite","ans":"invitation","note":""},{"d":"Day 26","no":8,"s":"Tom and Paul like science very much and their dreams are to be great ____ [ In'ventez].","h":"","ans":"inventors","note":"句意：汤姆和保罗非常喜欢科学，他们 的梦想是成为伟大的发明家。根据语境和音标可知填 inventors ."},{"d":"Day 26","no":9,"s":"His BMI reached a normal level after four months of effort. “ My health and willpower(意志力) have shown a big ____ (improve).\"","h":"improve","ans":"improvement","note":""},{"d":"Day 26","no":10,"s":"She started to become more and more interested ____ it.","h":"","ans":"in","note":""},{"d":"Day 26","no":11,"s":"Let's i____ Kate over for dinner tomorrow.","h":"","ans":"invite","note":"句意：我们邀请凯特明天来家里吃晚饭 吧。根据“Kate over for dinner tomorrow”和首字母可知 是邀请凯特来家里吃晚饭。invite sb.over“邀请某人来 家里”;祈使句中动词用原形,故填invite。"},{"d":"Day 27","no":1,"s":"The train j____ from Hangzhou to Shanghai takes about 90 minutes.","h":"","ans":"journey","note":"句意：从杭州到上海的火车行程大约需 要 90 分钟。根据“from Hangzhou to Shanghai takes about 90 minutes”并结合首字母提示可知,此处是指火车的行 程,应用名词 journey。根据谓语动词 takes 为第三人称单 数可知,主语应为单数形式,故填journey。"},{"d":"Day 27","no":2,"s":"How can I improve my pronunciation, Madam? -Keep on ____ (practice) and you'll make progress.","h":"practice","ans":"practicing","note":""},{"d":"Day 27","no":3,"s":"The key to ____ (stay) on our own tracks is to be patient and keep our own passions (热情).","h":"stay","ans":"staying","note":""},{"d":"Day 27","no":4,"s":"After reading Little Women, I felt warmth and ____ (kind) from the family.","h":"kind","ans":"kindness","note":""},{"d":"Day 28","no":1,"s":"As we all know, the Yellow River is known ____ a “ mother river\" of the Chinese nation.","h":"","ans":"as","note":""},{"d":"Day 28","no":2,"s":"Nanjing Baiju is an ancient type of art which has strong local colour and a____ (持久的)value.","h":"","ans":"lasting","note":""},{"d":"Day 28","no":3,"s":"Jack was ____ for school. He explained to his teacher that he didn't catch the bus.","h":"","ans":"late","note":""},{"d":"Day 28","no":5,"s":"They spent time together in the cold wind, learned ____ (work) together and helped each other.","h":"work","ans":"to work","note":"句意：他们在寒风中共度时光,学习合作 并互相帮助。此处考查 learn to do sth.“学习做某事”。 故填towork。"},{"d":"Day 28","no":6,"s":"Our government made some ____ (法律)to care about the left-behind(留守的)kids.","h":"","ans":"laws","note":"句意：我们政府制定了一些法律来关爱留 守儿童。“法律”law,是可数名词，由 some可知此处应用 复数形式，故填laws。"},{"d":"Day 29","no":1,"s":"Well, I ____ (忘了带) the old newspaper on my desk yesterday. It belonged to my grandmother..","h":"","ans":"left","note":""},{"d":"Day 29","no":2,"s":"Most hotels in Suqian can provide a high ____ (水平)of service.","h":"","ans":"level","note":""},{"d":"Day 29","no":3,"s":"On one visit, I carefully entered a dark room to find an elderly man ____ (lie) in bed.","h":"lie","ans":"lying","note":""},{"d":"Day 29","no":4,"s":"They wondered who had taken the paper and hoped nobody would do something ____ (类似)that.","h":"","ans":"like","note":""},{"d":"Day 29","no":5,"s":"If people have a healthy lifestyle, they are more likely ____ (have) satisfying social lives.","h":"have","ans":"to have","note":""},{"d":"Day 30","no":1,"s":"Listening ____ light music can make people feel relaxed.","h":"","ans":"to","note":""},{"d":"Day 30","no":2,"s":"My English teacher always makes her classes ____ (生动的)and interesting.","h":"","ans":"lively","note":""},{"d":"Day 30","no":3,"s":"He promises to reply to me as ____ as he receives my letter.","h":"","ans":"long","note":""},{"d":"Day 30","no":4,"s":"She ____ (看起来) like a completely different person.","h":"","ans":"looks/looked","note":""},{"d":"Day 30","no":5,"s":"My brother is looking t____ the Internet pages for information about how to make zongzi.","h":"","ans":"through","note":""},{"d":"Day 30","no":6,"s":"Being a good ____ (listen) requires patience, respect and an encouraging attitude.","h":"listen","ans":"listener","note":""},{"d":"Day 30","no":7,"s":"Soon we landed at our destination, and we cheered ____ (loud).","h":"loud","ans":"loudly","note":"句意：很快我们就在目的地着陆了，我们 大声欢呼起来。根据空前的动词“cheered”可知，此处应 填副词。故填loudly。"},{"d":"Day 30","no":8,"s":"Linda is a____ (可爱的)girl,honest and caring.","h":"","ans":"lovely","note":""},{"d":"Day 31","no":1,"s":"The old man felt ____ (luck) to be alive after that traffic accident.","h":"luck","ans":"lucky","note":""},{"d":"Day 31","no":2,"s":"Typing can also make it easier for people ____ (correct) mistakes.","h":"correct","ans":"to correct","note":""},{"d":"Day 31","no":3,"s":"He burned your farm down to make you ____ (sell) it.","h":"sell","ans":"sell","note":""},{"d":"Day 31","no":4,"s":"I like to go fishing because it always makes me ____ (feel) comfortable.","h":"feel","ans":"feel","note":""},{"d":"Day 31","no":5,"s":"Many of the stories about Bao Zheng were made ____ some movies, novels, operas and so on.","h":"","ans":"into","note":""},{"d":"Day 31","no":6,"s":"As the host city, Suzhou will manage ____ (make) the 2026 ISF Football World Cup a great success.","h":"make","ans":"to make","note":""},{"d":"Day 31","no":7,"s":"The ____ (manage) asked Lily to wait for him outside because he was having a meeting.","h":"manage","ans":"manager","note":""},{"d":"Day 31","no":8,"s":"They can vote (选举), learn to drive a car, get ____ (marry), join the army...","h":"marry","ans":"married","note":""},{"d":"Day 31","no":9,"s":"It's fun that Russian visitors come to the two morning ____ (市场) in Heihe to have breakfast.","h":"","ans":"markets","note":"句意：有趣的是，俄罗斯游客来到这两 个黑河早市吃早餐。market“市场”可数名词，由“two” 可知,用复数形式。故填markets。"},{"d":"Day 32","no":1,"s":"The conversation we had last night was so ____ (meaning), as it helped us understand each other better.","h":"meaning","ans":"meaningful","note":""},{"d":"Day 32","no":2,"s":"They made up their minds ____ (send) their children to good schools.","h":"send","ans":"to send","note":""},{"d":"Day 32","no":3,"s":"Would you mind ____ (share) your English book with me? I forgot to bring it.","h":"share","ans":"sharing","note":""},{"d":"Day 32","no":4,"s":"It's important to learn from ____ (错误)and become stronger.","h":"","ans":"mistakes","note":"考查名词。句意：从错误中学习并变得 更强大很重要。mistake表示“错误”，是可数名词，此处 表泛指,应该用复数,故填mistakes。"},{"d":"Day 33","no":1,"s":"How often in life do we compare ourselves to others and still keep happy though we know we really can't win? It's____ (nature) to compare sometimes.","h":"nature","ans":"natural","note":"句意：我们在生活中多久与他人比较一 次,并且尽管知道自已不可能赢却仍然保持开心？有时 比较是很正常的。根据固定句式“It's+形容词+to do 词汇册 答案解析 sth.”可知，应将nature变为形容词。故填natural。"},{"d":"Day 33","no":2,"s":"You should do ____ (much) exercise than before, and you'll get stronger.","h":"much","ans":"more","note":""},{"d":"Day 33","no":3,"s":"Huizhou became the ____ (nation) ink-making center in the Ming Dynasty.","h":"nation","ans":"national","note":""},{"d":"Day 33","no":4,"s":"Ann was so ____ (move) that tears filled her eyes.","h":"move","ans":"moved","note":""},{"d":"Day 34","no":1,"s":"I need ____ (prepare) for my presentation by organizing my notes and practicing my speech.","h":"prepare","ans":"to prepare","note":""},{"d":"Day 34","no":2,"s":"We offered to look after our ____ (邻居的)dog when she was away.","h":"","ans":"neighbour's/neighbor's","note":"句意：我们主动提出当邻 居不在的时候,照顾她的狗。“邻居”neighbour/neighbor， “邻居的”说明要用名词所有格,结合 she 可知特指这一 个邻居,用单数形式。故填 neighbour's/neighbor's。"},{"d":"Day 34","no":3,"s":"The classroom is so ____ (noise) that I can hardly hear anything.","h":"noise","ans":"noisy","note":""},{"d":"Day 34","no":4,"s":"What did you do on vacation, Sally? N____. I just stayed at home.","h":"","ans":"Nothing","note":"句意Sally,你假期做了什么？—什 么也没做。我只是待在家里。根据“I just stayed at home.”和首字母提示可知什么也没做，应用不定代词 Nothing. 答案解析 69"},{"d":"Day 35","no":1,"s":"They promised to provide a certain number ____ funds(资金)for every race.","h":"","ans":"of","note":""},{"d":"Day 35","no":2,"s":"The headmaster went to the ____ (open) of the new school.","h":"open","ans":"opening","note":""},{"d":"Day 35","no":3,"s":"The bank is o____ the market. To get there, we just need to cross the street.","h":"","ans":"opposite","note":""},{"d":"Day 35","no":4,"s":"Kate's room is in good o____, and everything is in its proper place.","h":"","ans":"order","note":""},{"d":"Day 35","no":5,"s":"He donated money to support of the local animal protection ____ (organise).","h":"organise","ans":"organisation/organization","note":""},{"d":"Day 36","no":1,"s":"My teacher always offers us help ____ (patient).","h":"patient","ans":"patiently","note":""},{"d":"Day 36","no":2,"s":"Then, to everyone's surprise, he handed the waiter a million-pound cheque to pay ____ the bill.","h":"","ans":"for","note":""},{"d":"Day 36","no":3,"s":"Have you ever cut your finger on the edge(边缘) of a book page? The small cut on the finger can be very ____ (pain).","h":"pain","ans":"painful","note":""},{"d":"Day 37","no":1,"s":"Although that ____ (perform) of the club was over, I still stayed in the folk music club and learned to play the guzheng.","h":"perform","ans":"performance","note":"句意：虽然俱乐部的那场表演结束 了,但我仍然留在民乐俱乐部学习弹奏古筝。空处被of the club 修饰，作从句主语，因此需要用名词。故填 performance。"},{"d":"Day 37","no":2,"s":"Harvard students could share their ____ (person) information there.","h":"person","ans":"personal","note":"句意：哈佛大学的学生可以在那里分 享他们的个人信息。此处修饰名词应用形容词,表示“个 人的”。故填personal。"},{"d":"Day 37","no":3,"s":"Be careful when you take ____ (photo) on rainy days. Don't get your camera wet!","h":"photo","ans":"photos","note":""},{"d":"Day 37","no":4,"s":"Exercise is a key part of staying healthy and good for both ____ (身体的)and mental health.","h":"","ans":"physical","note":""},{"d":"Day 37","no":5,"s":"It is a pity ____ (waste) so much food.","h":"waste","ans":"to waste","note":""},{"d":"Day 37","no":6,"s":"She had pity ____ him and gave him some food to eat.","h":"","ans":"on","note":""},{"d":"Day 38","no":1,"s":"This weekend, Sam plans ____ (visit) the art museum with his parents.","h":"visit","ans":"to visit","note":""},{"d":"Day 38","no":2,"s":"\" Didn't your mother teach you not to play ____ knives?\" Mr. Apple Tree said.","h":"","ans":"with","note":""},{"d":"Day 38","no":3,"s":"Many of her friends are pleased ____ the day's lunch selections: pizza, French fries and hot dogs.","h":"","ans":"with","note":""},{"d":"Day 38","no":4,"s":"Reading brings me both ____ (please) and knowledge.","h":"please","ans":"pleasure","note":""},{"d":"Day 38","no":5,"s":"There was still plenty ____ time to take Jill out for pizza.","h":"","ans":"of","note":""},{"d":"Day 38","no":6,"s":"In tea, we find peace, art, and ____ (polite). It has played an important role in Chinese culture.","h":"polite","ans":"politeness","note":""},{"d":"Day 39","no":1,"s":"We need to try our best to stop noise ____ (pollute).","h":"pollute","ans":"pollution","note":"句意：我们需要尽我们的最大努力阻止 噪声污染。此处指“噪声污染”,应用 noise pollution。故 填 pollution。"},{"d":"Day 39","no":3,"s":"The school is making ____ (prepare) for the opening ceremony of the new term.","h":"prepare","ans":"preparations","note":""},{"d":"Day 39","no":4,"s":"Holly prefers playing the piano to ____ (play) the violin. Listen! She is playing the piano in her room.","h":"play","ans":"playing","note":""},{"d":"Day 39","no":5,"s":"In the past, when I felt upset, I____ (prefer) to keep my feelings to myself.","h":"prefer","ans":"preferred","note":""},{"d":"Day 39","no":6,"s":"Mum, the leather boots look beautiful. -Yes,but the p____ is too high. Let's have a look at a cheaper pair.","h":"","ans":"price","note":"句意：——妈妈,这双皮靴看起来很漂 亮。一一是的,但是价格太高了。我们看一双便宜点的 吧。根据“Let's have a look at a cheaper pair.”和首字母提 示可知,此处表示价格太高,结合is 可知,主语用单数,故 填 price。"},{"d":"Day 40","no":1,"s":"My father promises ____ (buy) me a model car if I pass the exam.","h":"buy","ans":"to buy","note":""},{"d":"Day 40","no":2,"s":"-How do you improve your English ____ (pronounce)? By listening to a tape and repeating out loud.","h":"pronounce","ans":"pronunciation","note":""},{"d":"Day 40","no":3,"s":"This website may ____ (提供) you with more useful information.","h":"","ans":"provide","note":""},{"d":"Day 40","no":4,"s":"It's good manners to dress ____ (proper) for different situations.","h":"proper","ans":"properly","note":""},{"d":"Day 40","no":5,"s":"An armadillo(犹滁) has a hard cover that can protect it ____ other dangerous animals.","h":"","ans":"from","note":""},{"d":"Day 40","no":6,"s":"Anyway, I'm really proud ____ you.","h":"","ans":"of","note":""},{"d":"Day 40","no":7,"s":"Lanterns have become the national ____ (proud) in China.","h":"proud","ans":"pride","note":""},{"d":"Day 40","no":8,"s":"What problems do you have ____ (order) dishes in China? -I can't read the Chinese on the menus.","h":"order","ans":"ordering","note":"句意一—你在中国点菜时有什么问题 吗？— 一我看不懂莱单上的中文。order“点（酒、菜 等）”;固定搭配:have problems doing sth.“做某事有困 难”。故填ordering。"},{"d":"Day 41","no":1,"s":"People shouldn't____ (逼迫) their kids so hard. Too much pressure is not good for a child's development.","h":"","ans":"push","note":""},{"d":"Day 41","no":2,"s":"How many times have we put ____ our dreams until tomorrow? I'd say, too many. Our dreams should not, and cannot wait.","h":"","ans":"off","note":""},{"d":"Day 41","no":3,"s":"China's BeiDou Navigation Satellite System has developed ____ (quick) and it plays an important role in many fields.","h":"quick","ans":"quickly","note":"考查副词。句意：中国的北斗卫星导航 系统发展迅速,在许多领域都发挥着重要的作用。设空 处修饰谓语 has developed,应用副词形式。故填 quickly。"},{"d":"Day 41","no":4,"s":"They are selling used books to ____ (筹集) money for the club.","h":"","ans":"raise","note":""},{"d":"Day 41","no":5,"s":"After two years, I was ready ____ (get) Larry back.","h":"get","ans":"to get","note":"句意:两年后,我准备好要把Larry 带回来 了。根据“Iwas ready”可知,此处为固定搭配be ready to do sth.“准备好做某事”,空处应填动词不定式。故填 to get. 70 5年中考3年模拟 中考英语"},{"d":"Day 41","no":6,"s":"Robert held the telephone ____ (quiet) with eyes full of tears.","h":"quiet","ans":"quietly","note":"句意:Robert 安静地拿着电话,眼里充满 了泪水。空处修饰动词 held,需要填副词。故填quietly。"},{"d":"Day 42","no":2,"s":"What is the old man doing? He is collecting empty bottles and waste paper for ____ (recycle).","h":"recycle","ans":"recycling","note":""},{"d":"Day 42","no":3,"s":"Finally, he r____ our invitation to the party because he had to prepare for an important interview.","h":"","ans":"refused","note":""},{"d":"Day 42","no":4,"s":"The film is so exciting that we all don't regret ____ (see) it.","h":"see","ans":"seeing","note":""},{"d":"Day 42","no":5,"s":"That was great! I felt ____ (relax) at once.","h":"relax","ans":"relaxed","note":""},{"d":"Day 42","no":6,"s":"Qipao became popular in the 1920s and ____ (依然是) as the national-style dress.","h":"","ans":"remained","note":""},{"d":"Day 42","no":7,"s":"The lovely rabbits on these stamps remind me ____ my sweet childhood.","h":"","ans":"of","note":""},{"d":"Day 42","no":8,"s":"Please send me a____ (答复)as soon as possible.","h":"","ans":"reply/response","note":""},{"d":"Day 43","no":1,"s":"The teacher requires students ____ (arrive) on time for class.","h":"arrive","ans":"to arrive","note":""},{"d":"Day 43","no":2,"s":"A true friend is someone who walks in when the rest ____ the world walks out.","h":"","ans":"of","note":""},{"d":"Day 43","no":3,"s":"The lake area is ____ ((丰富) in wildlife and draws lots of people.","h":"","ans":"rich","note":"考查形容词。句意：这片湖区野生动物丰 富,吸引了很多人。根据汉语提示可知,这里填 rich。"},{"d":"Day 43","no":4,"s":"I don't think they will risk ____ (hold) an election.","h":"hold","ans":"holding","note":""},{"d":"Day 43","no":5,"s":"Although not included in zhongkao, BMI in cities like Xiamen still plays a r____ in regular PE tests.","h":"","ans":"role","note":""},{"d":"Day 44","no":1,"s":"Follow these tips, and you can enjoy your summer ____ (安全地).","h":"","ans":"safely","note":"句意：遵循这些提示,你便可以安全地享 受你的夏天。设空处修饰动词enjoy,应使用副词。safely “安全地”。故填safely。"},{"d":"Day 44","no":2,"s":"I am ____ (satisfy) with the result of my exam because I have studied hard.","h":"satisfy","ans":"satisfied","note":""},{"d":"Day 44","no":3,"s":"It is ____ (say) that the Chinese character “ cha\" for tea was finally decided by Lu Yu.","h":"say","ans":"said","note":""},{"d":"Day 44","no":4,"s":"Losing weight requires a____ (science) plan.","h":"science","ans":"scientific","note":"句意：减肥需要一个科学的计划。空 处位于冠词a后面,名词前面,应填形容词修饰 plan。故 填 scientific。"},{"d":"Day 44","no":5,"s":"This rule is designed for students' health and ____ (safe).","h":"safe","ans":"safety","note":""},{"d":"Day 45","no":1,"s":"I have a poor s____ of direction, so I easily get lost in big cities.","h":"","ans":"sense","note":""},{"d":"Day 45","no":2,"s":"Sam didn't seem ____ (be) happy just now. But I don't know why.","h":"be","ans":"to be","note":""},{"d":"Day 45","no":3,"s":"Teachers ask students to take gardening ____ (serious).","h":"serious","ans":"seriously","note":"句意：老师要求学生们认真对待园艺。 take sth.seriously认真对待某事”。故填 seriously。"},{"d":"Day 45","no":4,"s":"It's my pleasure to offer you good ____ (serve), sir.","h":"serve","ans":"service","note":""},{"d":"Day 45","no":5,"s":"Spring is my favorite s____ because different kinds of flowers come out.","h":"","ans":"season","note":"句意：春天是我最喜欢的季节,因为各种 各样的花开放。根据“Spring is my favorite”可知此处说 的是季节,且只是春天这一个季节,故填 season。"},{"d":"Day 45","no":6,"s":"He has ____ (很少) seen a child with so much talent.","h":"","ans":"seldom","note":"句意:他很少看到一个孩子有这么高的 天赋。该空在构成谓语的 has 和 seen 之间,应用副词,结 合中文提示可知填seldom。"},{"d":"Day 45","no":7,"s":"Drawing is her hobby and she's____ (认真的)about it.","h":"","ans":"serious","note":"句意:绘画是她的爱好,而且她对此很认 真。根据中文提示可知,该空填 serious。"},{"d":"Day 46","no":1,"s":"The tour guide showed us ____ the museum and explained the exhibits.","h":"","ans":"around","note":""},{"d":"Day 46","no":2,"s":"I expected him to show ____ at the party, but he never came.","h":"","ans":"up","note":""},{"d":"Day 46","no":3,"s":"Sally is my best friend, and she often sits beside me ____ (silent) when I am sad.","h":"silent","ans":"silently","note":""},{"d":"Day 46","no":4,"s":"\"Has anyone seen my notebook?\" she asked. Meg and Beth said “No\", but Amy was in ____ (silent).","h":"silent","ans":"silence","note":""},{"d":"Day 46","no":5,"s":"Some people don't like this fruit ____ (simple) because of the smell.","h":"simple","ans":"simply","note":"句意：有些人不喜欢这种水果仅仅是因 为它的味道。分析句子结构可知，空处作状语修饰 because of the smell,需填 simple 的副词形式。故填 simply 。"},{"d":"Day 47","no":1,"s":"It is reported that more and more people have trouble falling ____ (sleep) at night.","h":"sleep","ans":"asleep","note":"句意：据报道,越来越多的人晚上入睡有 困难。fall asleep“人睡”。故填 asleep。"},{"d":"Day 47","no":2,"s":"Although I didn't like it at that time, I____ (slow) understood Mom's words.","h":"slow","ans":"slowly","note":"句意：虽然当时我不喜欢它,但是我慢慢 地理解了妈妈的话。空处应用副词修饰谓语动词 “understood”,slow的副词形式为slowly“慢慢地”。故填 slowly 。"},{"d":"Day 47","no":3,"s":"The performance was so excellent ____ all the audience stood up and clapped.","h":"","ans":"that","note":""},{"d":"Day 47","no":4,"s":"It helps ____ (解决) the problems of farm waste and food shortages(短缺).","h":"","ans":"(to)solve","note":"help（sb.）（to）do sth.为固定用法。"},{"d":"Day 48","no":1,"s":"Millie is interested in biology and she ____ (有时) records the actions of some insects in the park.","h":"","ans":"sometimes","note":""},{"d":"Day 48","no":2,"s":"As teenagers, we'd better develop one or more hobbies in our s____ time.","h":"","ans":"spare","note":""},{"d":"Day 48","no":3,"s":"Lu Ban spent the whole night in ____ (build) ten pavilions(亭) around the lake.","h":"build","ans":"building","note":"句意:鲁班花了一整夜的时间在湖边建 了十个亭子。spend time（in）doing sth.“花费时间做某 事”,故填building。"},{"d":"Day 48","no":4,"s":"I like to spend time ____ my parents on Saturdays and Sundays.","h":"","ans":"with","note":""},{"d":"Day 48","no":5,"s":"I thought I should spend my time ____ schoolwork to get good grades.","h":"","ans":"on","note":""},{"d":"Day 49","no":1,"s":"As a student, you must stay ____ from smoking and drinking.","h":"","ans":"away","note":""},{"d":"Day 49","no":2,"s":"The thief ____ (steal) her mobile phone quietly and ran away quickly.","h":"steal","ans":"stole","note":""},{"d":"Day 49","no":3,"s":"It was such an interesting novel that I couldn't stop ____ (read) it again and again.","h":"read","ans":"reading","note":"句意:这是一本如此有趣的小说,我忍不 住看了一遍又一遍。could 是 can 的过去式; can't stop doing sth.意为“忍不住做某事”。故填reading。"},{"d":"Day 49","no":4,"s":"I don't know the ____ (strange). Can you tell me who he is?","h":"strange","ans":"stranger","note":""},{"d":"Day 49","no":5,"s":"You should be strict ____ yourself, or you'll fall behind.","h":"","ans":"with","note":""},{"d":"Day 50","no":1,"s":"If you want to be a____ (success) learner, you must learn independently.","h":"success","ans":"successful","note":""},{"d":"Day 50","no":2,"s":"They also did housework such as ____ (make) the bed and cooking meals.","h":"make","ans":"making","note":""},{"d":"Day 50","no":3,"s":"It rained all of a s____ yesterday, but luckily I didn't get wet.","h":"","ans":"sudden","note":"句意：昨天突然下雨了，但幸运的是我没 有被淋湿。根据all of a和首字母提示的s可知,此处是 固定搭配all of a sudden“突然”。故填sudden。"},{"d":"Day 50","no":4,"s":"The article gives students some ____ (suggest) about how to stay safe online.","h":"suggest","ans":"suggestions","note":""},{"d":"Day 50","no":5,"s":"Students are not supposed ____ (play) football in the classroom.","h":"play","ans":"to play","note":""},{"d":"Day 50","no":6,"s":"After Tom received the biscuits, the coach suggested ____ (share) them with the strong boy.","h":"share","ans":"sharing","note":""},{"d":"Day 50","no":7,"s":"I believe if we continue to work together, we are sure ____ (win).","h":"win","ans":"to win","note":""},{"d":"Day 50","no":8,"s":"____ my surprise, the restaurant is actually very nice.","h":"","ans":"To","note":""},{"d":"Day 51","no":1,"s":"It takes me about twenty minutes ____ (walk) to the subway station.","h":"walk","ans":"to walk","note":""},{"d":"Day 51","no":2,"s":"He traveled everywhere to look for herbs (药草) and do research. And he talked ____ farmers, doctors and patients.","h":"","ans":"with/to","note":""},{"d":"Day 51","no":3,"s":"New ____ (技术) have greatly changed our lives.","h":"","ans":"technologies","note":"考查名词。根据空后的 have 可知， 此处用technology的复数形式。"},{"d":"Day 51","no":4,"s":"Always remember that planning things carefully ahead is better than ____ (regret) later.","h":"regret","ans":"regretting","note":"句意：永远记住,事先认真计划比事后 后悔好。regret 后悔。than 是介词,故该空应用动词的 -ing形式。故填regretting。"},{"d":"Day 52","no":1,"s":"____ (thank) to the help of the government, farmers in China are living a happier and richer life. bringing it back to me!\"","h":"thank","ans":"Thanks","note":""},{"d":"Day 52","no":3,"s":"Some of ____ (they) are now traveling in a show all over the world.","h":"they","ans":"them","note":"句意：他们中的一些人现在正在世界各地 巡回演出。空处位于 of 后面作宾语,应使用代词 they 的 宾格形式。故填them。"},{"d":"Day 52","no":4,"s":"We must study hard to get into a good high school. Exactly! Happiness is achieved t____ hard work.","h":"","ans":"through","note":"句意：一—我们必须努力学习进人一所 好高中。一—确实！幸福是通过努力学习实现的。本题"},{"d":"Day 52","no":5,"s":"In China, people usually tidy ____ their houses to sweep away bad luck before the Spring Festival.","h":"","ans":"up","note":""},{"d":"Day 52","no":6,"s":"I'm really ____ (thank) to my parents. With their help, I have been very active.","h":"thank","ans":"thankful","note":""},{"d":"Day 52","no":7,"s":"I want to be a writer. I love using words to express my ____ (think) and feelings.","h":"think","ans":"thoughts","note":""},{"d":"Day 52","no":8,"s":"A boy in my class was mean to Leo. He ____ (throw) Leo's notebook onto the ground.","h":"throw","ans":"threw","note":""},{"d":"Day 53","no":1,"s":"The work is very ____ (累人的),but nobody complains about it.","h":"","ans":"tiring","note":"考查形容词。空处在 be 动词后作表语,修 饰 The work。"},{"d":"Day 53","no":2,"s":"For further information on ____ (明天) weather conditions, call the hotline below.","h":"","ans":"tomorrow's","note":"考查名词所有格。句意:如需进一步 了解有关明天的天气情况的信息，请拨打以下热线电话。 此处表示“明天的天气情况”,tomorrow要用名词所有格 形式。"},{"d":"Day 53","no":3,"s":"The bookstore is a place where book lovers get t____ and share ideas or experiences.","h":"","ans":"together","note":""},{"d":"Day 53","no":4,"s":"He was too proud ____ (ask) his parents for help and support.","h":"ask","ans":"to ask","note":""},{"d":"Day 53","no":5,"s":"Some people think that we are spending ____ (太多) time online. which can be really bad for our health.","h":"","ans":"too much","note":""},{"d":"Day 53","no":6,"s":"When we arrived at the top ____ the mountain, we saw the most beautiful sunrise.","h":"","ans":"of","note":""},{"d":"Day 53","no":7,"s":"The t____ (总的) cost of the new bags will be 267 yuan.","h":"","ans":"total","note":""},{"d":"Day 53","no":8,"s":"I was ____ (touch) by all the lively characters in the story.","h":"touch","ans":"touched","note":""},{"d":"Day 53","no":9,"s":"Dad advised visiting my grandparents three ____ (time) a week as their house is near ours.","h":"time","ans":"times","note":""},{"d":"Day 54","no":1,"s":"Every year, Yangzhou offers a magical and special experience for its ____ (tour).","h":"tour","ans":"tourists","note":"考查名词。句意：扬州每年为游客们提 供一次神奇而特别的体验。此空位于形容词性物主代词 之后,所以要用名词形式tourist;又因为游客不止一人,故 用其复数形式。"},{"d":"Day 54","no":2,"s":"I was deeply attracted by ____ (tradition) Chinese culture.","h":"tradition","ans":"traditional","note":""},{"d":"Day 54","no":3,"s":"The animals in the early zoos were not ____ (对待)well.","h":"","ans":"treated","note":""},{"d":"Day 54","no":4,"s":"I have trouble ____ (learn) English. Could you help me?","h":"learn","ans":"learning","note":""},{"d":"Day 54","no":5,"s":"I won't let you go unless you tell the ____ (true).","h":"true","ans":"truth","note":""},{"d":"Day 54","no":6,"s":"Although they are sometimes shy, they have a strong mind and will try their best ____ (make) their dreams come true.","h":"make","ans":"to make","note":"句意：虽然他们有时会害羞,但他们有 坚强的意志,并会尽最大努力使他们的梦想成真。固定 搭配:try one's best to do sth.“尽某人最大努力做某事”, 所以此处应为动词不定式。故填 to make。"},{"d":"Day 55","no":2,"s":"I used ____ (eat) a lot of French fries. For my health, I don't eat them now.","h":"eat","ans":"to eat","note":""},{"d":"Day 55","no":3,"s":"The wind can be used ____ (produce) electricity.","h":"produce","ans":"to produce","note":""},{"d":"Day 55","no":4,"s":"The teacher is used to ____ (divide) us into two groups to play the games.","h":"divide","ans":"dividing","note":""},{"d":"Day 55","no":5,"s":"I won't tell you my plan ____ (除非) you tell me yours.","h":"","ans":"unless","note":""},{"d":"Day 55","no":6,"s":"It's raining too hard outside. We won't leave ____ the rain stops.","h":"","ans":"until","note":""},{"d":"Day 55","no":7,"s":"People ____ (usual) become friends because they have something in common.","h":"usual","ans":"usually","note":""},{"d":"Day 55","no":8,"s":"Jim has gone to bed. This is very ____ (usual). He always stays up late.","h":"usual","ans":"unusual","note":"考查形容词。根据句意可知,Jim总是 熬夜,而今天已经去睡觉了,这很不寻常。usual 应加上 否定前缀 un-。"},{"d":"Day 56","no":1,"s":"The stone you found the other day in the park seemed ____ (value). It looks like real gold to me.","h":"value","ans":"valuable","note":"句意：你几天前在公园里发现的那块石 头似乎很值钱。在我看来它像是真金。seem 是系动词, 后接形容词作表语。故填valuable。"},{"d":"Day 56","no":2,"s":"The festival attracts a large number of ____ (visit) from all over the world.","h":"visit","ans":"visitors","note":"句意：这个节日吸引了来自世界各地的大 量游客。a large number of 后接名词复数。故填visitors。"},{"d":"Day 56","no":3,"s":"The bus was so crowded that they had to ____ (等待)the next one.","h":"","ans":"wait for","note":"考查动词短语。句意：这辆公共汽车如 此拥挤,以至于他们不得不等下一辆。wait for“等待”， had to后跟动词原形。故填wait for。 答案解析 71"},{"d":"Day 57","no":1,"s":"The Changjiang Delta is a very ____ (wealth) area in China.","h":"wealth","ans":"wealthy","note":"句意:长江三角洲是中国一个非常富裕 的地区。此空应用形容词作定语修饰名词“area”, wealthy“富有的”是形容词。故填wealthy。"},{"d":"Day 57","no":2,"s":"I want to know ____ the weather will be like in Beijing tomorrow.","h":"","ans":"what","note":""},{"d":"Day 57","no":3,"s":"In ancient China, there were no weekends because people did not use a____ (week) calendar.","h":"week","ans":"weekly","note":"句意在中国古代没有周末,因为人们不 使用周历。空前是冠词,空后是名词,故该空作定语修饰 calendar，weekly表示“每周的”符合语境。故填weekly。"},{"d":"Day 57","no":4,"s":"Do you know the story of Cao Chong ____ /weiz/ the Elephant?","h":"","ans":"Weighs","note":""},{"d":"Day 57","no":5,"s":"So what's the best way ____ (win) a game of “Rock-Paper-Scissors\"?","h":"win","ans":"to win","note":""},{"d":"Day 57","no":6,"s":"The brain makes up 2% of our body ____ (weigh) but uses about a fifth of the energy we get from food.","h":"weigh","ans":"weight","note":""},{"d":"Day 58","no":1,"s":"____ (不管) it's summer or winter, it is a good place to take a holiday.","h":"","ans":"Whether","note":""},{"d":"Day 58","no":2,"s":"As we all know, the new kind of car is ____ (wide) accepted around the world.","h":"wide","ans":"widely","note":""},{"d":"Day 58","no":3,"s":"I'll never forget her words-be a true ____ (win) in your own heart.","h":"win","ans":"winner","note":"句意：我将永远不会忘记她的话一一成 为自己心中真正的赢家。这句话鼓励了我很多次。空前"}]};
+
+/* ================= 工具 ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function ymd(d){const p=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())}
+const today=()=>ymd(new Date());
+const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const norm=s=>(s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.,!?;:'"“”‘’]/g,'');
+let toastT=null;
+function toast(m){const o=document.querySelector('.toast');if(o)o.remove();
+  const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);
+  clearTimeout(toastT);toastT=setTimeout(()=>d.remove(),1800);}
+function shuffle(a){const r=[...a];for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]]}return r}
+function fmtSec(s){const m=Math.floor(s/60),x=s%60;return m?m+'分'+(x?x+'秒':''):x+'秒'}
+function fmtMin(sec){const m=Math.round((sec||0)/60);
+  if(!sec)return '0 分钟';if(m<1)return '不到 1 分钟';if(m<60)return m+' 分钟';return Math.floor(m/60)+' 小时 '+(m%60)+' 分钟'}
+
+/* ================= 存储 ================= */
+const KEY='zk_vocab_v3';
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{"users":{},"cur":null}')}catch(e){return {users:{},cur:null}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(DB))}
+let DB=load();
+let CUR=()=>DB.cur&&DB.users[DB.cur]?DB.users[DB.cur]:null;
+function blankUser(name){return {name:name||'同学',records:{},srs:{},wrong:[],sessions:[],games:{},stats:{days:{},total:0,right:0,streak:0,last:''}}}
+function ensureUser(){if(!CUR()){const n='同学';if(!DB.users[n])DB.users[n]=blankUser(n);DB.cur=n;save();}return CUR()}
+function progress(){const u=ensureUser();
+  if(!u.records)u.records={};if(!u.srs)u.srs={};if(!u.wrong)u.wrong=[];
+  if(!u.sessions)u.sessions=[];if(!u.games)u.games={};
+  if(!u.stats)u.stats={days:{},total:0,right:0,streak:0,last:''};
+  return u;}
+
+/* ================= 朗读（进入即读：手势解锁 + token 重试，不能用 cancel 互相打断） ================= */
+let voiceCache=null,audioUnlocked=false,speechToken=0;
+function pickVoice(){
+  if(voiceCache)return voiceCache;
+  const vs=window.speechSynthesis?speechSynthesis.getVoices():[];
+  if(!vs.length)return null;
+  const en=vs.filter(v=>/^en/i.test(v.lang));
+  const us=en.filter(v=>/^en[-_]US/i.test(v.lang));
+  // 联网音色（名字带 Google、localService=false）起麦慢且断网就哑，优先本地音色
+  const score=v=>{
+    let s=0;
+    if(v.localService!==false)s+=10; else s-=4;
+    if(/Online/i.test(v.name))s-=8;            // 联网音色（Edge 的 "Online (Natural)"）要联网合成，起麦慢
+    if(/Natural|Aria|Jenny|Zira|Samantha|David|Mark/i.test(v.name))s+=2;
+    if(/Google/i.test(v.name))s-=10;
+    return s;
+  };
+  const pool=us.length?us.slice():en.slice();
+  pool.sort((a,b)=>score(b)-score(a));
+  voiceCache=pool[0]||null;
+  return voiceCache;
+}
+function unlockAudio(){
+  if(audioUnlocked||!window.speechSynthesis)return;
+  audioUnlocked=true;
+  try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;u.lang='en-US';speechSynthesis.speak(u);}catch(e){}
+}
+['touchstart','click','keydown'].forEach(t=>document.addEventListener(t,unlockAudio,{once:true}));
+if(window.speechSynthesis)speechSynthesis.onvoiceschanged=()=>{voiceCache=null};
+
+function speakOnce(text,rate){
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US';u.rate=rate||0.85;u.pitch=1;u.volume=1;
+  const v=pickVoice();if(v)u.voice=v;
+  speechSynthesis.speak(u);
+  return u;
+}
+/* token 机制：新的朗读请求才取消旧的；播放失败在内部重试，不叠加 setTimeout 抢麦 */
+function speak(text,opt){
+  opt=opt||{};
+  if(playLocal(text))return null;
+  if(!window.speechSynthesis||!text)return null;
+  const token=++speechToken;
+  try{
+    // 空闲时不 cancel：cancel→speak 会让引擎重新起麦，多出几百毫秒
+    if(speechSynthesis.speaking||speechSynthesis.pending)speechSynthesis.cancel();
+    if(speechSynthesis.paused&&speechSynthesis.resume)speechSynthesis.resume();
+    let started=false;
+    const u=speakOnce(text,opt.rate);
+    u.onstart=()=>{started=true;if(token===speechToken)window.__speechOK=true;};
+    // 只兜一次底：1.5 秒还没开口、且引擎确实空闲，才补播一次（不再 cancel 抢麦）
+    if(opt.retry!==false)setTimeout(()=>{
+      if(token!==speechToken||started||speechSynthesis.speaking||speechSynthesis.pending)return;
+      try{speakOnce(text,opt.rate).onstart=()=>{started=true}}catch(e){}
+    },1500);
+    return u;
+  }catch(e){return null}
+}
+
+/* ---- 离线单词语音包：与 HTML 同级的 audio/<slug>.mp3 ---- */
+function slugOf(t){return String(t||'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'')}
+const audioPool={};
+let localAudioOK=null;
+function localSrc(t){return 'audio/'+slugOf(t)+'.mp3'}
+function preloadLocal(t){
+  const s=slugOf(t);if(!s||localAudioOK===false||!window.Audio)return null;
+  let a=audioPool[s];
+  if(!a||a==='bad'){a=new Audio();a.preload='auto';a.src=localSrc(t);audioPool[s]=a;}
+  return a;
+}
+function playLocal(t){
+  if(localAudioOK===false||!window.Audio)return false;
+  // 只处理单词/短语；整句（带标点、较长）仍交给合成语音
+  if(!t||t.length>48||/[.?!;]/.test(t))return false;
+  const s=slugOf(t);if(!s)return false;
+  const a=preloadLocal(t);if(!a)return false;
+  try{
+    if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel();
+    a.currentTime=0;
+    const p=a.play();
+    if(p&&p.catch)p.catch(()=>{audioPool[s]='bad';});
+    a.onerror=()=>{audioPool[s]='bad'};
+    return true;
+  }catch(e){return false}
+}
+function probeLocalAudio(){
+  if(localAudioOK!==null)return;
+  try{
+    const first=(window.DATA&&DATA.days&&DATA.days[0]&&DATA.days[0].words[0]&&DATA.days[0].words[0].en)||'a';
+    const a=new Audio();a.preload='auto';a.src=localSrc(first);
+    a.addEventListener('canplaythrough',()=>{localAudioOK=true},{once:true});
+    a.addEventListener('error',()=>{localAudioOK=false},{once:true});
+    a.load();
+    setTimeout(()=>{if(localAudioOK===null)localAudioOK=false},1600);
+  }catch(e){localAudioOK=false}
+}
+
+/* 用户主动点按钮时用：空闲就直接播，不 cancel 不排队，尽量零延迟 */
+let lastUtter={text:'',at:0};
+function speakNow(text,rate){
+  if(playLocal(text))return null;
+  if(!window.speechSynthesis||!text)return null;
+  // 同一个词正在读就别打断重来（TTS 每次起麦都有延迟）
+  if(speechSynthesis.speaking&&lastUtter.text===text&&Date.now()-lastUtter.at<3000)return null;
+  lastUtter={text,at:Date.now()};
+  const token=++speechToken;
+  try{
+    // 只有正在播/排队时才打断；空闲时 cancel() 会让引擎重新起麦，反而慢
+    if(speechSynthesis.speaking||speechSynthesis.pending)speechSynthesis.cancel();
+    if(speechSynthesis.paused&&speechSynthesis.resume)speechSynthesis.resume();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='en-US';u.rate=rate||0.9;u.pitch=1;u.volume=1;
+    const v=pickVoice();if(v)u.voice=v;
+    lastUtter={text,at:Date.now()};
+    speechSynthesis.speak(u);
+    return u;
+  }catch(e){return null}
+}
+
+/* 同一个词 1.2 秒内不重复朗读（预读 + 进题不会叠在一起），force 可强制 */
+let lastSpoken={w:'',t:0};
+function speakWord(word,force){
+  if(!word)return;
+  const now=Date.now();
+  if(!force&&lastSpoken.w===word&&now-lastSpoken.t<1200)return;
+  lastSpoken={w:word,t:now};
+  speak(word,{retry:true});
+}
+
+/* ================= 页面 ================= */
+function go(id){hideVK();$$('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'auto'});renderTop();}
+function renderTop(){const tb=document.querySelector('.topbar');if(tb)tb.style.display='flex';
+  const u=CUR();const n=(u&&u.name)||'同学';$('#avatar').textContent=n.slice(0,1).toUpperCase();$('#uname').textContent=u?n:'未选择用户'}
+function closeModal(id){$('#'+id).classList.remove('show')}
+function askConfirm(msg,cb){$('#confirmMsg').textContent=msg;$('#confirmYes').onclick=()=>{closeModal('confirmModal');cb&&cb()};$('#confirmModal').classList.add('show')}
+
+/* ================= 数据访问 ================= */
+function allWords(){let a=[];DATA.days.forEach(d=>d.words.forEach(w=>a.push(w)));return a}
+function findWord(en){return allWords().find(w=>w.en===en)}
+function dayWords(day){const d=DATA.days.find(x=>x.day===day);return d?d.words:[]}
+
+/* ================= 间隔重复（艾宾浩斯） ================= */
+const BOX_DAYS=[0,1,2,4,7,15,30,60];
+const BOX_LABEL=['当天','+1 天','+2 天','+4 天','+7 天','+15 天','+30 天','+60 天'];
+function srsOf(w){const p=progress();return p.srs[w.en]||null}
+function gradeWord(w,ok){
+  const p=progress();const k=w.en;
+  const cur=p.srs[k]||{box:0,due:today(),seen:0,right:0,wrong:0};
+  cur.seen++;
+  if(ok){cur.right++;cur.box=Math.min(7,(cur.box||0)+1)}else{cur.wrong++;cur.box=0}
+  const d=new Date();d.setDate(d.getDate()+BOX_DAYS[cur.box]);
+  cur.due=ymd(d);cur.last=today();p.srs[k]=cur;
+  const r=p.records[k]||{right:0,wrong:0,last:''};
+  if(ok)r.right++;else r.wrong++;
+  r.last=today();p.records[k]=r;
+  p.stats.total++;if(ok)p.stats.right++;
+  const day=p.stats.days[today()]||{n:0,r:0,sec:0};day.n++;if(ok)day.r++;p.stats.days[today()]=day;
+  const t=today();
+  if(p.stats.last!==t){const y=new Date();y.setDate(y.getDate()-1);
+    p.stats.streak=(p.stats.last===ymd(y))?(p.stats.streak||0)+1:1;p.stats.last=t}
+  save();
+}
+function dueList(){const t=today(),p=progress(),out=[];allWords().forEach(w=>{const s=p.srs[w.en];if(s&&s.due<=t)out.push(w)});return out}
+function dueByDate(){ // 未来 60 天的复习计划
+  const p=progress(),map={};
+  allWords().forEach(w=>{const s=p.srs[w.en];if(!s)return;
+    (map[s.due]=map[s.due]||[]).push(w)});
+  return map;
+}
+function streakDays(p){let n=0;const d=new Date();
+  for(;;){const k=ymd(d);if(p.stats.days[k]&&p.stats.days[k].n>0){n++;d.setDate(d.getDate()-1)}else break;if(n>500)break}
+  return n}
+function studyDays(p){return Object.keys(p.stats.days).filter(k=>p.stats.days[k].n>0).length}
+function masteredCount(){const p=progress();return Object.values(p.srs).filter(s=>s.box>=4).length}
+function todayStat(p){return (p.stats.days[today()]||{n:0,r:0,sec:0})}
+function addWrong(rec){const p=progress();p.wrong.unshift(Object.assign({id:Date.now()+'-'+Math.random().toString(36).slice(2,7),date:today()},rec));
+  if(p.wrong.length>800)p.wrong.length=800;save()}
+
+/* ================= 首页 ================= */
+function renderHome(){
+  const p=progress(),due=dueList().length,ts=todayStat(p);
+  const acc=p.stats.total?Math.round(p.stats.right/p.stats.total*1000)/10:0;
+  const wrongN=Object.keys(p.records).filter(k=>p.records[k].wrong>0).length;
+  $('#home').innerHTML=`
+    <h1>60天搞定中考词汇</h1>
+    <p class="sub">${esc(p.name)} · ${esc(DATA.title||'中考英语复习词汇')} · ${DATA.days.length} 个 Day · ${allWords().length} 词</p>
+    <div class="statrow">
+      <div class="statbox"><b>${ts.n}</b><span>今日题数</span></div>
+      <div class="statbox"><b>${p.stats.total?acc+'%':'—'}</b><span>总正确率</span></div>
+      <div class="statbox"><b>${streakDays(p)}</b><span>连续打卡</span></div>
+      <div class="statbox"><b>${due}</b><span>待复习</span></div>
+    </div>
+    <div class="bigbtn hero" onclick="openGameHub()"><div class="ico">🌠</div>
+      <div class="l"><div class="tt">单词流星雨</div><div class="dd">消消乐 · 对对碰 · 连连看，学完一个 Day 就玩一局巩固</div></div><div class="go">›</div></div>
+    <div class="bigbtn" onclick="openDayPicker('trans')"><div class="ico">🔤</div>
+      <div class="l"><div class="tt">单词翻译官</div><div class="dd">中→英、英→中随机切换，键盘默写</div></div><div class="go">›</div></div>
+    <div class="bigbtn" onclick="openDayPicker('dict')"><div class="ico">🎧</div>
+      <div class="l"><div class="tt">听写闯关</div><div class="dd">进入题目自动朗读，听音拼写</div></div><div class="go">›</div></div>
+    <div class="bigbtn" onclick="openDayPicker('ex')"><div class="ico">⚔️</div>
+      <div class="l"><div class="tt">真题大作战</div><div class="dd">中考真题句子挖空，填出正确词形</div></div><div class="go">›</div></div>
+    <div class="bigbtn" onclick="openStudy('review')"><div class="ico">🧠</div>
+      <div class="l"><div class="tt">学习中心</div><div class="dd">艾宾浩斯抗遗忘复习 · 错题本 · 学习报告 · 排行榜（错题 ${wrongN}）</div></div><div class="go">›</div></div>`;
+  go('home');
+}
+
+/* ================= 范围选择 ================= */
+let pickCtx={mode:'trans'};
+function openDayPicker(mode){
+  ensureUser();unlockAudio();
+  pickCtx.mode=mode;
+  const name={trans:'单词翻译官',dict:'听写闯关',ex:'真题大作战'}[mode];
+  $('#dayInfo').textContent='模式：'+name+'。选择要练的 Day（可多选）：';
+  $('#dayPicks').innerHTML=DATA.days.map((d,i)=>`<div class="pill" data-i="${i}" onclick="this.classList.toggle('on')">${esc(d.day)} · ${d.words.length}词</div>`).join('')
+    +`<div class="pill" onclick="toggleAllDays()">全选 / 全不选</div>`;
+  $('#dayModal').classList.add('show');
+}
+function toggleAllDays(){const pills=$$('#dayPicks .pill[data-i]');const allOn=pills.every(p=>p.classList.contains('on'));
+  pills.forEach(p=>p.classList.toggle('on',!allOn))}
+function startFromDayModal(){
+  const idx=$$('#dayPicks .pill[data-i].on').map(p=>+p.dataset.i);
+  if(!idx.length){toast('请至少选择一个 Day');return}
+  closeModal('dayModal');
+  let ws=[];idx.forEach(i=>DATA.days[i].words.forEach(w=>ws.push(w)));
+  if(pickCtx.mode==='ex'){const e=ws.filter(w=>w.ex&&w.ex.length);if(e.length>=2)ws=e}
+  if(ws.length<2){toast('该范围词太少');return}
+  pickCtx.words=ws;
+  $('#countInfo').textContent=`共 ${ws.length} 个词，选择题数：`;
+  $$('#countPills .pill').forEach((p,i)=>p.classList.toggle('on',i===1));
+  $('#customCount').value='';
+  $('#countModal').classList.add('show');
+  pickCtx.count=20;
+}
+function pickCount(el,n){$$('#countPills .pill').forEach(p=>p.classList.remove('on'));el.classList.add('on');
+  pickCtx.count=n===0?pickCtx.words.length:n;$('#customCount').value=''}
+function confirmCount(){
+  const c=parseInt($('#customCount').value);
+  let n=!isNaN(c)&&c>0?c:pickCtx.count;
+  n=Math.min(n,pickCtx.words.length);
+  closeModal('countModal');unlockAudio();
+  startQuiz(pickCtx.words,n,pickCtx.mode);
+}
+function startReview(){
+  ensureUser();
+  const due=dueList();
+  if(!due.length){toast('暂无到期单词，先学一个新 Day 吧');return}
+  startQuiz(due,Math.min(due.length,30),'trans');
+}
+
+/* ================= 出题 ================= */
+const MODE_TYPES={trans:['cn2en','en2cn'],dict:['dict'],ex:['ex']};
+const TYPE_LABEL={cn2en:'中 → 英',en2cn:'英 → 中',dict:'听写闯关',ex:'真题大作战'};
+let Q=null;
+function pickExample(w){if(!w.ex||!w.ex.length)return null;return w.ex[Math.floor(Math.random()*w.ex.length)]}
+function allEx(){return (DATA.exercises&&DATA.exercises.length)?DATA.exercises:[]}
+function startQuiz(words,count,mode){
+  // 真题大作战：优先用《词汇答案册》里逐题核对过的真题库（答案+解析）
+  if(mode==='ex'&&allEx().length){
+    let pool=allEx();
+    if(words&&words.length&&words.length<allWords().length){
+      const ds=new Set();
+      words.forEach(w=>DATA.days.forEach(d=>{if(d.words.indexOf(w)>=0)ds.add(d.day)}));
+      const f=pool.filter(e=>ds.has(e.d));
+      if(f.length>=1)pool=f;
+    }
+    const picked=shuffle(pool).slice(0,Math.max(1,Math.min(count,pool.length)));
+    const qs=picked.map(e=>({w:{en:e.ans,cn:'',ipa:''},type:'ex',ex:e}));
+    Q={qs,idx:0,mode,score:0,combo:0,maxCombo:0,log:[],startAt:Date.now(),tickAt:Date.now(),done:0,
+       dayList:[...new Set(picked.map(e=>e.d))],cfg:{seconds:60,words:words,count:count},lock:false};
+    go('quiz');renderQ();return;
+  }
+  if(mode==='ex'){const e=words.filter(w=>w.ex&&w.ex.length);if(e.length>=2)words=e}
+  const pool=shuffle(words);
+  const picked=pool.slice(0,Math.max(1,Math.min(count,pool.length)));
+  const types=MODE_TYPES[mode]||['cn2en'];
+  const qs=picked.map(w=>{
+    let t=types[Math.floor(Math.random()*types.length)];
+    if(t==='ex'&&(!w.ex||!w.ex.length))t='cn2en';
+    return {w,type:t,ex:t==='ex'?pickExample(w):null};
+  });
+  const daysSet=new Set();picked.forEach(w=>{DATA.days.forEach(d=>{if(d.words.includes(w))daysSet.add(d.day)})});
+  Q={qs,idx:0,mode,score:0,combo:0,maxCombo:0,log:[],startAt:Date.now(),tickAt:Date.now(),done:0,
+     dayList:[...daysSet],cfg:{seconds:45,words:words,count:count},lock:false};
+  // 听写模式：点「开始」时就先读第一题，页面切换过去声音已经在播
+  if(mode==='dict'){unlockAudio();const f=qs[0];if(f&&f.type==='dict')speakWord(f.w.en)}
+  go('quiz');renderQ();
+}
+function currentQ(){return Q&&Q.qs[Q.idx]}
+function promptOf(q){
+  if(q.type==='cn2en')return '释义：'+q.w.cn;
+  if(q.type==='en2cn')return '单词：'+q.w.en;
+  if(q.type==='dict')return '听写（释义提示：'+((q.w.cn||'').split('；')[0])+'）';
+  return (q.ex?q.ex.s:q.w.en);
+}
+function correctOf(q){
+  if(q.type==='ex'){const ex=q.ex||pickExample(q.w);
+    if(ex&&ex.ans)return ex.ans.replace(/\//g,' / ');
+    const forms=(q.w.forms||[]).map(f=>f.w).filter(Boolean);
+    return q.w.en+(forms.length?' / '+forms.join(' / '):'')}
+  return q.type==='en2cn'?q.w.cn:q.w.en;
+}
+function renderQ(){
+  clearInterval(Q.timer);Q.lock=false;
+  const q=currentQ();
+  if(!q)return showResult();
+  if(q.type==='ex'&&!q.ex)q.ex=pickExample(q.w);
+  const w=q.w,total=Q.qs.length;
+  // 听写题：在渲染 DOM 之前就开口，减少等待感
+  if(q.type==='dict'){unlockAudio();speakWord(w.en);
+    const nx=Q.qs[Q.idx+1];if(nx&&nx.w)preloadLocal(nx.w.en)}
+  let body='';
+  if(q.type==='cn2en'){
+    body=`<div class="qcard">
+      <div class="qcn">${esc(w.cn)}</div>
+      ${(w.pos||w.ipa)?`<div class="qhint">${w.pos?esc(w.pos):''}${w.pos&&w.ipa?' · ':''}${w.ipa?esc(w.ipa):''}</div>`:''}
+      <div style="margin-top:18px"><input class="inp" id="ans" readonly inputmode="none" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="点击这里，用下方键盘拼写"></div>
+    </div>`;
+  }else if(q.type==='en2cn'){
+    body=`<div class="qcard">
+      <div class="qbig">${esc(w.en)}</div>
+      ${w.ipa?`<div class="qipa">${esc(w.ipa)}</div>`:''}
+      <div style="margin-top:10px;text-align:center"><button class="speakbtn" onclick="speakNow(${JSON.stringify(w.en).replace(/"/g,'&quot;')})">🔊 朗读</button></div>
+      <div style="margin-top:18px"><input class="inp" id="ans" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="写出中文释义（多义项用空格隔开）"></div>
+    </div>`;
+  }else if(q.type==='dict'){
+    body=`<div class="qcard">
+      <div style="font-size:42px;text-align:center">🎧</div>
+      <div class="qhint">听发音，写出这个单词</div>
+      <div style="margin-top:14px;text-align:center">
+        <button class="btn" style="width:auto;padding:14px 26px;font-size:17px" onclick="speakNow(${JSON.stringify(w.en).replace(/"/g,'&quot;')})">🔈 听发音</button>
+      </div>
+      <div style="margin-top:18px"><input class="inp" id="ans" readonly inputmode="none" autocorrect="off" autocomplete="off" spellcheck="false" placeholder="点击这里，用下方键盘拼写"></div>
+    </div>`;
+  }else{
+    const ex=q.ex;
+    const shown=esc(ex.s).replace(/_{2,}/g,'<u>＿＿</u>');
+    let hw=ex.h||'';
+    let hwLabel='（用它的正确形式填空）';
+    if(!hw){const m=ex.s.match(/(?<![A-Za-z])([A-Za-z])\s*____/);if(m){hw=m[1];hwLabel='（首字母提示，填完整单词）'}}
+    body=`<div class="qcard">
+      <div class="sentbox">${shown}</div>
+      ${hw?`<div style="text-align:center"><span class="hintword">提示词：${esc(hw)}${hwLabel}</span></div>`:''}
+      ${ex.d?`<div class="qhint" style="text-align:center">${esc(ex.d)} · 第 ${ex.no} 题</div>`:''}
+      <div style="margin-top:16px"><input class="inp" id="ans" readonly inputmode="none" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="点击这里，用下方键盘填空"></div>
+    </div>`;
+  }
+  $('#quiz').innerHTML=`
+    <div class="qhead"><span class="idx">${Q.idx+1}/${total}</span>
+      <div class="bar"><i style="width:${Q.idx/total*100}%"></i></div>
+      <span class="timer" id="timer">${Q.cfg.seconds}</span></div>
+    <div style="text-align:center"><span class="tag">${TYPE_LABEL[q.type]||''}</span></div>
+    ${body}
+    <div class="fb" id="fb"></div>
+    <div style="margin-top:14px"><button class="btn" id="submitBtn" onclick="submitAnswer()">确认提交</button></div>
+    <div style="margin-top:10px;text-align:center"><button class="btn ghost sm" onclick="tryQuit()">退出本轮</button></div>`;
+  const inp=$('#ans');
+  if(q.type==='en2cn'){hideVK();setTimeout(()=>{const i=$('#ans');if(i)i.focus()},80)}
+  else{showVK();inp.addEventListener('click',()=>showVK())}
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitAnswer()}});
+  if(q.type==='dict'){}   /* 已在渲染前朗读 */
+  startTimer();
+}
+function startTimer(){
+  const el=$('#timer');Q.left=Q.cfg.seconds;if(el)el.textContent=Q.left;
+  Q.timer=setInterval(()=>{Q.left--;
+    const t=$('#timer');if(t){t.textContent=Q.left;if(Q.left<=5)t.classList.add('warn')}
+    if(Q.left<=0){clearInterval(Q.timer);timeout()}},1000);
+}
+function tickStudy(){
+  if(!Q)return;const p=progress();
+  const now=Date.now();const delta=Math.max(0,Math.round((now-(Q.tickAt||now))/1000));
+  Q.tickAt=now;const day=p.stats.days[today()]||{n:0,r:0,sec:0};
+  day.sec=(day.sec||0)+delta;p.stats.days[today()]=day;save();
+}
+function matchCN(ans,w){
+  const parts=(w.cn||'').split(/[；;，,、\/]+/).map(x=>x.trim()).filter(Boolean);
+  const user=(ans||'').trim();if(!user)return false;
+  const un=norm(user);
+  for(const p of parts){const pn=norm(p);if(!pn)continue;
+    if(un===pn)return true;
+    if(pn.length>=2&&(pn.includes(un)||un.includes(pn)))return true}
+  const us=user.split(/[\s,，、;；\/]+/).filter(Boolean);
+  if(us.length>1)return us.every(u=>parts.some(p=>norm(p).includes(norm(u))||norm(u).includes(norm(p))));
+  return false;
+}
+function formSet(w){const s=new Set();const add=x=>{const n=norm(x);if(n)s.add(n)};add(w.en);(w.forms||[]).forEach(f=>add(f.w));return s}
+function judge(q,raw){
+  const ans=raw||'';
+  if(q.type==='en2cn')return matchCN(ans,q.w);
+  if(q.type==='ex'){const ex=q.ex||pickExample(q.w);
+    const std=(ex&&ex.ans)||'';
+    if(!std)return norm(ans)===norm(q.w.en);
+    // 严格比对：与标准答案（"/" 分隔的可接受写法）一致才算对
+    return std.split('/').map(s=>norm(s)).some(s=>s&&s===norm(ans))}
+  return norm(ans)===norm(q.w.en);
+}
+function submitAnswer(){
+  const q=currentQ();if(!q||Q.lock)return;
+  const inp=$('#ans');const val=inp?inp.value:'';
+  if(!val.trim()){toast('先写点什么吧');return}
+  Q.lock=true;clearInterval(Q.timer);tickStudy();
+  const ok=judge(q,val);
+  if(inp){inp.classList.add(ok?'ok':'bad');inp.readOnly=true}
+  const fb=$('#fb');
+  if(ok){Q.score++;Q.combo++;Q.maxCombo=Math.max(Q.maxCombo,Q.combo);
+    fb.className='fb good';fb.textContent='✅ 正确'+(Q.combo>1?' 🔥'+Q.combo+' 连击':'')}
+  else{Q.combo=0;fb.className='fb bad';fb.textContent='❌ 不对，做完本轮统一看答案和解析'}
+  gradeWord(q.w,ok);Q.done++;
+  Q.log.push({type:q.type,en:q.w.en,your:val.trim(),ok,correct:correctOf(q),prompt:promptOf(q),w:q.w,ex:q.ex});
+  if(!ok)addWrong({en:q.w.en,ipa:q.w.ipa||'',cn:q.w.cn||'',type:q.type,prompt:promptOf(q),your:val.trim(),correct:correctOf(q),note:(q.ex&&q.ex.note)||'',day:(q.ex&&q.ex.d)||''});
+  const btn=$('#submitBtn');if(btn){btn.disabled=true;btn.textContent='下一题 →';setTimeout(()=>nextQ(),480)}
+}
+function timeout(){
+  const q=currentQ();if(!q)return;tickStudy();
+  const fb=$('#fb');if(fb){fb.className='fb timeout';fb.textContent='⏰ 时间到，进入下一题'}
+  Q.combo=0;gradeWord(q.w,false);Q.done++;
+  Q.log.push({type:q.type,en:q.w.en,your:'（超时）',ok:false,correct:correctOf(q),prompt:promptOf(q),w:q.w,ex:q.ex});
+  addWrong({en:q.w.en,ipa:q.w.ipa||'',cn:q.w.cn||'',type:q.type,prompt:promptOf(q),your:'（超时）',correct:correctOf(q),note:(q.ex&&q.ex.note)||'',day:(q.ex&&q.ex.d)||''});
+  const btn=$('#submitBtn');if(btn){btn.disabled=true;btn.textContent='下一题 →'}
+  setTimeout(()=>nextQ(),800);
+}
+function nextQ(){hideVK();Q.idx++;if(Q.idx>=Q.qs.length)return showResult();Q.tickAt=Date.now();renderQ()}
+function tryQuit(){askConfirm('退出后本轮不记录成绩，也不会显示答案。确定退出？',()=>{
+  clearInterval(Q&&Q.timer);tickStudy();Q=null;renderHome()})}
+
+/* ================= 结果 ================= */
+function showResult(){
+  hideVK();clearInterval(Q&&Q.timer);tickStudy();
+  if(!Q)return renderHome();
+  const total=Q.done||Q.qs.length,right=Q.score,acc=total?(right/total*100).toFixed(1):'0.0';
+  const sec=Math.max(1,Math.round((Date.now()-Q.startAt)/1000));
+  const p=progress();
+  // 记录本次学习
+  p.sessions.unshift({id:Date.now(),date:today(),at:new Date().toTimeString().slice(0,5),
+    mode:Q.mode,modeName:{trans:'单词翻译官',dict:'听写闯关',ex:'真题大作战'}[Q.mode]||Q.mode,
+    total,right,sec,days:(Q.dayList||[]).slice(0,6).join('、')});
+  if(p.sessions.length>120)p.sessions.length=120;
+  save();
+  let html=`<h1>本轮完成</h1>
+    <p class="sub">共 ${total} 题 · 用时 ${fmtSec(sec)} · 成绩已计入学习报告</p>
+    <div class="statrow">
+      <div class="statbox"><b>${right}/${total}</b><span>答对</span></div>
+      <div class="statbox"><b>${acc}%</b><span>正确率</span></div>
+      <div class="statbox"><b>${Q.maxCombo}</b><span>最高连击</span></div>
+      <div class="statbox"><b>${fmtMin(todayStat(p).sec)}</b><span>今日时长</span></div>
+    </div>
+    ${nextLabel(Q.mode)?`<div class="row" style="margin:16px 0 4px"><button class="btn" onclick="nextRound()">${nextLabel(Q.mode)}</button></div>`:''}
+    <h2>答案与解析</h2>`;
+  html+=Q.log.map((x,i)=>{
+    const w=x.w;let qtext=esc(x.prompt);
+    if(x.type==='ex'&&x.ex){qtext=esc(x.ex.s).replace(/([A-Za-z])?_{2,}/g,(m,p)=>'<span class="hl">'+esc(x.ex.ans||'＿＿')+'</span>')}
+    else if(x.type==='en2cn'){qtext=esc(w.en)+(w.ipa?' <span style="color:#c2749c;font-size:12px">'+esc(w.ipa)+'</span>':'')}
+    else if(x.type==='cn2en'){qtext=esc(w.cn)}
+    else{qtext=esc(w.en)}
+    const bank=x.type==='ex'&&x.ex&&x.ex.d;
+    return `<div class="qa">
+      <div class="qt">${i+1}. ${TYPE_LABEL[x.type]} ${x.ok?'<span class="right">✅</span>':'<span class="wrong">❌</span>'}</div>
+      <div class="qq">${qtext}</div>
+      <div class="ans">你的答案：<b>${esc(x.your)}</b>　标准答案：<b>${esc(x.correct)}</b>${x.ok?'<span class="right"> ✅ 一致</span>':'<span class="wrong"> ❌ 不一致</span>'}</div>
+      ${bank?`<div class="ans" style="color:#9a6b85">${esc(x.ex.d)} · 第 ${x.ex.no} 题</div>`:
+        `<div class="ans">${esc(w.en)} ${w.ipa?esc(w.ipa):''}${w.pos?' · '+esc(w.pos):''} · ${esc(w.cn)}</div>`}
+      ${bank&&x.ex.note?`<div class="ans" style="background:#fff5f9;border-radius:10px;padding:8px 10px;line-height:1.7"><b>解析：</b>${esc(x.ex.note)}</div>`:''}
+      ${(!bank&&w.forms&&w.forms.length)?`<div class="ans">变形：${w.forms.map(f=>esc(f.w)+(f.label?'（'+esc(f.label)+'）':'')).join('、')}</div>`:''}
+      ${(!bank&&w.phrases&&w.phrases.length)?`<div class="ans">短语：${w.phrases.slice(0,4).map(f=>esc(f.en)+' '+esc(f.cn)).join('；')}</div>`:''}
+      ${bank?'':`<div style="margin-top:6px"><button class="speakbtn" style="font-size:12px;padding:5px 12px" onclick="openDetail('${esc(w.en).replace(/'/g,"\\'")}')">完整解析</button></div>`}
+    </div>`;
+  }).join('');
+  const wrongs=Q.log.filter(x=>!x.ok);
+  if(wrongs.length)html+=`<div class="row" style="margin-top:14px">
+    <button class="btn ghost" onclick="retryWrong()">重练本轮错题（${wrongs.length}）</button>
+    <button class="btn" onclick="openStudy('wrong')">打开错题本</button></div>`;
+  html+=`<div class="row" style="margin-top:12px">
+    <button class="btn ghost" onclick="renderHome()">回首页</button>
+    <button class="btn ghost" onclick="openStudy('report')">看学习报告</button></div>`;
+  $('#result').innerHTML=html;go('result');
+}
+function nextLabel(m){return {trans:'进入下一轮翻译',dict:'进入下一轮听写',ex:'进入下一轮作战'}[m]||''}
+function nextRound(){
+  if(!Q)return renderHome();
+  const m=Q.mode,n=(Q.cfg&&Q.cfg.count)||10,w=(Q.cfg&&Q.cfg.words)||allWords();
+  startQuiz(w,n,m);
+}
+function retryWrong(){
+  if(!Q)return renderHome();
+  const missed=Q.log.filter(x=>!x.ok);
+  if(!missed.length){toast('本轮没有错题');return}
+  const prev=Q;
+  // 原样重做错题：保留每题的题型（听写/中→英/英→中/真题），听写题才有「听发音」
+  const qs=missed.map(x=>({w:x.w,type:x.type,ex:x.ex||null}));
+  Q={qs,idx:0,mode:prev.mode,score:0,combo:0,maxCombo:0,log:[],startAt:Date.now(),tickAt:Date.now(),done:0,
+     dayList:prev.dayList,cfg:{seconds:(prev.cfg&&prev.cfg.seconds)||60,
+       words:(prev.cfg&&prev.cfg.words)||null,count:qs.length},lock:false};
+  if(Q.mode==='dict'){unlockAudio();const f=qs[0];if(f&&f.type==='dict')speakWord(f.w.en,true)}
+  go('quiz');renderQ();
+  toast('再做一遍这 '+qs.length+' 道错题');
+}
+
+/* ================= 单词流星雨：先学后玩 ================= */
+let hubDay=null,game=null,learnCtx={day:null,i:0};
+function learnedMap(){const p=progress();if(!p.learned)p.learned={};return p.learned}
+function isLearned(day){return !!learnedMap()[day]}
+function seenMap(){const p=progress();if(!p.learnSeen)p.learnSeen={};return p.learnSeen}
+function openGameHub(day){
+  ensureUser();
+  if(day)hubDay=day;
+  if(!hubDay||!DATA.days.find(d=>d.day===hubDay))hubDay=DATA.days[0].day;
+  const p=progress(),g=(p.games[hubDay]||{}),words=dayWords(hubDay);
+  const learned=isLearned(hubDay);
+  const card=(k,ico,title,desc)=>{
+    const rec=g[k];
+    const extra=rec?' · 最好成绩 '+fmtSec(rec.best)+'（'+rec.plays+' 次）':'';
+    if(!learned)return `<div class="bigbtn locked" onclick="toast('先把 ${esc(hubDay)} 的单词学完，才能解锁游戏')">
+      <div class="ico">🔒</div><div class="l"><div class="tt">${title}</div><div class="dd">${desc} · 学完本 Day 单词后解锁</div></div><div class="go">›</div></div>`;
+    return `<div class="bigbtn" onclick="startGame('${k}')"><div class="ico">${ico}</div>
+      <div class="l"><div class="tt">${title}</div><div class="dd">${desc}${extra}</div></div><div class="go">›</div></div>`;
+  };
+  const seen=(seenMap()[hubDay]||[]).length;
+  $('#gamehub').innerHTML=`
+    <h1>单词流星雨</h1>
+    <p class="sub">先学完一个 Day 的单词，再用三个小游戏检验 + 巩固。当前：<b>${esc(hubDay)}</b>（${words.length} 词）</p>
+    <div class="pills" id="hubDays" style="flex-wrap:nowrap;overflow-x:auto;max-height:none;padding-bottom:6px">${DATA.days.map(d=>`<div class="pill ${d.day===hubDay?'on':''}" onclick="pickHubDay('${esc(d.day)}')" style="white-space:nowrap">${d.day}${isLearned(d.day)?' ✓':''}</div>`).join('')}</div>
+    <div class="bigbtn ${learned?'':'hero'}" onclick="openLearn('${esc(hubDay)}')">
+      <div class="ico">${learned?'✅':'📚'}</div>
+      <div class="l"><div class="tt">${learned?'复习本 Day 单词':'第 1 步：学习本 Day 单词'}</div>
+      <div class="dd">${learned?'已学完（'+learned+'）· 点进去可再看一遍':'逐词看音标/释义/短语/例句，学完自动解锁下面三个游戏'+(seen?' · 已看 '+seen+'/'+words.length:'')}</div></div>
+      <div class="go">${learned?'✓':'›'}</div></div>
+    <div class="gamehint">${learned?'三个游戏都用本 Day 的词：消消乐 → 对对碰 → 连连看，一路打通关。':'学完单词后，这里会依次开放：单词消消乐 → 单词对对碰 → 单词连连看。'}</div>
+    ${card('match','🫧','单词消消乐','12 张卡片，英文↔中文配对消除')}
+    ${card('flip','🃏','单词对对碰','卡片背面朝上，每次翻两张，配对成功即消除')}
+    ${card('link','🔗','单词连连看','点单词再点对应中文，连线消除，连完为止')}
+    <div class="row" style="margin-top:12px">
+      <button class="btn ghost" onclick="showReader('${esc(hubDay)}')">查看完整词表</button>
+      <button class="btn ghost" onclick="openLearn('${esc(hubDay)}')">${learned?'再学一遍':'开始学习'}</button>
+    </div>`;
+  go('gamehub');
+}
+function pickHubDay(d){hubDay=d;openGameHub(d)}
+function canPlay(){if(!isLearned(hubDay)){toast('先把 '+hubDay+' 的单词学完再玩');openLearn(hubDay);return false}return true}
+
+/* --- 学习页：逐词过一遍，学完解锁游戏 --- */
+function openLearn(day){
+  ensureUser();
+  learnCtx={day:day||hubDay,i:0};
+  renderLearn();
+}
+function renderLearn(){
+  const words=dayWords(learnCtx.day);
+  if(!words.length){toast('这个词表是空的');return}
+  learnCtx.i=Math.max(0,Math.min(learnCtx.i,words.length-1));
+  const i=learnCtx.i,w=words[i];
+  // 记录已看
+  const sm=seenMap();sm[learnCtx.day]=sm[learnCtx.day]||[];
+  if(!sm[learnCtx.day].includes(i)){sm[learnCtx.day].push(i);save()}
+  const seen=sm[learnCtx.day].length,all=seen>=words.length;
+  const p=progress();
+  let body=`<div class="qcard" style="text-align:left">
+    <div class="explain"><div class="wrow">
+      <span class="wen" style="font-size:26px;cursor:pointer" onclick="speakNow(${JSON.stringify(w.en).replace(/"/g,'&quot;')})">${esc(w.en)} <span style="font-size:15px">🔊</span></span>
+      ${w.ipa?`<span class="wipa">${esc(w.ipa)}</span>`:''}
+      ${w.pos?`<span class="wpos">${esc(w.pos)}</span>`:''}</div>
+      <div class="wcn" style="font-size:16px">${esc(w.cn)}</div></div>`;
+  if(w.forms&&w.forms.length)body+=`<div class="sect"><h4>🔄 词形变化 / 派生词</h4>${w.forms.map(f=>`<span class="chip">${esc(f.w)}${f.label?` <em>${esc(f.label)}</em>`:''}</span>`).join('')}</div>`;
+  if(w.phrases&&w.phrases.length){
+    const lw=w.en.toLowerCase();
+    const re=new RegExp('(^|[^a-z])'+lw.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^a-z]|$)','i');
+    const ps=w.phrases.filter(x=>re.test((x.en||'').toLowerCase()));
+    if(ps.length)body+=`<div class="sect"><h4>🔗 短语搭配</h4>${ps.map(x=>`<span class="chip" onclick="speakNow(${JSON.stringify(x.en).replace(/"/g,'&quot;')})">${esc(x.en)}<em style="margin-left:6px">${esc(x.cn)}</em></span>`).join('')}</div>`;
+  }
+  if(w.ex&&w.ex.length)body+=`<div class="sect"><h4>🧩 例句</h4>${w.ex.map(ex=>{
+    const full=ex.ans?ex.s.replace(/_{2,}/g,ex.ans):ex.s.replace(/_{2,}/g,'＿＿');
+    const say=ex.ans?ex.s.replace(/_{2,}/g,ex.ans):ex.s.replace(/_{2,}/g,'');
+    return `<div class="exitem" style="cursor:pointer" onclick="speakNow(${JSON.stringify(say).replace(/"/g,'&quot;')})">
+      <div class="sentline">🔈 ${esc(full)}</div>
+      ${ex.zh?`<div style="margin-top:4px;font-size:13px;color:#8a6a7c;line-height:1.6">${esc(ex.zh)}</div>`:''}</div>`;
+  }).join('')}</div>`;
+  body+=`</div>`;
+  const unlock=all
+    ? `<button class="btn" onclick="finishLearn()">学完了，进入单词消消乐</button>`
+    : `<button class="btn" onclick="learnNext()">${i+1<words.length?'下一个 →':'再走一遍'}</button>`;
+  $('#learn').innerHTML=`
+    <div class="qhead"><span class="idx">${esc(learnCtx.day)} · ${i+1}/${words.length}</span>
+      <div class="bar"><i style="width:${(i+1)/words.length*100}%"></i></div>
+      <span class="timer">${seen}/${words.length}</span></div>
+    <div style="text-align:center"><span class="tag">${all?'已全部看过':'学习模式 · 看一遍再进游戏'}</span></div>
+    ${body}
+    <div class="row" style="margin-top:14px">
+      <button class="btn ghost" onclick="learnPrev()">上一个</button>
+      <button class="btn ghost" onclick="openGameHub()">返回</button>
+    </div>
+    <div style="margin-top:10px">${unlock}</div>
+    ${all?`<div class="gamehint" style="margin-top:12px">已看完 ${words.length} 个词。接下来用游戏检验：消消乐 → 对对碰 → 连连看。</div>`:`<div class="sub" style="text-align:center;margin-top:10px">还剩 ${words.length-seen} 个词没看</div>`}`;
+  go('learn');
+}
+function learnPrev(){learnCtx.i--;renderLearn()}
+function learnNext(){learnCtx.i++;renderLearn()}
+function finishLearn(){
+  const p=progress();learnedMap()[learnCtx.day]=today();save();
+  toast(learnCtx.day+' 已学完，游戏已解锁');
+  openGameHub(learnCtx.day);
+}
+function nextDayLearn(){
+  const idx=DATA.days.findIndex(d=>d.day===hubDay);
+  const nd=DATA.days[Math.min(idx+1,DATA.days.length-1)];
+  hubDay=nd.day;openLearn(hubDay);
+}
+
+function startGame(kind){
+  if(!canPlay())return;
+  const words=dayWords(hubDay);
+  if(words.length<4){toast('这个 Day 词太少，换一个吧');return}
+  unlockAudio();
+  if(kind==='match')startMatch(words);
+  else if(kind==='flip')startFlip(words);
+  else startLink(words);
+}
+function recordGame(kind,sec,moves){
+  const p=progress();
+  const key=hubDay;
+  p.games[key]=p.games[key]||{};
+  const prev=p.games[key][kind];
+  p.games[key][kind]={plays:(prev?prev.plays:0)+1,best:prev?Math.min(prev.best,sec):sec,last:today()};
+  save();
+}
+function gameHud(title,sub){
+  return `<div class="gamebar"><span id="gameTitle">${esc(title)}</span><span id="gameStat">${esc(sub||'')}</span></div>`;
+}
+function endGame(kind,sec,moves,extra){
+  sec=Math.max(1,sec);
+  recordGame(kind,sec,moves);
+  const p=progress();const rec=p.games[hubDay][kind];
+  const order=['match','flip','link'];
+  const nextKind=order[order.indexOf(kind)+1];
+  let btns='';
+  if(nextKind){
+    const name=nextKind==='flip'?'单词对对碰':'单词连连看';
+    btns=`<div class="row" style="margin-top:14px"><button class="btn" onclick="startGame('${nextKind}')">进入${name} →</button></div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn ghost" onclick="startGame('${kind}')">再来一局</button>
+        <button class="btn ghost" onclick="openGameHub()">回单词流星雨</button></div>`;
+  }else{
+    btns=`<div class="row" style="margin-top:14px"><button class="btn" onclick="startGame('match')">再来一轮</button>
+      <button class="btn" onclick="nextDayLearn()">学下一个 Day →</button></div>
+      <div class="row" style="margin-top:10px"><button class="btn ghost" onclick="openGameHub()">回单词流星雨</button></div>`;
+  }
+  const tip=nextKind
+    ? `<div class="gamehint">这一关过了，接着玩「${nextKind==='flip'?'单词对对碰':'单词连连看'}」，把本 Day 的词再巩固一遍。</div>`
+    : `<div class="gamehint">三个游戏全部通关！${esc(hubDay)} 的单词已经过了三遍，明天记得来「艾宾浩斯复习」。</div>`;
+  $('#game').innerHTML=`<h1>过关！</h1>
+    <p class="sub">${esc(hubDay)} · ${kind==='match'?'单词消消乐':kind==='flip'?'单词对对碰':'单词连连看'}</p>
+    <div class="statrow">
+      <div class="statbox"><b>${fmtSec(sec)}</b><span>本局用时</span></div>
+      <div class="statbox"><b>${moves}</b><span>${kind==='flip'?'翻牌次数':'错误次数'}</span></div>
+      <div class="statbox"><b>${rec.plays}</b><span>已玩次数</span></div>
+      <div class="statbox"><b>${fmtSec(rec.best)}</b><span>最好成绩</span></div>
+    </div>
+    ${extra||''}${tip}
+    ${btns}`;
+  go('game');
+}
+
+/* --- 消消乐 --- */
+function startMatch(words){
+  const pairs=shuffle(words).slice(0,6);
+  const tiles=[];
+  pairs.forEach((w,i)=>{
+    tiles.push({i,en:w.en,cn:(w.cn||'').split('；')[0],kind:'en'});
+    tiles.push({i,en:w.en,cn:(w.cn||'').split('；')[0],kind:'cn'});
+  });
+  const deck=shuffle(tiles);
+  const cols=3,rows=Math.ceil(deck.length/cols);
+  game={kind:'match',sel:null,left:deck.length,errors:0,moves:0,t0:Date.now()};
+  const tileHtml=deck.map((t,idx)=>`<div class="tile ${t.kind}" data-idx="${idx}" data-pair="${t.i}" onclick="matchTap(this)">
+      ${t.kind==='en'?esc(t.en):esc(t.cn)}</div>`).join('');
+  $('#game').innerHTML=`<h1>单词消消乐</h1>
+    <p class="sub">${esc(hubDay)} · 点一个英文，再点它对应的中文</p>
+    ${gameHud('剩余 '+game.left+' 张','错误 0')}
+    <div class="gamegrid" id="mgrid" style="grid-template-columns:repeat(${cols},1fr);max-width:420px;margin:0 auto">${tileHtml}</div>
+    <div style="margin-top:14px"><button class="btn ghost" onclick="openGameHub()">退出游戏</button></div>`;
+  go('game');
+}
+function matchTap(el){
+  if(el.classList.contains('gone'))return;
+  const g=game;
+  if(!g.sel){g.sel=el;el.classList.add('sel');return}
+  if(g.sel===el){el.classList.remove('sel');g.sel=null;return}
+  const a=g.sel,b=el;
+  if(a.dataset.pair===b.dataset.pair&&a.dataset.idx!==b.dataset.idx){
+    a.classList.remove('sel');a.classList.add('gone');b.classList.add('gone');
+    g.sel=null;g.left-=2;g.moves++;
+    const gt=$('#gameTitle');if(gt)gt.textContent='剩余 '+g.left+' 张';
+    $('#gameStat').textContent='错误 '+g.errors;
+    if(g.left<=0){
+      const sec=Math.round((Date.now()-g.t0)/1000);
+      return endGame('match',sec,g.errors||0,'<div class="gamehint">这一 Day 的 6 个词全部配对成功，去玩「对对碰」再巩固一次吧。</div>');
+    }
+    return;
+  }
+  // 错配
+  g.errors++;g.moves++;
+  a.classList.add('shake');b.classList.add('shake');
+  setTimeout(()=>{a.classList.remove('shake','sel');b.classList.remove('shake')},320);
+  g.sel=null;
+  $('#gameStat').textContent='错误 '+g.errors;
+}
+
+/* --- 对对碰 --- */
+function startFlip(words){
+  const pairs=shuffle(words).slice(0,6);
+  const deck=[];
+  pairs.forEach((w,i)=>{
+    deck.push({i,text:w.en,kind:'en'});
+    deck.push({i,text:(w.cn||'').split('；')[0],kind:'cn'});
+  });
+  const sh=shuffle(deck);
+  game={kind:'flip',open:[],matched:0,moves:0,pairs:pairs.length,t0:Date.now(),busy:false};
+  const cols=3;
+  $('#game').innerHTML=`<h1>单词对对碰</h1>
+    <p class="sub">${esc(hubDay)} · 每次翻两张，英文和中文配对即消除</p>
+    ${gameHud('翻牌配对','已配对 0/'+pairs.length+' · 翻牌 0 次')}
+    <div class="gamegrid" id="fgrid" style="grid-template-columns:repeat(${cols},1fr);max-width:420px;margin:0 auto">
+      ${sh.map((c,idx)=>`<div class="tile back" data-idx="${idx}" data-pair="${c.i}" data-text="${esc(c.text)}" onclick="flipTap(this)">${esc(c.text)}</div>`).join('')}
+    </div>
+    <div style="margin-top:14px"><button class="btn ghost" onclick="openGameHub()">退出游戏</button></div>`;
+  go('game');
+}
+function flipTap(el){
+  const g=game;
+  if(g.busy||el.classList.contains('reveal')||el.classList.contains('gone'))return;
+  el.classList.remove('back');el.classList.add('reveal');
+  g.open.push(el);
+  if(g.open.length<2)return;
+  g.moves++;
+  const [a,b]=g.open;
+  if(a.dataset.pair===b.dataset.pair){
+    setTimeout(()=>{
+      a.classList.add('gone');b.classList.add('gone');
+      g.matched++;g.open=[];
+      const st=$('#gameStat');if(st)st.textContent='已配对 '+g.matched+'/'+g.pairs+' · 翻牌 '+g.moves+' 次';
+      if(g.matched>=g.pairs){
+        const sec=Math.round((Date.now()-g.t0)/1000);
+        endGame('flip',sec,g.moves,'<div class="gamehint">记忆配对完成！下次试试「连连看」，需要更强的位置记忆。</div>');
+      }
+    },260);
+  }else{
+    g.busy=true;
+    setTimeout(()=>{
+      a.classList.remove('reveal');a.classList.add('back');
+      b.classList.remove('reveal');b.classList.add('back');
+      g.open=[];g.busy=false;
+      const st=$('#gameStat');if(st)st.textContent='已配对 '+g.matched+'/'+g.pairs+' · 翻牌 '+g.moves+' 次';
+    },700);
+  }
+}
+
+/* --- 连连看 --- */
+function startLink(words){
+  const pairs=shuffle(words).slice(0,12);
+  const cells=[];
+  pairs.forEach((w,i)=>{
+    cells.push({pair:i,text:w.en,kind:'en'});
+    cells.push({pair:i,text:(w.cn||'').split('；')[0],kind:'cn'});
+  });
+  const deck=shuffle(cells);
+  const cols=4,rows=Math.ceil(deck.length/cols);
+  game={kind:'link',grid:[],sel:null,cols,rows,left:deck.length,errors:0,moves:0,t0:Date.now()};
+  // grid[r][c] = null(空) 或 {pair,text,kind,el}
+  for(let r=0;r<rows;r++)game.grid.push(new Array(cols).fill(null));
+  let k=0;
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    if(k<deck.length){game.grid[r][c]=deck[k];k++}
+  }
+  const tileHtml=[];
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const t=game.grid[r][c];
+    if(!t){tileHtml.push('<div></div>');continue}
+    tileHtml.push(`<div class="tile ${t.kind}" id="lt-${r}-${c}" data-r="${r}" data-c="${c}" data-pair="${t.pair}" onclick="linkTap(${r},${c})" style="min-height:46px;font-size:11px">${esc(t.text)}</div>`);
+  }
+  $('#game').innerHTML=`<h1>单词连连看</h1>
+    <p class="sub">${esc(hubDay)} · 点一个单词，再点它对应的中文，出现连线后两张卡一起消失</p>
+    ${gameHud('剩余 '+game.left+' 张','错误 0')}
+    <div style="position:relative;max-width:430px;margin:0 auto">
+      <svg id="linkSvg" width="100%" height="100%"></svg>
+      <div class="gamegrid" id="lgrid" style="grid-template-columns:repeat(${cols},1fr)">${tileHtml.join('')}</div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn ghost" onclick="openGameHub()">退出游戏</button></div>`;
+  go('game');
+  requestAnimationFrame(syncSvgSize);
+}
+function syncSvgSize(){
+  const svg=$('#linkSvg'),grid=$('#lgrid');if(!svg||!grid)return;
+  const r=grid.getBoundingClientRect();
+  svg.setAttribute('width',r.width);svg.setAttribute('height',r.height);
+  svg.style.width=r.width+'px';svg.style.height=r.height+'px';
+  const sg=grid.style;svg.style.left=(grid.offsetLeft)+'px';svg.style.top=(grid.offsetTop)+'px';
+}
+function cellCenter(r,c){
+  const el=document.getElementById('lt-'+r+'-'+c);
+  const grid=$('#lgrid');if(!el||!grid)return null;
+  const a=el.getBoundingClientRect(),b=grid.getBoundingClientRect();
+  return {x:a.left-b.left+a.width/2,y:a.top-b.top+a.height/2};
+}
+/* 走空白缝隙的折线：从卡片边缘出 → 行缝 → 列缝 → 行缝 → 进入目标卡边缘，不遮字 */
+function gridGeom(){
+  const grid=$('#lgrid');if(!grid)return null;
+  const first=grid.querySelector('.tile');if(!first)return null;
+  const r=first.getBoundingClientRect();
+  const gap=8;
+  return {w:r.width,h:r.height,gap,stepX:r.width+gap,stepY:r.height+gap,rows:game.rows,cols:game.cols};
+}
+function drawRoute(a,b){
+  const svg=$('#linkSvg');if(!svg)return;
+  syncSvgSize();
+  const gm=gridGeom();const A=cellCenter(a.r,a.c),B=cellCenter(b.r,b.c);
+  if(!gm||!A||!B)return;
+  const {w,h,gap,stepX,stepY,rows,cols}=gm;
+  const above=r=>r>0;                       // 第 0 行走下方，其余走上方
+  const gapLine=r=>above(r)? r*stepY-gap/2 : r*stepY+h+gap/2;
+  const yA=gapLine(a.r), yB=gapLine(b.r);
+  const midX=(A.x+B.x)/2;
+  let bestX=midX,bestD=1e9;
+  for(let c=0;c<cols-1;c++){
+    const gx=c*stepX+w+gap/2, d=Math.abs(gx-midX);
+    if(d<bestD){bestD=d;bestX=gx}
+  }
+  const edgeA={x:A.x,y:above(a.r)?A.y-h/2:A.y+h/2};
+  const edgeB={x:B.x,y:above(b.r)?B.y-h/2:B.y+h/2};
+  const pts=[edgeA,{x:A.x,y:yA},{x:bestX,y:yA},{x:bestX,y:yB},{x:B.x,y:yB},edgeB];
+  const clean=[];
+  pts.forEach(p=>{const l=clean[clean.length-1];
+    if(!l||Math.abs(l.x-p.x)>0.5||Math.abs(l.y-p.y)>0.5)clean.push(p)});
+  drawPolyline(clean,220);
+}
+function drawPolyline(pts,life){
+  const svg=$('#linkSvg');if(!svg||pts.length<2)return;
+  const poly=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  poly.setAttribute('points',pts.map(p=>p.x+','+p.y).join(' '));
+  poly.setAttribute('fill','none');poly.setAttribute('stroke','#f472b6');
+  poly.setAttribute('stroke-width','3');poly.setAttribute('stroke-linecap','round');
+  poly.setAttribute('stroke-linejoin','round');poly.setAttribute('opacity','0.95');
+  poly.style.transition='opacity .18s';
+  svg.appendChild(poly);
+  setTimeout(()=>{poly.style.opacity='0'},(life||560)-180);
+  setTimeout(()=>{poly.remove()},life||560);
+}
+
+/* 简化玩法：点一个英文 + 它对应的中文 → 画一条线 → 两张卡和线一起消失 */
+function linkTap(r,c){
+  const g=game,t=g.grid[r][c];
+  if(!t)return;
+  const el=document.getElementById('lt-'+r+'-'+c);
+  if(!el||el.classList.contains('gone'))return;
+  if(!g.sel){g.sel={r,c};el.classList.add('sel');return}
+  if(g.sel.r===r&&g.sel.c===c){el.classList.remove('sel');g.sel=null;return}
+  const s0=g.sel,prev=g.grid[s0.r][s0.c];
+  if(prev&&prev.pair===t.pair&&prev.kind!==t.kind){
+    drawRoute({r:s0.r,c:s0.c},{r,c});
+    g.grid[s0.r][s0.c]=null;g.grid[r][c]=null;
+    const e1=document.getElementById('lt-'+s0.r+'-'+s0.c);
+    g.sel=null;g.left-=2;g.moves++;
+    const gt=$('#gameTitle');if(gt)gt.textContent='剩余 '+g.left+' 张';
+    // 线、两张卡同一帧一起消失
+    if(e1){e1.classList.remove('sel');e1.classList.add('gone')}
+    el.classList.add('gone');
+    if(g.left<=0){
+      const sec=Math.round((Date.now()-g.t0)/1000);
+      setTimeout(()=>endGame('link',sec,g.errors||0,'<div class="gamehint">全部连完！这一 Day 的单词已经过了三遍。</div>'),260);
+    }
+    return;
+  }
+  g.errors++;
+  el.classList.add('shake');
+  const e1=document.getElementById('lt-'+s0.r+'-'+s0.c);
+  if(e1)e1.classList.add('shake');
+  setTimeout(()=>{el.classList.remove('shake');if(e1)e1.classList.remove('shake','sel')},320);
+  g.sel=null;
+  const st=$('#gameStat');if(st)st.textContent='错误 '+g.errors;
+}
+/* 画折线（两个点就是直接连线），480ms 后自动擦掉 */
+function drawPath(path){
+  const svg=$('#linkSvg');if(!svg)return;
+  syncSvgSize();
+  const pts=path.map(p=>cellCenter(p.r,p.c)).filter(Boolean);
+  if(pts.length<2)return;
+  const poly=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  poly.setAttribute('points',pts.map(p=>p.x+','+p.y).join(' '));
+  poly.setAttribute('fill','none');poly.setAttribute('stroke','#f472b6');
+  poly.setAttribute('stroke-width','4');poly.setAttribute('stroke-linecap','round');
+  poly.setAttribute('opacity','0.95');
+  svg.appendChild(poly);
+  setTimeout(()=>{poly.remove()},520);
+}
+
+/* ================= 学习中心：复习 / 错题本 / 报告 ================= */
+let studyTab='review';
+function openStudy(tab){ensureUser();studyTab=tab||studyTab;renderStudy()}
+function renderStudy(){
+  const p=progress();
+  const tabs=`<div class="tabs">
+    <div class="${studyTab==='review'?'on':''}" onclick="openStudy('review')">艾宾浩斯复习</div>
+    <div class="${studyTab==='wrong'?'on':''}" onclick="openStudy('wrong')">错题本</div>
+    <div class="${studyTab==='report'?'on':''}" onclick="openStudy('report')">学习报告</div>
+    <div class="${studyTab==='rank'?'on':''}" onclick="openStudy('rank')">排行榜</div>
+  </div>`;
+  let body='';
+  if(studyTab==='review')body=reviewHtml(p);
+  else if(studyTab==='wrong')body=wrongHtml(p);
+  else if(studyTab==='rank')body=rankHtml(p);
+  else body=reportHtml(p);
+  $('#study').innerHTML=tabs+body;
+  go('study');
+}
+
+/* --- 艾宾浩斯 --- */
+function reviewHtml(p){
+  const due=dueList();
+  const map=dueByDate();
+  const dates=Object.keys(map).sort();
+  const future=dates.filter(d=>d>today()).slice(0,6);
+  const plan=[];
+  // 按天数分组展示未来计划
+  const dayMs=86400000;
+  const groups={};
+  future.forEach(d=>{
+    const diff=Math.round((new Date(d)-new Date(today()))/dayMs);
+    const label=diff===1?'明天':diff===2?'后天':diff<=7?diff+' 天后':'第 '+diff+' 天';
+    (groups[label]=groups[label]||[]).push(...map[d].map(w=>w.en));
+  });
+  let html=`<h1>${esc(p.name)} 的艾宾浩斯复习</h1>
+    <p class="sub">按遗忘曲线安排：答对一次进入下一个复习间隔（+1、+2、+4、+7、+15、+30、+60 天），答错回到当天。</p>
+    <div class="statrow">
+      <div class="statbox"><b>${due.length}</b><span>今天到期</span></div>
+      <div class="statbox"><b>${Object.keys(p.srs).length}</b><span>已进入曲线</span></div>
+      <div class="statbox"><b>${masteredCount()}</b><span>已掌握</span></div>
+      <div class="statbox"><b>${streakDays(p)}</b><span>连续打卡</span></div>
+    </div>
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn" onclick="startReview()">开始今日复习（${due.length}）</button>
+      <button class="btn ghost" onclick="exportReview()">导出复习计划 PDF</button>
+    </div>`;
+  if(due.length){
+    html+=`<h2>今天到期（${due.length} 词）</h2>`;
+    html+=due.slice(0,60).map(w=>`<div class="list-item" onclick="openDetail('${esc(w.en).replace(/'/g,"\\'")}')">
+      <div class="l"><div class="n">${esc(w.en)} <span style="font-weight:400;color:#c2749c;font-size:12px">${esc(w.ipa||'')}</span></div>
+      <div class="m">${esc(w.cn)}</div></div>
+      <div class="r">第 ${(srsOf(w)||{}).box||0} 盒</div></div>`).join('');
+    if(due.length>60)html+=`<div class="sub">（只显示前 60 个，其余在「开始今日复习」里）</div>`;
+  }else{
+    html+=`<div class="empty">今天没有到期单词<br>先去「单词流星雨」学一个新 Day，明天这里就会有复习任务</div>`;
+  }
+  html+=`<h2>未来复习计划</h2><div class="glass" style="padding:14px">`;
+  const keys=Object.keys(groups);
+  if(!keys.length)html+=`<div class="sub" style="margin:0">暂无安排，学完新词后会自动生成。</div>`;
+  else html+=keys.map(k=>`<div class="sess"><span>${k}</span><span class="m">${groups[k].length} 词 · ${groups[k].slice(0,4).join(' ')}${groups[k].length>4?' …':''}</span></div>`).join('');
+  html+=`</div>`;
+  html+=`<h2>复习曲线说明</h2><div class="glass" style="padding:14px;font-size:13px;color:var(--text2);line-height:1.9">
+    ${BOX_LABEL.map((l,i)=>`第 ${i} 盒 → 隔 ${l} 复习`).join('　')}
+    <div style="margin-top:8px">例：今天学会的词，明天第 1 次复习；答对→2 天后；再答对→4 天后……连续答对 4 次以上视为掌握。</div>
+  </div>`;
+  return html;
+}
+function exportReview(){
+  const p=progress();
+  const map=dueByDate();
+  const dayMs=86400000;
+  const rows=[];
+  const all=Object.keys(map).sort();
+  all.forEach(d=>{
+    const diff=Math.round((new Date(d)-new Date(today()))/dayMs);
+    if(diff<0)return;
+    const label=diff===0?'今天（'+d+'）':diff===1?'明天（'+d+'）':diff<=60?diff+' 天后（'+d+'）':'';
+    if(!label)return;
+    rows.push({label,words:map[d]});
+  });
+  if(!rows.length){toast('还没有复习计划，先学一个新 Day');return}
+  const u=(CUR()&&CUR().name)||'同学';
+  const table=rows.map(g=>`
+    <tr class="g"><td colspan="5">${g.label} · ${g.words.length} 词</td></tr>
+    ${g.words.map((w,i)=>`<tr><td class="c">☐</td><td><b>${esc(w.en)}</b></td><td class="ipa">${esc(w.ipa||'')}</td><td>${esc(w.cn)}</td><td class="c">${i+1}</td></tr>`).join('')}
+  `).join('');
+  const html=`<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>艾宾浩斯复习计划 ${today()}</title>
+<style>
+ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#3f2b36;margin:26px}
+ h1{font-size:20px;margin:0 0 4px;color:#d9468a}
+ .meta{font-size:12px;color:#8d7280;margin-bottom:12px}
+ .bar{position:fixed;right:18px;top:18px}
+ .bar button{background:#f472b6;color:#fff;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer}
+ table{width:100%;border-collapse:collapse;font-size:12.5px}
+ th,td{border:1px solid #f3d3e0;padding:6px 8px;text-align:left;vertical-align:top}
+ th{background:#fff0f6;color:#b03a68}
+ tr.g td{background:#ffeaf2;font-weight:800;color:#a63e6b}
+ td.c{text-align:center;white-space:nowrap;font-size:15px}
+ td.ipa{color:#c2749c;white-space:nowrap}
+ .hint{font-size:11px;color:#b39aa8;margin-top:10px;line-height:1.7}
+ @media print{.bar{display:none}body{margin:10mm}tr.g td{background:#ffeaf2 !important;-webkit-print-color-adjust:exact}}
+</style></head><body>
+<div class="bar"><button onclick="window.print()">打印 / 存为 PDF</button></div>
+<h1>中考英语词汇 · 艾宾浩斯抗遗忘复习计划</h1>
+<div class="meta">学生：${esc(u)}　生成日期：${today()}　共 ${rows.reduce((s,g)=>s+g.words.length,0)} 个词</div>
+<table><thead><tr><th>✓</th><th>单词</th><th>音标</th><th>中文释义</th><th>#</th></tr></thead>
+<tbody>${table}</tbody></table>
+<div class="hint">用法：按日期从上往下复习，每背对一个就打个勾；错词回到"今天"重新开始一轮。<br>打印建议：A4 纵向；电脑上 Ctrl+P 可直接另存为 PDF。</div>
+</body></html>`;
+  download(html,safeName()+'-艾宾浩斯复习计划-'+today()+'.html','text/html');
+  toast('已导出，打开后点右上角"打印 / 存为 PDF"');
+}
+
+/* --- 错题本 --- */
+function wrongHtml(p){
+  const list=p.wrong||[];
+  const words=Object.keys(p.records).filter(k=>p.records[k].wrong>0)
+    .map(k=>({w:findWord(k),r:p.records[k]})).filter(x=>x.w).sort((a,b)=>b.r.wrong-a.r.wrong);
+  let html=`<h1>${esc(p.name)} 的错题本</h1>
+    <p class="sub">共 ${list.length} 道错题记录（默写 + 真题大作战），涉及 ${words.length} 个易错词</p>
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn" onclick="exportWrong(true)">导出 PDF（打印版）</button>
+    </div>`;
+  if(!list.length){html+=`<div class="empty">还没有错题<br>做完一轮「单词翻译官」或「真题大作战」后，答错的题会自动收进来</div>`;return html}
+  html+=list.slice(0,60).map((x,i)=>`<div class="qa">
+      <div class="qt">${i+1}. ${x.type==='ex'?'真题大作战':(x.type==='dict'?'听写闯关':'单词默写')} · ${esc(x.date)}${x.day?' · '+esc(x.day):''}</div>
+      <div class="qq">${esc(x.prompt)}</div>
+      <div class="ans">你写：<span class="wrong">${esc(x.your)}</span>　标准答案：<span class="right">${esc(x.correct)}</span></div>
+      ${x.type==='ex'?'':`<div class="ans">${esc(x.en)} ${esc(x.ipa||'')} · ${esc(x.cn||'')}</div>`}
+      ${x.note?`<div class="ans" style="background:#fff5f9;border-radius:10px;padding:8px 10px;line-height:1.7"><b>解析：</b>${esc(x.note)}</div>`:''}
+      ${x.type==='ex'?'':`<div style="margin-top:6px"><button class="speakbtn" style="font-size:12px;padding:5px 12px" onclick="openDetail('${esc(x.en).replace(/'/g,"\\'")}')">解析</button></div>`}
+    </div>`).join('');
+  if(list.length>60)html+=`<div class="sub">（只显示最近 60 条，导出文件包含全部 ${list.length} 条）</div>`;
+  html+=`<div class="row" style="margin-top:12px"><button class="btn" onclick="practiceWrong()">练这些错词</button>
+    <button class="btn ghost" onclick="clearWrongBook()">清空错题本</button></div>`;
+  return html;
+}
+function clearWrongBook(){askConfirm('清空错题本？（学习记录与记忆盒不受影响）',()=>{const p=progress();p.wrong=[];save();renderStudy();toast('已清空')})}
+function practiceWrong(){
+  const p=progress();
+  const ws=Object.keys(p.records).filter(k=>p.records[k].wrong>0).map(findWord).filter(Boolean);
+  if(!ws.length){toast('没有错词');return}
+  startQuiz(ws,Math.min(ws.length,30),'trans');
+}
+function safeName(){return ((CUR()&&CUR().name)||'学生').replace(/[\\/:*?"<>|]/g,'_')}
+function download(text,filename,mime){
+  const blob=new Blob(['\ufeff'+text],{type:(mime||'text/plain')+';charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);
+}
+function exportWrong(printable){
+  const list=progress().wrong||[];
+  if(!list.length){toast('错题本是空的');return}
+  const u=(CUR()&&CUR().name)||'同学';
+  const rows=list.map((x,i)=>`<tr>
+     <td class="c">${i+1}</td>
+     <td><b>${esc(x.en)}</b><div class="ipa">${esc(x.ipa||'')}</div><div class="cn">${esc(x.cn||'')}</div></td>
+     <td class="c">${x.type==='ex'?'大作战':(x.type==='dict'?'听写':'默写')}</td>
+     <td class="q">${esc(x.prompt)}</td>
+     <td class="w">${esc(x.your)}</td>
+     <td class="r">${esc(x.correct)}</td>
+     <td class="d">${esc(x.date)}</td></tr>`).join('');
+  const html=`<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>错题本 ${today()}</title>
+<style>
+ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#3f2b36;margin:26px;background:#fff}
+ h1{font-size:20px;margin:0 0 4px;color:#d9468a}
+ .meta{font-size:12px;color:#8d7280;margin-bottom:14px}
+ .bar{position:fixed;right:18px;top:18px}
+ .bar button{background:#f472b6;color:#fff;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer}
+ table{width:100%;border-collapse:collapse;font-size:12.5px}
+ th,td{border:1px solid #f3d3e0;padding:7px 8px;vertical-align:top;text-align:left}
+ th{background:#fff0f6;color:#b03a68;font-size:12px}
+ td.c{text-align:center;white-space:nowrap}
+ td.q{max-width:300px}
+ td.w{color:#dc2626;white-space:nowrap}
+ td.r{color:#059669;font-weight:700;white-space:nowrap}
+ td.d{white-space:nowrap;color:#b39aa8}
+ .ipa{color:#c2749c;font-size:11px}.cn{color:#8d7280;font-size:11px}
+ .hint{font-size:11px;color:#b39aa8;margin-top:10px}
+ @media print{.bar{display:none}body{margin:10mm}th{background:#fff0f6 !important;-webkit-print-color-adjust:exact}}
+</style></head><body>
+<div class="bar"><button onclick="window.print()">打印 / 存为 PDF</button></div>
+<h1>中考英语词汇 · 错题本</h1>
+<div class="meta">学生：${esc(u)}　导出日期：${today()}　共 ${list.length} 题　（${esc(DATA.title||'')}）</div>
+<table><thead><tr><th>#</th><th>单词 / 音标 / 释义</th><th>题型</th><th>题干</th><th>我的答案</th><th>正确答案</th><th>日期</th></tr></thead>
+<tbody>${rows}</tbody></table>
+<div class="hint">打印建议：A4 纵向；电脑上 Ctrl+P 可直接"另存为 PDF"。</div>
+</body></html>`;
+  download(html,safeName()+'-错题本-'+today()+'.html','text/html');
+  toast('已导出，打开后点右上角"打印 / 存为 PDF"');
+}
+
+/* --- 学习报告导出 PDF --- */
+function exportReport(){
+  const p=progress(),ts=todayStat(p),rep=buildReport(p);
+  const sessions=p.sessions||[];
+  const srs=Object.values(p.srs);
+  const boxes=[0,1,2,3,4,5,6,7].map(b=>srs.filter(s=>s.box===b).length);
+  const allAcc=p.stats.total?Math.round(p.stats.right/p.stats.total*1000)/10:0;
+  const tsAcc=ts.n?Math.round(ts.r/ts.n*1000)/10:0;
+  const totalSec=Object.values(p.stats.days).reduce((s,d)=>s+(d.sec||0),0);
+  const u=(CUR()&&CUR().name)||'同学';
+  const plain=h=>String(h).replace(/<[^>]+>/g,'');
+  const kv=[['今日题数',ts.n+' 题'],['今日正确率',(ts.n?tsAcc+'%':'—')],['今日学习时长',fmtMin(ts.sec)],
+    ['学习天数',studyDays(p)+' 天'],['累计题数',p.stats.total+' 题'],['总正确率',allAcc+'%'],
+    ['累计时长',fmtMin(totalSec)],['连续打卡',streakDays(p)+' 天'],['已掌握词',masteredCount()+' 个'],
+    ['待复习',dueList().length+' 个'],['错题记录',(p.wrong||[]).length+' 条']];
+  const kvHtml=(()=>{
+    const rows=[];
+    for(let i=0;i<kv.length;i+=2){
+      const a=kv[i],b=kv[i+1];
+      rows.push('<tr><td>'+esc(a[0])+'</td><td class="v">'+esc(a[1])+'</td>'+
+        (b?'<td>'+esc(b[0])+'</td><td class="v">'+esc(b[1])+'</td>':'<td></td><td></td>')+'</tr>');
+    }
+    return '<table><thead><tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr></thead><tbody>'+rows.join('')+'</tbody></table>';
+  })();
+  const sessRows=sessions.length?sessions.slice(0,60).map(s=>'<tr><td>'+esc(s.date)+' '+esc(s.at||'')+'</td><td>'+esc(s.modeName||s.mode)+'</td><td class="c">'+s.right+'/'+s.total+'</td><td class="c">'+(s.total?(Math.round(s.right/s.total*1000)/10):0)+'%</td><td class="c">'+fmtSec(s.sec)+'</td></tr>').join('')
+    :'<tr><td colspan="5" class="c">还没有练习记录</td></tr>';
+  const boxRows=boxes.map((n,i)=>'<tr><td>第 '+i+' 盒</td><td>'+BOX_LABEL[i]+'</td><td class="c">'+n+'</td></tr>').join('');
+  const html='<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>学习报告 '+today()+'</title>'+
+'<style>body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#3f2b36;margin:26px}'+
+'h1{font-size:20px;margin:0 0 4px;color:#d9468a}.meta{font-size:12px;color:#8d7280;margin-bottom:14px}'+
+'h2{font-size:14px;margin:18px 0 8px;color:#a63e6b}.bar{position:fixed;right:18px;top:18px}'+
+'.bar button{background:#f472b6;color:#fff;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer}'+
+'table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{border:1px solid #f3d3e0;padding:6px 8px;text-align:left}'+
+'th{background:#fff0f6;color:#b03a68}td.c{text-align:center}td.v{font-weight:700;color:#d9468a}'+
+'ul{margin:4px 0 0 18px;padding:0;font-size:12.5px;line-height:1.9}li{color:#5b4550}'+
+'.hint{font-size:11px;color:#b39aa8;margin-top:12px}@media print{.bar{display:none}body{margin:10mm}th{background:#fff0f6 !important;-webkit-print-color-adjust:exact}}'+
+'</style></head><body><div class="bar"><button onclick="window.print()">打印 / 存为 PDF</button></div>'+
+'<h1>60天搞定中考词汇 · 学习报告</h1>'+
+'<div class="meta">学生：'+esc(u)+'　生成日期：'+today()+'　'+(esc(DATA.title||''))+'</div>'+
+'<h2>一、数据概览</h2>'+kvHtml+
+'<h2>二、今日学习分析</h2><ul>'+rep.analysis.map(x=>'<li>'+esc(plain(x))+'</li>').join('')+'</ul>'+
+'<h2>三、明日建议</h2><ul>'+rep.advice.map(x=>'<li>'+esc(plain(x))+'</li>').join('')+'</ul>'+
+'<h2>四、每一次练习记录（共 '+sessions.length+' 次，显示最近 60 次）</h2>'+
+'<table><thead><tr><th>时间</th><th>模式</th><th>对/总</th><th>正确率</th><th>用时</th></tr></thead><tbody>'+sessRows+'</tbody></table>'+
+'<h2>五、记忆盒分布（艾宾浩斯）</h2><table><thead><tr><th>记忆盒</th><th>下次复习</th><th>词数</th></tr></thead><tbody>'+boxRows+'</tbody></table>'+
+'<div class="hint">打印建议：A4 纵向；电脑上 Ctrl+P 可直接"另存为 PDF"。</div></body></html>';
+  download(html,safeName()+'-学习报告-'+today()+'.html','text/html');
+  toast('已导出，打开后点右上角"打印 / 存为 PDF"');
+}
+
+/* --- 排行榜 --- */
+function userStat(key,u){
+  const st=u.stats||{days:{},total:0,right:0};
+  const days=st.days||{};
+  const sec=Object.keys(days).reduce((s,k)=>s+((days[k]&&days[k].sec)||0),0);
+  const dnum=Object.keys(days).filter(k=>days[k]&&days[k].n>0).length;
+  const total=st.total||0,right=st.right||0;
+  return {key,name:u.name||key,total,right,acc:total?right/total*100:0,sec,days:dnum};
+}
+function rankHtml(p){
+  const rows=Object.keys(DB.users).map(k=>DB.users[k]&&(DB.users[k].stats&&DB.users[k].stats.total>0)?userStat(k,DB.users[k]):null).filter(Boolean);
+  rows.sort((a,b)=>b.acc-a.acc||b.sec-a.sec||b.total-a.total);
+  const meIdx=rows.findIndex(r=>r.key===p.name);
+  const me=meIdx>=0?rows[meIdx]:null;
+  let html=`<h1>排行榜</h1>
+    <p class="sub">正确率优先、学习时长次之 · 共 ${rows.length} 位同学参与</p>`;
+  if(me){
+    html+=`<div class="qcard" style="text-align:center;padding:16px">
+      <div class="sub" style="margin:0 0 6px">我的排名</div>
+      <div style="font-size:30px;font-weight:800;color:#f472b6">第 ${meIdx+1} 名</div>
+      <div class="sub" style="margin-top:6px">正确率 ${me.acc.toFixed(1)}% · ${me.total} 题 · ${fmtMin(me.sec)} · 学习 ${me.days} 天</div>
+    </div>`;
+  }else{
+    html+=`<div class="empty">还没有成绩，先去做一轮练习吧</div>`;
+  }
+  if(rows.length){
+    html+=`<div style="margin-top:14px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)">
+      <div style="display:grid;grid-template-columns:40px 1fr 62px 46px 82px;gap:4px;padding:10px 12px;background:#fff0f6;font-size:12px;color:#a97b90;font-weight:700">
+        <span>名次</span><span>同学</span><span style="text-align:right">正确率</span><span style="text-align:right">题数</span><span style="text-align:right">时长</span>
+      </div>`;
+    rows.forEach((r,i)=>{
+      const on=r.key===p.name;
+      const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);
+      html+=`<div style="display:grid;grid-template-columns:40px 1fr 62px 46px 82px;gap:4px;padding:11px 12px;align-items:center;
+          border-top:1px solid #fbe6ef;font-size:13.5px;${on?'background:#fff5f9;font-weight:800;color:#d6398a':''}">
+        <span>${medal}</span>
+        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(r.name)}${on?' <span style="font-size:11px">(我)</span>':''}</span>
+        <span style="text-align:right">${r.acc.toFixed(1)}%</span>
+        <span style="text-align:right">${r.total}</span>
+        <span style="text-align:right">${fmtMin(r.sec)}</span>
+      </div>`;
+    });
+    html+=`</div>`;
+  }
+  html+=`<p class="sub" style="margin-top:12px">排名在每次练习结束后自动更新。</p>`;
+  return html;
+}
+
+/* --- 学习报告：每次记录 + 汇总 --- */
+function reportHtml(p){
+  const ts=todayStat(p);
+  const sessions=p.sessions||[];
+  const days=Object.keys(p.stats.days).sort().slice(-14);
+  const max=Math.max(1,...days.map(d=>p.stats.days[d].n));
+  const bars=days.map(d=>{const x=p.stats.days[d];const h=Math.round(x.n/max*100);
+    return `<div style="flex:1;max-width:46px;display:flex;flex-direction:column;align-items:center;gap:4px">
+      <div style="width:100%;height:60px;display:flex;align-items:flex-end"><div style="width:100%;height:${Math.max(4,h)}%;background:linear-gradient(180deg,#fda4af,#f472b6);border-radius:8px 8px 0 0"></div></div>
+      <span style="font-size:10px;color:var(--text3)">${d.slice(5)}</span><span style="font-size:10px;color:var(--text3)">${x.n}</span></div>`}).join('')
+    ||'<div class="empty">暂无记录</div>';
+  const srs=Object.values(p.srs);
+  const boxes=[0,1,2,3,4,5,6,7].map(b=>srs.filter(s=>s.box===b).length);
+  const acc=ts.n?Math.round(ts.r/ts.n*1000)/10:0;
+  const allAcc=p.stats.total?Math.round(p.stats.right/p.stats.total*1000)/10:0;
+  const rep=buildReport(p);
+  const totalSec=Object.values(p.stats.days).reduce((s,d)=>s+(d.sec||0),0);
+  let html=`<h1>${esc(p.name)} 的学习报告</h1>
+    <p class="sub">${esc(DATA.title||'')}</p>
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn" onclick="exportReport()">导出学习报告 PDF</button>
+    </div>
+    <div class="statrow">
+      <div class="statbox"><b>${fmtMin(ts.sec)}</b><span>今日时长</span></div>
+      <div class="statbox"><b>${studyDays(p)}</b><span>学习天数</span></div>
+      <div class="statbox"><b>${ts.n?acc+'%':'—'}</b><span>今日正确率</span></div>
+      <div class="statbox"><b>${masteredCount()}</b><span>已掌握词</span></div>
+    </div>
+    <div class="report" style="margin-bottom:14px">
+      <h3>📋 今日学习分析</h3><ul>${rep.analysis.map(x=>'<li>'+x+'</li>').join('')}</ul>
+      <h3 style="margin-top:14px">🎯 明日建议</h3><ul>${rep.advice.map(x=>'<li>'+x+'</li>').join('')}</ul>
+    </div>
+    <h2>每一次练习记录（${sessions.length}）</h2>
+    <div class="glass" style="padding:10px 14px">
+      ${sessions.length?sessions.slice(0,30).map(s=>`<div class="sess">
+        <span><b>${esc(s.date)} ${esc(s.at||'')}</b>　${esc(s.modeName||s.mode)}</span>
+        <span class="m">${s.right}/${s.total} 题 · ${s.total?(Math.round(s.right/s.total*1000)/10):0}% · ${fmtSec(s.sec)}</span></div>`).join('')
+        :'<div class="sub" style="margin:0">还没有练习记录</div>'}
+      ${sessions.length>30?`<div class="sub">（只显示最近 30 次，共 ${sessions.length} 次）</div>`:''}
+    </div>
+    <h2>汇总</h2>
+    <div class="statrow" style="margin-top:0">
+      <div class="statbox"><b>${p.stats.total}</b><span>累计题数</span></div>
+      <div class="statbox"><b>${allAcc}%</b><span>总正确率</span></div>
+      <div class="statbox"><b>${studyDays(p)}</b><span>学习天数</span></div>
+      <div class="statbox"><b>${fmtMin(totalSec)}</b><span>累计时长</span></div>
+    </div>
+    <div class="statrow">
+      <div class="statbox"><b>${streakDays(p)}</b><span>连续打卡</span></div>
+      <div class="statbox"><b>${dueList().length}</b><span>待复习</span></div>
+      <div class="statbox"><b>${(p.wrong||[]).length}</b><span>错题记录</span></div>
+      <div class="statbox"><b>${Object.keys(p.games||{}).length}</b><span>玩过的 Day</span></div>
+    </div>
+    <h2>最近 14 天（题数）</h2>
+    <div class="glass" style="padding:14px"><div style="display:flex;gap:6px;align-items:flex-end;justify-content:center">${bars}</div></div>
+    <h2>记忆盒分布（艾宾浩斯）</h2>
+    <div class="glass" style="padding:14px">
+      ${boxes.map((n,i)=>`<div style="display:flex;align-items:center;gap:10px;margin:6px 0">
+        <span style="font-size:12px;color:var(--text2);width:64px">第 ${i} 盒 ${BOX_LABEL[i]||''}</span>
+        <div style="flex:1;height:9px;background:#ffe9f1;border-radius:99px;overflow:hidden">
+          <div style="height:100%;width:${srs.length?Math.round(n/srs.length*100):0}%;background:linear-gradient(90deg,#fda4af,#f472b6)"></div></div>
+        <span style="font-size:12px;color:var(--text3);width:40px;text-align:right">${n}</span></div>`).join('')}
+      <p class="sub" style="margin:10px 0 0">第 0-2 盒＝刚学/易忘，第 4 盒以上视为掌握。答对升一盒，答错回到第 0 盒。</p>
+    </div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn ghost" onclick="openStudy('wrong')">看错题本</button>
+      <button class="btn ghost" onclick="resetUser()">清空本用户数据</button></div>`;
+  return html;
+}
+function resetUser(){askConfirm('清空当前用户的全部学习记录（含错题本、记忆盒、打卡、练习记录）？',()=>{
+  DB.users[DB.cur]=blankUser(DB.cur);save();renderStudy();toast('已清空')})}
+function buildReport(p){
+  const ts=todayStat(p);
+  const analysis=[],advice=[];
+  const acc=ts.n?ts.r/ts.n*100:0;
+  const avgSec=ts.n?Math.round((ts.sec||0)/ts.n):0;
+  const due=dueList().length;
+  const wrongWords=Object.keys(p.records).filter(k=>p.records[k].wrong>0)
+    .map(k=>({w:findWord(k),r:p.records[k]})).filter(x=>x.w).sort((a,b)=>b.r.wrong-a.r.wrong);
+  if(!ts.n){
+    analysis.push('今天还没有练习记录，学习时长为 0 分钟。');
+    advice.push('先做一轮「单词翻译官」20 题热身（约 8 分钟），再挑 1 个 Day 玩一局「单词流星雨」。');
+    if(due)advice.push('另有 '+due+' 个词已到复习期，用「学习中心 → 艾宾浩斯复习」快速过掉。');
+    return {analysis,advice};
+  }
+  analysis.push('今天练了 <b>'+ts.n+' 题</b>，答对 '+ts.r+' 题，正确率 <b>'+acc.toFixed(1)+'%</b>，学习时长 <b>'+fmtMin(ts.sec)+'</b>。');
+  if(avgSec)analysis.push('平均每题 '+avgSec+' 秒'+(avgSec<6?'，偏快，注意别靠猜。':(avgSec>35?'，偏慢，说明还在回忆阶段，建议先把释义和发音读熟。':'，节奏正常。')));
+  const todaySessions=(p.sessions||[]).filter(s=>s.date===today());
+  if(todaySessions.length)analysis.push('今天完成 '+todaySessions.length+' 轮练习：'+todaySessions.map(s=>s.modeName+' '+s.right+'/'+s.total).join('、')+'。');
+  const played=Object.keys(p.games||{});
+  if(played.length)analysis.push('已经在 '+played.length+' 个 Day 上玩过单词流星雨，最近：'+played.slice(-3).join('、')+'。');
+  if(p.stats.total)analysis.push('累计做 '+p.stats.total+' 题，总正确率 '+(p.stats.right/p.stats.total*100).toFixed(1)+'%，已掌握（第 4 盒以上）'+masteredCount()+' 个词。');
+  if(due)analysis.push('有 <b>'+due+'</b> 个词今天到期需要复习。');
+  if(wrongWords.length)analysis.push('当前最薄弱的词：'+wrongWords.slice(0,5).map(x=>'<b>'+esc(x.w.en)+'</b>（错 '+x.r.wrong+' 次）').join('、')+'。');
+  else analysis.push('错题本目前是空的，说明这一阶段掌握得比较稳。');
+  if(acc>=90){
+    advice.push('正确率很稳，明天把题量提到 30 题，并加一轮「真题大作战」练词形。');
+    advice.push('可以开始自己的下一个 Day，旧词只交给艾宾浩斯复习。');
+  }else if(acc>=70){
+    advice.push('基础不错，明天先点「练这些错词」把错题本前 10 个过一遍，再做一轮单词翻译官。');
+    advice.push('重点看错词的「短语搭配」和「例句」，中考常考搭配比单词本身更容易失分。');
+  }else{
+    advice.push('正确率偏低，明天把范围缩小到 15 个词：先预习词表听 2 遍，再默写。');
+    advice.push('先保证"听得出、想得起意思"，再追求拼写全对；错词当天必须回看一次。');
+  }
+  if(avgSec>35)advice.push('每题超过 35 秒说明还在"想"，建议早上出声朗读词汇表 5 分钟。');
+  if(avgSec&&avgSec<6&&acc<85)advice.push('答得快但错得多，建议慢下来：写之前先默念一遍中文意思。');
+  if((ts.sec||0)<300)advice.push('今天学习不到 5 分钟，词汇要靠重复量，建议每次至少 10 分钟。');
+  if((ts.sec||0)>2700)advice.push('今天已超过 45 分钟，注意休息，睡前再过一遍今日错词效果更好。');
+  if(due)advice.push('明天开口先把 '+due+' 个到期词复习掉（2-3 分钟），再学新词。');
+  return {analysis,advice};
+}
+
+/* ================= 词汇表（从单词流星雨进入） ================= */
+let readerDay='all';
+function showReader(day){
+  ensureUser();
+  if(day)readerDay=day;
+  const opts=`<div class="pills"><div class="pill ${readerDay==='all'?'on':''}" onclick="setReaderDay('all')">全部</div>`+
+    DATA.days.map(d=>`<div class="pill ${readerDay===d.day?'on':''}" onclick="setReaderDay('${esc(d.day)}')">${esc(d.day)}</div>`).join('')+`</div>`;
+  const days=readerDay==='all'?DATA.days:DATA.days.filter(d=>d.day===readerDay);
+  let list='';
+  days.forEach(d=>{
+    list+=`<h2 style="font-size:14px;color:var(--text2);margin:16px 0 8px">${esc(d.day)} · ${d.words.length} 词</h2>`;
+    list+=d.words.map(w=>{const r=progress().records[w.en];
+      const badge=r&&r.wrong>0?`<span style="color:var(--bad)">错${r.wrong}</span>`:'';
+      return `<div class="list-item" onclick="openDetail('${esc(w.en).replace(/'/g,"\\'")}')">
+        <div class="l"><div class="n">${esc(w.en)} <span style="font-weight:400;color:#c2749c;font-size:12px">${esc(w.ipa||'')}</span></div>
+        <div class="m">${esc(w.cn)}</div></div><div class="r">${badge}</div></div>`}).join('');
+  });
+  $('#reader').innerHTML=`<h1>词表预习</h1><p class="sub">共 ${allWords().length} 词 · 点开看释义、短语、例句</p>${opts}${list}`;
+  go('reader');
+}
+function setReaderDay(d){readerDay=d;showReader()}
+function openDetail(en){
+  const w=findWord(en);if(!w)return;
+  let html=`<div class="explain">
+    <div class="wrow"><span class="wen">${esc(w.en)}</span>
+    ${w.ipa?`<span class="wipa">${esc(w.ipa)}</span>`:''}
+    ${w.pos?`<span class="wpos">${esc(w.pos)}</span>`:''}
+    <button class="speakbtn" style="margin-left:auto" onclick="speakNow(${JSON.stringify(w.en).replace(/"/g,'&quot;')})">🔊</button></div>
+    <div class="wcn">${esc(w.cn)}</div></div>`;
+  if(w.forms&&w.forms.length)html+=`<div class="sect"><h4>🔄 词形变化 / 派生词</h4>${w.forms.map(f=>`<span class="chip">${esc(f.w)}${f.label?` <em>${esc(f.label)}</em>`:''}</span>`).join('')}</div>`;
+  if(w.phrases&&w.phrases.length)html+=`<div class="sect"><h4>🔗 短语搭配</h4>${w.phrases.map(p=>`<span class="chip">${esc(p.en)}<em style="margin-left:6px">${esc(p.cn)}</em></span>`).join('')}</div>`;
+  if(w.ex&&w.ex.length)html+=`<div class="sect"><h4>🧩 例句</h4>${w.ex.map(ex=>`<div class="exitem"><div class="sentline">${esc(ex.ans?ex.s.replace(/_{2,}/g,ex.ans):ex.s)}</div>
+    <button class="speakbtn" style="margin-top:6px;font-size:12px;padding:5px 12px" onclick="speakNow(${JSON.stringify(ex.s).replace(/"/g,'&quot;')})">🔊 读例句</button></div>`).join('')}</div>`;
+  const s=srsOf(w);if(s)html+=`<div class="sect" style="font-size:12px;color:var(--text3)">第 ${s.box} 盒（${BOX_LABEL[s.box]}）· 下次复习 ${s.due} · 对 ${s.right} / 错 ${s.wrong}</div>`;
+  $('#detailBody').innerHTML=html;$('#detailModal').classList.add('show');
+}
+
+/* ================= 用户 ================= */
+function openUserModal(){
+  $('#userModal').classList.add('show');
+}
+function switchUser(){toast('请先退出登录')}
+function addUser(){toast('请先退出登录')}
+
+/* ================= 键盘 ================= */
+const VK_ROWS=[['q','w','e','r','t','y','u','i','o','p'],['a','s','d','f','g','h','j','k','l'],['z','x','c','v','b','n','m','del'],['space','enter']];
+function buildVK(){
+  VK_ROWS.forEach((row,r)=>{const el=$('#vk'+r);if(!el||el.childNodes.length)return;
+    row.forEach(k=>{const b=document.createElement('button');
+      b.className='vkkey'+(k==='del'?' wide':'')+(k==='space'?' space':'')+(k==='enter'?' enter':'');
+      b.textContent=k==='del'?'⌫':k==='space'?'空格':k==='enter'?'✓ 确认':k.toUpperCase();
+      b.onmousedown=e=>e.preventDefault();
+      b.onclick=e=>{e.preventDefault();vkPress(k)};
+      el.appendChild(b)})})}
+function vkPress(k){
+  const inp=$('#ans');if(!inp||inp.disabled)return;   // 注意：readonly 也要能写入
+  if(k==='del')inp.value=inp.value.slice(0,-1);
+  else if(k==='space')inp.value+=' ';
+  else if(k==='enter'){submitAnswer();return}
+  else inp.value+=k;
+  inp.classList.remove('ok','bad');
+}
+function showVK(){buildVK();$('#vk').classList.add('show');document.body.classList.add('vkopen')}
+function hideVK(){$('#vk').classList.remove('show');document.body.classList.remove('vkopen')}
+
+/* ================= 启动：先输名字 ================= */
+function welcomeHtml(){
+  return `<div style="text-align:center;margin-top:8vh">
+    <div style="font-size:52px;line-height:1">🎓</div>
+    <h1 style="margin-top:14px">60天搞定中考词汇</h1>
+    <p class="sub" style="margin-top:8px">输入名字和密码进入。第一次来的同学，输入名字后自己设一个密码，下次就用它登录。</p>
+    <div style="margin-top:22px"><input class="inp" id="wName" maxlength="12" placeholder="输入你的名字" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    <div style="margin-top:12px"><input class="inp" id="wPwd" type="password" maxlength="24" placeholder="输入密码（至少 4 位）" autocomplete="off"></div>
+    <div class="qhint" id="wTip" style="margin-top:10px;min-height:18px"></div>
+    <div style="margin-top:12px"><button class="btn" onclick="startWithName()">进入</button></div>
+  </div>`;
+}
+function setTip(t){const el=$('#wTip');if(el){el.textContent=t||'';el.style.color=t?'#d9534f':''}}
+function hashPwd(s){
+  const str='zk|'+s;
+  try{
+    if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
+      return window.crypto.subtle.digest('SHA-256',new TextEncoder().encode(str)).then(b=>
+        Array.prototype.map.call(new Uint8Array(b),x=>('0'+x.toString(16)).slice(-2)).join(''));
+    }
+  }catch(e){}
+  let h=5381;for(let i=0;i<str.length;i++)h=((h*33)^str.charCodeAt(i))>>>0;
+  return Promise.resolve('w'+h.toString(36));
+}
+async function startWithName(){
+  const nameEl=$('#wName'),pwdEl=$('#wPwd');
+  const v=((nameEl&&nameEl.value)||'').trim();
+  const p=((pwdEl&&pwdEl.value)||'').trim();
+  if(!v){setTip('先输入名字');if(nameEl)nameEl.focus();return}
+  if(p.length<4){setTip('密码至少 4 位');if(pwdEl)pwdEl.focus();return}
+  unlockAudio();
+  const h=await hashPwd(p);
+  const old=DB.users[v];
+  if(old&&old.pw&&old.pw!==h){setTip('密码不对，请重新输入');if(pwdEl){pwdEl.value='';pwdEl.focus()}return}
+  if(!old)DB.users[v]=blankUser(v);
+  const me=DB.users[v];
+  if(!me.pw)me.pw=h;                 // 新账号 / 老账号首次设密码
+  me.name=v;me.named=true;me.lastLogin=Date.now();
+  // 顺手清掉登录前可能生成的占位账号
+  Object.keys(DB.users).forEach(k=>{const u=DB.users[k];
+    if(k!==v&&u&&!u.named&&(!u.stats||!u.stats.total))delete DB.users[k]});
+  DB.cur=v;save();setTip('');
+  toast((old?'欢迎回来，':'欢迎你，')+v+'！');
+  renderHome();
+}
+function logout(){
+  hideVK();
+  DB.cur=null;save();
+  renderWelcome();
+}
+function renderWelcome(){
+  $('#welcome').innerHTML=welcomeHtml();
+  go('welcome');
+  const tb=document.querySelector('.topbar');if(tb)tb.style.display='none';
+  setTimeout(()=>{
+    const el=$('#wName'),pw=$('#wPwd');
+    if(el){
+      el.focus();
+      el.addEventListener('keydown',e=>{if(e.key==='Enter'&&pw)pw.focus()});
+      el.addEventListener('input',()=>{
+        const v=(el.value||'').trim();const u=DB.users[v];
+        if(!v)return setTip('');
+        if(u&&u.pw)setTip('“'+v+'”已设置密码，请输入密码');
+        else setTip('新名字，将创建新账号（用下面的密码）');
+      });
+    }
+    if(pw)pw.addEventListener('keydown',e=>{if(e.key==='Enter')startWithName()});
+  },120);
+}
+/* ================= 启动 ================= */
+(function boot(){
+  // 每次打开都从「输入名字」开始：名字相同就自动接回原来的记录
+  renderWelcome();
+  probeLocalAudio();
+})();
+window.addEventListener('resize',()=>{if(game&&game.kind==='link')syncSvgSize()});
+</script>
+</body>
+</html>
